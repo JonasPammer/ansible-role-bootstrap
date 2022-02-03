@@ -103,7 +103,9 @@ No tasks must come before this role.
 
 == Development
 
-Follow the Guidelines defined in [TODO Link to my general Ansible Role Development Guidelines].
+// TODO Add Link to my general ansible role development guideline docs once they're finished
+//  assignees: jonaspammer
+Follow the Guidelines defined in ….
 
 Versions are defined using https://git-scm.com/book/en/v2/Git-Basics-Tagging[Tags],
 which in turn get https://galaxy.ansible.com/docs/contributing/version.html[recognized and used] by Ansible Galaxy.
