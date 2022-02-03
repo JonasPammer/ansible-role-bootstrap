@@ -1,4 +1,4 @@
-= ansible-bootstrap
+= ansible-role-bootstrap
 Jonas Pammer <jonas@nesevo.com>;
 :revdate: 2021-08-14
 :toc:
