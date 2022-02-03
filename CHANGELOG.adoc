@@ -2,9 +2,10 @@
 // Included in README.adoc
 
 [[changelog]]
-== Changelog
+== 📝 Changelog
+[subs="+macros"]
 ----
-The following Changelog format was inspired by [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
+The following Changelog format was inspired by https://keepachangelog.com/en/1.0.0/[Keep a Changelog].
 
 === [major.minor.patch] - year-month-day
 Optional Description
