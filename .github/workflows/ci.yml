@@ -71,6 +71,6 @@ jobs:
           ANSIBLE_FORCE_COLOR: '1'
           MOLECULE_DISTRO: ${{ matrix.distro }}
 
-      - name: Setup tmate session if failed
-        if: ${{ failure() }}
+      - name: Setup tmate session if previous step failed and if this is a manual run
+        if: ${{ failure() && github.event_name == 'workflow_dispatch' }}
         uses: mxschmitt/action-tmate@v3
