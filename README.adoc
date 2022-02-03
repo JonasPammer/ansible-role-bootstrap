@@ -1,9 +1,11 @@
-= ansible-role-bootstrap https://github.com/JonasPammer/ansible-role-bootstrap/actions/workflows/ci.yml[image:https://github.com/JonasPammer/ansible-role-bootstrap/actions/workflows/ci.yml/badge.svg[Testing CI]]
-Jonas Pammer <jonas@nesevo.com>;
-:revdate: 2021-08-14
+= ansible-role-bootstrap
+Jonas Pammer <opensource@jonaspammer.at>;
+:name: xxx
 :toc:
 :toclevels: 3
 :sectanchors:
+
+https://github.com/JonasPammer/ansible-role-bootstrap/actions/workflows/ci.yml[image:https://github.com/JonasPammer/ansible-role-bootstrap/actions/workflows/ci.yml/badge.svg[Testing CI]]
 
 An Ansible role for preparing a linux system to be managed by ansible.
 
@@ -18,7 +20,7 @@ In most cases, you want to use this role in combination with the `ansible-core_d
 
 
 [[meta]]
-== Metadata
+== 🔎 Metadata
 Below you can find information on…
 
 * the role's required Ansible version
@@ -33,14 +35,14 @@ include::meta/main.yml[]
 
 
 [[requirements]]
-== Requirements
+== 📌 Requirements
 // Any prerequisites that may not be covered by this role or Ansible itself should be mentioned here.
 User needs to be able to `become`
 
 
 
 [[variables]]
-== Role Variables
+== 📜 Role Variables
 // A description of the settable variables for this role should go here
 // and any variables that can/should be set via parameters to the role.
 // Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.)
@@ -66,14 +68,14 @@ Maximum number of seconds to wait for the remote system to be reachable/usable b
 
 
 [[dependencies]]
-== Dependencies
+== 👫 Dependencies
 // A list of other roles should go here,
 // plus any details in regard to parameters that may need to be set for other roles,
 // or variables that are used from other roles.
 
 
 [[example_playbooks]]
-== Example Playbook Usages
+== 📚 Example Playbook Usages
 // Including examples of how to use this role in a playbook for common scenarios is always nice for users too:
 
 [NOTE]
@@ -101,16 +103,26 @@ No tasks must come before this role.
 ====
 
 
-== Development
+[[development]]
+== 💪 Development
 
 // TODO Add Link to my general ansible role development guideline docs once they're finished
 //  assignees: jonaspammer
 Follow the Guidelines defined in ….
 
+[[development::versioning]]
+=== Versioning
+
 Versions are defined using https://git-scm.com/book/en/v2/Git-Basics-Tagging[Tags],
 which in turn get https://galaxy.ansible.com/docs/contributing/version.html[recognized and used] by Ansible Galaxy.
 
+When a new tag is pushed, https://github.com/JonasPammer/ansible-role-bootstrap/actions/workflows/release.yml[
+a GitHub CI workflow] takes care of importing the role to my Ansible Galaxy Account.
+image:https://github.com/JonasPammer/ansible-role-bootstrap/actions/workflows/release.yml/badge.svg[Release CI]
+
 There is no _variable_ that denotes the "version" of the current directory/role.
 Just look-into (and maintain) `link:CHANGELOG.adoc[CHANGELOG.adoc]`.
+
+
 
 include::CHANGELOG.adoc[]
