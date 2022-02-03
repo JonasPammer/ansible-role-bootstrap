@@ -70,3 +70,7 @@ jobs:
           PY_COLORS: '1'
           ANSIBLE_FORCE_COLOR: '1'
           MOLECULE_DISTRO: ${{ matrix.distro }}
+
+      - name: Setup tmate session if failed
+        if: ${{ failure() }}
+        uses: mxschmitt/action-tmate@v3
