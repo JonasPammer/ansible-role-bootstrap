@@ -1,0 +1,12 @@
+---
+- name: Converge
+  hosts: all
+
+  pre_tasks:
+    - name: Update Debians' APT cache.
+      ansible.builtin.apt: update_cache=yes cache_valid_time=86400
+      when: ansible_os_family == 'Debian'
+      changed_when: false
+
+  roles:
+    - role: "jonaspammer.bootstrap"
