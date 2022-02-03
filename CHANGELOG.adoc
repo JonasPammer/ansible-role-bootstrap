@@ -1,0 +1,24 @@
+// Changelog for ansible-role "jonaspammer.bootstrap"
+// Included in README.adoc
+
+[[changelog]]
+== Changelog
+----
+The following Changelog format was inspired by [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
+
+=== [major.minor.patch] - year-month-day
+Optional Description
+
+==== Added
+==== Changed
+==== Deprecated
+==== Removed
+==== Fixed
+==== Security
+----
+
+=== [1.0] - 2022-02-02
+Initial version.
+
+All credits for the science behind this role go to https://github.com/robertdebock/ansible-role-bootstrap/tree/b7938d45abac6fb2a03d8bc186630eae6a0cc62c[
+ robertdebock/ansible-role-bootstrap on GitHub (27 January, 2022)].
