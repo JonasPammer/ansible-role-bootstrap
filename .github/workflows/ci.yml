@@ -1,16 +1,21 @@
 ---
-name: CI
+name: Testing CI
 'on':
   pull_request:
   push:
     branches:
       - master
+    paths-ignore:
+      - 'README.adoc'
+      - 'CHANGELOG.adoc'
+      - 'LICENSE'
   schedule:
     - cron: "0 5 * * 0"
 
 defaults:
   run:
     working-directory: 'jonaspammer.bootstrap'
+
 
 jobs:
 
