@@ -11,3 +11,4 @@ rules:
   key-duplicates: enable
   line-length:
     max: 140
+  new-lines: disable

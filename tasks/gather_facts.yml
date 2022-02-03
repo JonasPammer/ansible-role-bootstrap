@@ -1,6 +1,6 @@
 ---
 
-- name: lookup bootstrap facts
+- name: lookup bootstrap facts (raw).
   become: false
   ansible.builtin.raw: "cat /etc/os-release"
   check_mode: false

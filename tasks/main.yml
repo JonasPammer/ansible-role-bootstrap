@@ -1,12 +1,12 @@
 ---
 # tasks file for bootstrap
 
-- name: import assert.yml
+- name: check if all variables have been set correctly
   ansible.builtin.import_tasks: assert.yml
   run_once: true
   delegate_to: localhost
 
-- name: wait for host
+- name: wait for host (when configured)
   ansible.builtin.wait_for:
     port: "{{ ansible_port | default('22') }}"
     host: "{{ (ansible_ssh_host | default(ansible_host) | default(inventory_hostname)) }}"
@@ -25,11 +25,14 @@
       register: bootstrap_connect
       changed_when: false
   rescue:
-    - name: gather bootstrap facts
+    - name: "NOTE - wait_for_connection failed for hosts listed in this Task. Trying to bootstrap them using ansible's raw module.."
+      debug: var=bootstrap_timeout
+
+    - name: include tasks to gather bootstrap facts (raw)
       ansible.builtin.include_tasks:
         file: gather_facts.yml
 
-    - name: install bootstrap packages (raw)
+    - name: Install bootstrap packages (raw).
       ansible.builtin.raw: "{{ bootstrap_install.raw }}"
       register: bootstrap_install_packages
       changed_when:
@@ -40,20 +43,20 @@
       vars:
         ansible_user: "{{ bootstrap_user }}"
   always:
-    - name: set bootstrap_ansible_user connected
+    - name: set 'bootstrap_ansible_user' to value of 'ansible_user' (when wait_for_connection succeeded)
       ansible.builtin.set_fact:
         bootstrap_ansible_user: "{{ ansible_user }}"
       when:
         - bootstrap_connect is succeeded
         - ansible_user is defined
 
-    - name: set bootstrap_ansible_user not connected
+    - name: set 'bootstrap_ansible_user' to value of 'bootstrap_user' (when wait_for_connection failed)
       ansible.builtin.set_fact:
         bootstrap_ansible_user: "{{ bootstrap_user }}"
       when:
         - bootstrap_connect is failed
 
-- name: ensure system is prepared
+- name: ensure system is prepared by issuing ansible modules.
   block:
     - name: gather ansible facts
       ansible.builtin.setup:
