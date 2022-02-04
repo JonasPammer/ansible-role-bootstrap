@@ -111,7 +111,7 @@ No tasks must come before this role.
 Follow the Guidelines defined in ….
 
 [[development::versioning]]
-=== Versioning
+=== 📦 Versioning
 
 Versions are defined using https://git-scm.com/book/en/v2/Git-Basics-Tagging[Tags],
 which in turn get https://galaxy.ansible.com/docs/contributing/version.html[recognized and used] by Ansible Galaxy.
@@ -122,6 +122,27 @@ image:https://github.com/JonasPammer/ansible-role-bootstrap/actions/workflows/re
 
 There is no _variable_ that denotes the "version" of the current directory/role.
 Just look-into (and maintain) `link:CHANGELOG.adoc[CHANGELOG.adoc]`.
+
+=== 🧃 Visual Studio Code Development Container
+
+The Visual Studio Code Remote - Containers extension lets you use a Docker container as a full-featured development environment. 
+
+This Project offers such a devcontainer definition.
+By looking at its docker-compose and dockerfile definition, 
+one can inform himself about everything there is to know about 
+how to setup the required / recommended development environment,
+*even if you do not use this editor in combination with this feature*.
+
+
+
+To use it:
+
+1. Install and configure https://www.docker.com/get-started[Docker] for your operating system.
+2. Install https://code.visualstudio.com/[Visual Studio Code]
+3. Install the https://aka.ms/vscode-remote/download/extension[Remote Development extension pack.]
+4. Issue the VS Code command `Remote-Containers: Reopen in Container` (e.g. by pressing F1, *or* clicking on the icon found on the most left in the lower status bar) to activate the environment.
++
+image:https://code.visualstudio.com/assets/docs/remote/containers/remote-containers-reopen.png[]
 
 
 

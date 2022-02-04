@@ -1,0 +1,16 @@
+---
+version: '3.6'
+services:
+  vscode-env:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+      args:
+        VARIANT: focal
+    container_name: jonaspammer-ansible-role-bootstrap
+    volumes:
+      # Mount the workspace files into /vscode
+      - ..:/vscode
+    tty: true
+
+
