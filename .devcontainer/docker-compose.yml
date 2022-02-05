@@ -2,7 +2,7 @@
 version: '3.6'
 services:
   vscode-env:
-    build: 
+    build:
       context: .
       dockerfile: Dockerfile
       args:
@@ -12,5 +12,3 @@ services:
       # Mount the workspace files into /vscode
       - ..:/vscode
     tty: true
-
-

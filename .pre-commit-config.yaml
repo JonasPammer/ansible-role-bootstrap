@@ -30,7 +30,7 @@ repos:
       - id: check-xml
       - id: debug-statements
       - id: detect-private-key
-#      - id: end-of-file-fixer
+      #      - id: end-of-file-fixer
       - id: fix-encoding-pragma
       - id: mixed-line-ending
       - id: requirements-txt-fixer
@@ -41,7 +41,6 @@ repos:
     hooks:
       - id: yamllint
         args: [-c=.yamllint]
-
 
 
 exclude: ".idea"

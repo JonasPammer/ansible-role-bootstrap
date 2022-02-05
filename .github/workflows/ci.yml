@@ -1,5 +1,5 @@
 ---
-name: Testing CI
+name: CI (Lint + Molecule)
 'on':
   pull_request:
   push:
@@ -37,9 +37,7 @@ jobs:
         run: pip3 install yamllint
 
       - name: Lint code.
-        run: |
-          yamllint --version
-          yamllint . -f github
+        run: yamllint . -f github
   molecule:
     name: Molecule
     runs-on: ubuntu-latest

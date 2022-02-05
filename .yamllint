@@ -2,13 +2,5 @@
 extends: default  # https://yamllint.readthedocs.io/en/stable/configuration.html#default-configuration
 
 rules:
-  comments-indentation: disable
-  empty-lines:
-    max: 3
-    level: error
-  hyphens:
-    level: error
-  key-duplicates: enable
   line-length:
     max: 140
-  new-lines: disable
