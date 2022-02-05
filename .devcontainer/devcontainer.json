@@ -8,10 +8,9 @@
 	"dockerComposeFile": "./docker-compose.yml",
 	"service": "vscode-env",
 	"workspaceFolder": "/vscode",
-	"features": {
-		"python": "latest",
-		"github-cli": "latest"
-	},
+	// Making use of the scripts ourselves allows for more complex Dockerfile,
+	// as features are dynamically injected *afterwards*.
+	"features": {},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
@@ -33,7 +32,7 @@
 		"redhat.vscode-yaml",
 		"wholroyd.jinja",
 		"samuelcolvin.jinjahtml",
-		
+
 		"asciidoctor.asciidoctor-vscode",
 		"eamodio.gitlens",
 		"Gruntfuggly.todo-tree"

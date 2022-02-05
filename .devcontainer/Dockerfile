@@ -1,20 +1,19 @@
-# See here for image contents: https://github.com/microsoft/vscode-dev-containers/tree/v0.217.1/containers/ubuntu/.devcontainer/base.Dockerfile
-
-# [Choice] Ubuntu version (use hirsuite or bionic on local arm64/Apple Silicon): hirsute, focal, bionic
-ARG VARIANT="focal"
-FROM mcr.microsoft.com/vscode/devcontainers/base:0-${VARIANT}
-
+FROM mcr.microsoft.com/vscode/devcontainers/base:focal
 ENV PYTHONUNBUFFERED=1
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get -qy update \
-    && apt-get -qy install --no-install-recommends python3-wheel=0.* \
-    && pip3 install --no-cache-dir --upgrade pip>=21 \
-    && pip3 install --no-cache-dir wheel \
-    && pip3 install --no-cache-dir pre-commit \
-    && pre-commit install --install-hooks --overwrite \
-    && pre-commit install --hook-type commit-msg \
-    && apt-get clean && rm -rf /var/lib/apt/lists/*
+### INSTALL THE GITHUB CLI. ###
+# https://github.com/microsoft/vscode-dev-containers/blob/main/script-library/docs/github-cli.md
+COPY library-scripts/github-debian.sh /tmp/library-scripts/
+RUN apt-get update && bash /tmp/library-scripts/github-debian.sh
 
 
+### INSTALL PYTHON, PIPX, AND COMMON PYTHON UTILITIES. ###
+# https://github.com/microsoft/vscode-dev-containers/blob/main/script-library/docs/python.md
+ARG PYTHON_PATH=/usr/local/python
+ENV PIPX_HOME=/usr/local/py-utils \
+    PIPX_BIN_DIR=/usr/local/py-utils/bin
+ENV PATH=${PYTHON_PATH}/bin:${PATH}:${PIPX_BIN_DIR}
+COPY library-scripts/python-debian.sh /tmp/library-scripts/
+RUN apt-get update && bash /tmp/library-scripts/python-debian.sh "3.9" "${PYTHON_PATH}" "${PIPX_HOME}"
