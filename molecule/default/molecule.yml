@@ -6,10 +6,6 @@ dependency:
     requirements-file: requirements.yml
 driver:
   name: docker
-lint: |
-  set -e
-  yamllint .
-  ansible-lint
 platforms:
   # service-enabled Docker image by geerlingguy
   - name: instance
