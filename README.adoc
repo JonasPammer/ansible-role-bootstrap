@@ -6,6 +6,7 @@ Jonas Pammer <opensource@jonaspammer.at>;
 :sectanchors:
 
 https://github.com/JonasPammer/ansible-role-bootstrap/actions/workflows/ci.yml[image:https://github.com/JonasPammer/ansible-role-bootstrap/actions/workflows/ci.yml/badge.svg[Testing CI]]
+https://conventionalcommits.org[image:https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg[Conventional Commits]]
 
 An Ansible role for preparing a linux system to be managed by ansible.
 
@@ -125,11 +126,11 @@ Just look-into (and maintain) `link:CHANGELOG.adoc[CHANGELOG.adoc]`.
 
 === 🧃 Visual Studio Code Development Container
 
-The Visual Studio Code Remote - Containers extension lets you use a Docker container as a full-featured development environment. 
+The Visual Studio Code Remote - Containers extension lets you use a Docker container as a full-featured development environment.
 
 This Project offers such a devcontainer definition.
-By looking at its docker-compose and dockerfile definition, 
-one can inform himself about everything there is to know about 
+By looking at its docker-compose and dockerfile definition,
+one can inform himself about everything there is to know about
 how to setup the required / recommended development environment,
 *even if you do not use this editor in combination with this feature*.
 
