@@ -1,8 +1,7 @@
 // Changelog for ansible-role "jonaspammer.bootstrap"
 // Included in README.adoc
 
-[[changelog]]
-== 📝 Changelog
+
 [subs="+macros"]
 ----
 The following Changelog format was inspired by https://keepachangelog.com/en/1.0.0/[Keep a Changelog].

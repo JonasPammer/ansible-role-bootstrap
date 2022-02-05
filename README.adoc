@@ -2,8 +2,17 @@
 Jonas Pammer <opensource@jonaspammer.at>;
 :name: xxx
 :toc:
-:toclevels: 3
+:toc-placement!:
 :sectanchors:
+
+ifdef::env-github[]
+// https://gist.github.com/dcode/0cfbf2699a1fe9b46ff04c41721dda74#admonitions
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+endif::[]
 
 https://github.com/JonasPammer/ansible-role-bootstrap/actions/workflows/ci.yml[image:https://github.com/JonasPammer/ansible-role-bootstrap/actions/workflows/ci.yml/badge.svg[Testing CI]]
 https://conventionalcommits.org[image:https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg[Conventional Commits]]
@@ -15,10 +24,7 @@ to install the minimum required set of packages (python and sudo) to allow Ansib
 
 In most cases, you want to use this role in combination with the `ansible-core_dependencies`-role.
 
-*Author*: {author}
--
-*Revision*: {revdate}
-
+toc::[]
 
 [[meta]]
 == 🔎 Metadata
@@ -28,7 +34,7 @@ Below you can find information on…
 * the role's supported platforms
 * the role's https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html#role-dependencies[role dependencies]
 
-.~/meta/main.yml
+.link:meta/main.yml[]
 [source,yaml]
 ----
 include::meta/main.yml[]
@@ -115,18 +121,19 @@ Follow the Guidelines defined in ….
 === 📦 Versioning
 
 Versions are defined using https://git-scm.com/book/en/v2/Git-Basics-Tagging[Tags],
-which in turn get https://galaxy.ansible.com/docs/contributing/version.html[recognized and used] by Ansible Galaxy.
+which in turn are https://galaxy.ansible.com/docs/contributing/version.html[recognized and used] by Ansible Galaxy.
 
 When a new tag is pushed, https://github.com/JonasPammer/ansible-role-bootstrap/actions/workflows/release.yml[
 a GitHub CI workflow] takes care of importing the role to my Ansible Galaxy Account.
 image:https://github.com/JonasPammer/ansible-role-bootstrap/actions/workflows/release.yml/badge.svg[Release CI]
 
 There is no _variable_ that denotes the "version" of the current directory/role.
-Just look-into (and maintain) `link:CHANGELOG.adoc[CHANGELOG.adoc]`.
+Just look-into and maintain `link:CHANGELOG.adoc[CHANGELOG.adoc]`.
 
-=== 🧃 Visual Studio Code Development Container
+=== 🧃 Visual Studio Code Development Container https://open.vscode.dev/jonaspammer/ansible-role-bootstrap[image:https://open.vscode.dev/badges/open-in-vscode.svg[Open in Visual Studio Code]]
 
-The Visual Studio Code Remote - Containers extension lets you use a Docker container as a full-featured development environment.
+The _Visual Studio Code Remote - Containers_ extension lets you use a Docker container
+as a full-featured development environment.
 
 This Project offers such a devcontainer definition.
 By looking at its docker-compose and dockerfile definition,
@@ -146,5 +153,6 @@ To use it:
 image:https://code.visualstudio.com/assets/docs/remote/containers/remote-containers-reopen.png[]
 
 
-
+[[changelog]]
+== 📝 Changelog
 include::CHANGELOG.adoc[]
