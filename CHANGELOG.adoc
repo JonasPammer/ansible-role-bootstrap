@@ -1,6 +1,6 @@
 // Changelog for ansible-role "jonaspammer.bootstrap"
 // Included in README.adoc
-
+:toc:
 
 [subs="+macros"]
 ----
