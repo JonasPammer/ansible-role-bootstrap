@@ -10,7 +10,6 @@
 	"workspaceFolder": "/vscode",
 	"features": {
 		"github-cli": "latest",
-		"python": "latest"
 	},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
