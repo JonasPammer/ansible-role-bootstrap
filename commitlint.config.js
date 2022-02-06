@@ -1,6 +1,6 @@
 module.exports = {
   extends: [
-    "@commitlint/config-conventional", // scoped packages are not prefixed
+    "@commitlint/config-conventional", // https://gist.github.com/JonasPammer/4ea577854ae10afe644bff366d7b2a8a
   ],
   rules: {
     "header-max-length": [2, "always", 72 * 2],
