@@ -5,8 +5,15 @@
 default_language_version:
   python: python3
 
-repos:
+ci:
+  autofix_commit_msg: |
+    chore: [pre-commit.ci] auto fixes from pre-commit hooks :rotating_light:
 
+    for more information, see https://pre-commit.ci
+  autoupdate_commit_msg: |
+    chore(pre-commit): [pre-commit.ci] pre-commit autoupdate :arrow_up:
+
+repos:
   - repo: https://github.com/alessandrojcm/commitlint-pre-commit-hook
     rev: v6.0.0
     hooks:
@@ -41,6 +48,5 @@ repos:
     hooks:
       - id: yamllint
         args: [-c=.yamllint]
-
 
 exclude: ".idea"
