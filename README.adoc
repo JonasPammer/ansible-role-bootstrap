@@ -136,7 +136,7 @@ This leads to more readable messages that are easy to follow when looking throug
 But also, this project use the git commit messages to generate the change log.
 
 
-[[development::versioning]]
+[[development--versioning]]
 === 📦 Versioning
 
 Versions are defined using https://git-scm.com/book/en/v2/Git-Basics-Tagging[Tags],
@@ -147,7 +147,7 @@ a GitHub CI workflow] takes care of importing the role to my Ansible Galaxy Acco
 image:https://github.com/JonasPammer/ansible-role-bootstrap/actions/workflows/release.yml/badge.svg[Release CI]
 
 
-[[development::environment]]
+[[development--environment]]
 === 🧃 Recommended Development Environment https://open.vscode.dev/jonaspammer/ansible-role-bootstrap[image:https://open.vscode.dev/badges/open-in-vscode.svg[Open in Visual Studio Code]]
 
 The _Visual Studio Code Remote - Containers_ extension lets you use a Docker container
@@ -169,7 +169,7 @@ To use it:
 image:https://code.visualstudio.com/assets/docs/remote/containers/remote-containers-reopen.png[]
 
 
-=== Tips
+=== 💁 Tips
 
 // TODO Add Link to my general ansible role development guideline docs once they're finished
 //  assignees: jonaspammer
