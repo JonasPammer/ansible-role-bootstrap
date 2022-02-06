@@ -4,5 +4,7 @@ module.exports = {
   ],
   rules: {
     "header-max-length": [2, "always", 72 * 2],
+    "body-max-length": [0, "never"],
+    "footer-max-length": [0, "never"],
   },
 };
