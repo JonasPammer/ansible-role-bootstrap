@@ -13,11 +13,11 @@ ifdef::env-github[]
 endif::[]
 
 https://github.com/JonasPammer/ansible-role-bootstrap/actions/workflows/ci.yml[image:https://github.com/JonasPammer/ansible-role-bootstrap/actions/workflows/ci.yml/badge.svg[Testing CI]]
-
-image:https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white[pre-commit, link=https://github.com/pre-commit/pre-commit]
 https://results.pre-commit.ci/latest/github/JonasPammer/ansible-role-bootstrap/master[image:https://results.pre-commit.ci/badge/github/JonasPammer/ansible-role-bootstrap/master.svg[pre-commit.ci
-status]] //
+status]]
+
 https://conventionalcommits.org[image:https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg[Conventional Commits]]
+// image:https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white[pre-commit, link=https://github.com/pre-commit/pre-commit]
 
 An Ansible role for preparing a linux system to be managed by ansible.
 
@@ -129,9 +129,12 @@ No tasks must come before this role.
 [[development]]
 == 💪 Development
 
-// TODO Add Link to my general ansible role development guideline docs once they're finished
-//  assignees: jonaspammer
-Follow the Guidelines defined in ….
+=== 💬 Conventional Commits Enforcement
+
+This Project enforces rules over how the git commit messages can be formatted.
+This leads to more readable messages that are easy to follow when looking through the project history.
+But also, this project use the git commit messages to generate the change log.
+
 
 [[development::versioning]]
 === 📦 Versioning
@@ -143,10 +146,9 @@ When a new tag is pushed, https://github.com/JonasPammer/ansible-role-bootstrap/
 a GitHub CI workflow] takes care of importing the role to my Ansible Galaxy Account.
 image:https://github.com/JonasPammer/ansible-role-bootstrap/actions/workflows/release.yml/badge.svg[Release CI]
 
-There is no _variable_ that denotes the "version" of the current directory/role.
-Just look-into and maintain `link:CHANGELOG.adoc[CHANGELOG.adoc]`.
 
-=== 🧃 Visual Studio Code Development Container https://open.vscode.dev/jonaspammer/ansible-role-bootstrap[image:https://open.vscode.dev/badges/open-in-vscode.svg[Open in Visual Studio Code]]
+[[development::environment]]
+=== 🧃 Recommended Development Environment https://open.vscode.dev/jonaspammer/ansible-role-bootstrap[image:https://open.vscode.dev/badges/open-in-vscode.svg[Open in Visual Studio Code]]
 
 The _Visual Studio Code Remote - Containers_ extension lets you use a Docker container
 as a full-featured development environment.
@@ -165,6 +167,14 @@ To use it:
 4. Issue the VS Code command `Remote-Containers: Reopen in Container` (e.g. by pressing F1, *or* clicking on the icon found on the most left in the lower status bar) to activate the environment.
 +
 image:https://code.visualstudio.com/assets/docs/remote/containers/remote-containers-reopen.png[]
+
+
+=== Tips
+
+// TODO Add Link to my general ansible role development guideline docs once they're finished
+//  assignees: jonaspammer
+Take a look at my general ansible role development guidelines at .
+
 
 
 [[changelog]]
