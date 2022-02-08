@@ -31,8 +31,11 @@
 		"wholroyd.jinja",
 		"samuelcolvin.jinjahtml",
 
+		"ms-azuretools.vscode-docker",
 		"asciidoctor.asciidoctor-vscode",
+		"Gruntfuggly.todo-tree",
 		"eamodio.gitlens",
-		"Gruntfuggly.todo-tree"
+		"donjayamanne.githistory",
+		"mhutchie.git-graph"
 	]
 }
