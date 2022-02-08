@@ -36,6 +36,7 @@
 		"Gruntfuggly.todo-tree",
 		"eamodio.gitlens",
 		"donjayamanne.githistory",
-		"mhutchie.git-graph"
+		"mhutchie.git-graph",
+		// "mutantdino.resourcemonitor"
 	]
 }
