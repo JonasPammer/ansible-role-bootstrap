@@ -5,3 +5,4 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 ### OWN COMMANDS ###
 #RUN pip3 install --no-cache-dir ansible ansible-lint yamllint
+RUN apt-get update && apt-get install gnupg2 -y

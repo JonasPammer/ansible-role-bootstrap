@@ -160,6 +160,9 @@ To use it:
 4. Issue the VS Code command `Remote-Containers: Reopen in Container` (e.g. by pressing F1, *or* clicking on the icon found on the most left in the lower status bar) to activate the environment.
 +
 image:https://code.visualstudio.com/assets/docs/remote/containers/remote-containers-reopen.png[]
+5. You may need to https://code.visualstudio.com/docs/remote/containers#_sharing-git-credentials-with-your-container[configure your host system to enable the container to use your SSH Keys]
+
+Once you've opened a folder in a container, any terminal window you open in VS Code (Terminal > New Terminal) will automatically run in the container rather than locally.
 
 === 💁 Tips
 
