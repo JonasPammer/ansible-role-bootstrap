@@ -1,5 +1,6 @@
 ---
-# vars file for bootstrap
+# vars file of ansible-role jonaspammer.bootstrap
+# (Almost not overwriteable variables)
 
 _bootstrap_packages:
   Alpine: python3 sudo

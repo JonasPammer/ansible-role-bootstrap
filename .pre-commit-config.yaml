@@ -7,11 +7,11 @@ default_language_version:
 
 ci:
   autofix_commit_msg: |
-    chore: [pre-commit.ci] auto fixes from pre-commit hooks :rotating_light:
+    chore(pre-commit): auto fixes from hooks :rotating_light:
 
     for more information, see https://pre-commit.ci
   autoupdate_commit_msg: |
-    chore(pre-commit): [pre-commit.ci] pre-commit autoupdate :arrow_up:
+    chore(pre-commit): autoupdate :arrow_up:
 
 repos:
   - repo: https://github.com/alessandrojcm/commitlint-pre-commit-hook

@@ -4,5 +4,8 @@ ENV PYTHONDONTWRITEBYTECODE=1
 ENV DEBIAN_FRONTEND=noninteractive
 
 ### OWN COMMANDS ###
-#RUN pip3 install --no-cache-dir ansible ansible-lint yamllint
-RUN apt-get update && apt-get install gnupg2 -y
+# Note: caches are to be kept
+RUN apt-get -qy update && \
+    apt-get install -qy gnupg2
+RUN apt-get install python3 python3-pip && \
+    pip3 install ansible ansible-lint yamllint

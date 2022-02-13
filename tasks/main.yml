@@ -1,5 +1,5 @@
 ---
-# tasks file for bootstrap
+# tasks file of ansible-role jonaspammer.bootstrap
 
 - name: check if all variables have been set correctly
   ansible.builtin.import_tasks: assert.yml

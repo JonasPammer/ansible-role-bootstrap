@@ -1,5 +1,5 @@
 ---
-# defaults file of ansible-role-bootstrap
+# defaults file of ansible-role jonaspammer.bootstrap
 # See README.adoc for documentation. If you change a default here, also update it in the README.
 
 bootstrap_user: root
