@@ -1,0 +1,19 @@
+{
+  "template": "https://github.com/JonasPammer/cookiecutter-ansible-role",
+  "commit": "c28fa1ea256903f8cc259c9832beba4d4c9b4f10",
+  "context": {
+    "cookiecutter": {
+      "full_name": "Jonas Pammer",
+      "email": "opensource@jonaspammer.at",
+      "github_user": "JonasPammer",
+      "galaxy_name": "jonaspammer",
+      "min_ansible_version": "2.9",
+      "allow_duplicates": "no",
+      "ansible_user_needs_to_become": "True",
+      "role_name": "bootstrap",
+      "project_short_purpose": "preparing a linux system to be managed by ansible",
+      "_template": "https://github.com/JonasPammer/cookiecutter-ansible-role"
+    }
+  },
+  "directory": null
+}
