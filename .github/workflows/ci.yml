@@ -1,6 +1,13 @@
 ---
 name: CI (Lint + Molecule)
 'on':
+  workflow_dispatch:
+    inputs:
+      lint:
+        description: 'Lint'
+        required: true
+        default: "true"
+        type: boolean
   pull_request:
   push:
     branches:
@@ -20,6 +27,7 @@ defaults:
 jobs:
 
   lint:
+    if: ${{ github.event.inputs.lint != false }}
     name: Lint
     runs-on: ubuntu-latest
     steps:
