@@ -1,3 +1,4 @@
+---
 name: "\U0001F41B Bug Report"
 description: "File a bug report"
 title: "[Bug]: "
@@ -86,4 +87,3 @@ body:
       render: shell
     validations:
       required: true
-
