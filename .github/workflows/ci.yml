@@ -86,7 +86,7 @@ jobs:
 
       - name: compile python requirements.txt from requirements.in
         run: |
-          pip3 install pip-tools 
+          pip3 install pip-tools
           pip-compile molecule/default/requirements.in > molecule/default/requirements.txt
 
       - name: Install test dependencies.
