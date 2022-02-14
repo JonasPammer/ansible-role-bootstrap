@@ -44,10 +44,16 @@ jobs:
       - name: Install test dependencies.
         run: |
           python -m pip install --upgrade pip
-          pip3 install yamllint
+          pip install yamllint
 
-      - name: Lint code.
-        run: yamllint . -f github
+      - name: Lint code (GitHub Annotations)
+        run: |
+          echo "Wondering about why there are no file names? This command outputs information parsed by GitHub to be displayed in 'Files changed' tab and 'Unchanged files with check annotations' section of a commit, as seen in https://github.com/adrienverge/yamllint/issues/364. \n\n\n"
+          yamllint . -f github
+
+      - name: Lint code (Standard Output)
+        run: yamllint . -f standard
+
   molecule:
     name: Molecule
     runs-on: ubuntu-latest
@@ -79,7 +85,9 @@ jobs:
           key: ${{ runner.os }}-pip-${{ hashFiles('molecule/default/requirements.in') }}
 
       - name: compile python requirements.txt from requirements.in
-        run: pip3 install pip-tools && pip-compile molecule/default/requirements.in > molecule/default/requirements.txt
+        run: |
+          pip3 install pip-tools 
+          pip-compile molecule/default/requirements.in > molecule/default/requirements.txt
 
       - name: Install test dependencies.
         run: pip3 install -r molecule/default/requirements.txt
