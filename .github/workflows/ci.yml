@@ -92,7 +92,7 @@ jobs:
           pip-compile molecule/default/requirements.in > molecule/default/requirements.txt
 
       - name: Install test dependencies.
-        run: pip3 install -r molecule/default/requirements.txt
+        run: pip-sync molecule/default/requirements.txt
 
       - name: Run Molecule tests.
         run: molecule test
