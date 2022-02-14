@@ -81,12 +81,16 @@ jobs:
           python-version: '3.x'
 
       - name: activate pip dependencies cache for future workflow runs
+        id: molecule-pip-cache
         uses: actions/cache@v2
         with:
-          path: ~/.cache/pip
+          path: |
+            ~/.cache/pip
+            **/molecule/default/requirements.txt
           key: ${{ runner.os }}-pip-${{ hashFiles('**/molecule/default/requirements.in') }}
 
-      - name: compile python requirements.txt from requirements.in
+      - name: compile python requirements.txt from requirements.in if cache did not hit
+        if: steps.molecule-pip-cache.outputs.cache-hit != 'true'
         run: |
           pip3 install pip-tools
           pip-compile molecule/default/requirements.in > molecule/default/requirements.txt
