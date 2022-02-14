@@ -27,7 +27,7 @@ defaults:
 jobs:
 
   lint:
-    if: ${{ github.event.inputs.lint != false }}
+    if: ${{ github.event.inputs.lint == false }}
     name: Lint
     runs-on: ubuntu-latest
     steps:
