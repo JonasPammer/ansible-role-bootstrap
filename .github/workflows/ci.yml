@@ -80,11 +80,11 @@ jobs:
         with:
           python-version: '3.x'
 
-#      - name: activate pip dependencies cache for future workflow runs
-#        uses: actions/cache@v2
-#        with:
-#          path: ~/.cache/pip
-#          key: ${{ runner.os }}-pip-${{ hashFiles('molecule/default/requirements.in') }}
+      - name: activate pip dependencies cache for future workflow runs
+        uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('molecule/default/requirements.in') }}
 
       - name: compile python requirements.txt from requirements.in
         run: |
