@@ -61,9 +61,18 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: '3.x'
+      
+      - name: activate pip dependencies cache for future workflow runs
+        uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('molecule/default/requirements.in') }
+
+      - name: compile python requirements.txt from requirements.in
+        run: pip3 install pip-compile && pip-compile molecule/default/requirements.in > molecule/default/requirements.txt
 
       - name: Install test dependencies.
-        run: pip3 install ansible ansible-lint molecule[docker] docker yamllint
+        run: pip3 install -r molecule/default/requirements.txt
 
       - name: Run Molecule tests.
         run: molecule test
