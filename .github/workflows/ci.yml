@@ -23,12 +23,11 @@ defaults:
   run:
     working-directory: 'jonaspammer.bootstrap'
 
-
 jobs:
 
   lint:
-    if: ${{ github.event.inputs.lint == false }}
     name: Lint
+    if: ${{ github.event.inputs.lint != false }}
     runs-on: ubuntu-latest
     steps:
       - name: Check out the codebase.
@@ -109,3 +108,4 @@ jobs:
       - name: Setup tmate session if previous step failed and if this is a manual run
         if: ${{ failure() && github.event_name == 'workflow_dispatch' }}
         uses: mxschmitt/action-tmate@v3
+ 
