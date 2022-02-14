@@ -95,7 +95,9 @@ jobs:
         run: pip-sync molecule/default/requirements.txt
 
       - name: Run Molecule tests.
-        run: molecule test
+        run: |
+          molecule --version
+          molecule test
         env:
           PY_COLORS: '1'
           ANSIBLE_FORCE_COLOR: '1'
