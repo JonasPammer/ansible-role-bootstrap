@@ -27,7 +27,7 @@ jobs:
 
   lint:
     name: Lint
-    if: ${{ github.event.inputs.lint != false }}
+    if: ${{ github.event.inputs.lint != 'false' }}
     runs-on: ubuntu-latest
     steps:
       - name: Check out the codebase.
