@@ -74,7 +74,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('molecule/default/requirements.in') }
+          key: ${{ runner.os }}-pip-${{ hashFiles('molecule/default/requirements.in') }}
 
       - name: compile python requirements.txt from requirements.in
         run: pip3 install pip-compile && pip-compile molecule/default/requirements.in > molecule/default/requirements.txt
