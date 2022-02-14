@@ -1,3 +1,4 @@
+---
 name: "\U0001F680 Feature Request"
 description: "Suggest an idea for this project"
 title: "[Feature Request]: "
@@ -21,6 +22,6 @@ body:
     id: extra
     attributes:
       label: Additional context
-      description: 
+      description:
     validations:
       required: false

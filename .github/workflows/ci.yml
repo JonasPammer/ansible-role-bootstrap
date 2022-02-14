@@ -1,6 +1,13 @@
 ---
 name: CI (Lint + Molecule)
 'on':
+  workflow_dispatch:
+    inputs:
+      lint:
+        description: 'Lint'
+        required: true
+        default: "true"
+        type: boolean
   pull_request:
   push:
     branches:
@@ -20,6 +27,7 @@ defaults:
 jobs:
 
   lint:
+    if: ${{ github.event.inputs.lint == false }}
     name: Lint
     runs-on: ubuntu-latest
     steps:
@@ -36,8 +44,18 @@ jobs:
       - name: Install test dependencies.
         run: pip3 install yamllint
 
-      - name: Lint code.
-        run: yamllint . -f github
+      - name: Lint code (GitHub Annotations)
+        run: |
+          cat <<HEREDOC
+          Wondering about why there are no file names?
+          This command outputs information parsed by GitHub
+          to be displayed in 'Annotations' tab.
+          HEREDOC
+          yamllint . -f github
+
+      - name: Lint code (Standard Output)
+        run: yamllint . -f standard
+
   molecule:
     name: Molecule
     runs-on: ubuntu-latest
@@ -62,11 +80,27 @@ jobs:
         with:
           python-version: '3.x'
 
+      - name: activate pip dependencies cache for future workflow runs
+        id: molecule-pip-cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.cache/pip
+            **/molecule/default/requirements.txt
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/molecule/default/requirements.in') }}
+
+      - name: compile python requirements.txt from requirements.in if cache did not hit
+        run: |
+          pip3 install pip-tools
+          pip-compile molecule/default/requirements.in > molecule/default/requirements.txt
+
       - name: Install test dependencies.
-        run: pip3 install ansible ansible-lint molecule[docker] docker yamllint
+        run: pip-sync molecule/default/requirements.txt
 
       - name: Run Molecule tests.
-        run: molecule test
+        run: |
+          molecule --version
+          molecule test
         env:
           PY_COLORS: '1'
           ANSIBLE_FORCE_COLOR: '1'
