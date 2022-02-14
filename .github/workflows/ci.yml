@@ -79,7 +79,7 @@ jobs:
           key: ${{ runner.os }}-pip-${{ hashFiles('molecule/default/requirements.in') }}
 
       - name: compile python requirements.txt from requirements.in
-        run: pip3 install pip-compile && pip-compile molecule/default/requirements.in > molecule/default/requirements.txt
+        run: pip3 install pip-tools && pip-compile molecule/default/requirements.in > molecule/default/requirements.txt
 
       - name: Install test dependencies.
         run: pip3 install -r molecule/default/requirements.txt
