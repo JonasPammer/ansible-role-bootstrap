@@ -54,7 +54,6 @@ jobs:
 
       - name: Lint code (Standard Output)
         run: yamllint . -f standard
-
   molecule:
     name: Molecule
     runs-on: ubuntu-latest

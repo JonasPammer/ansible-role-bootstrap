@@ -1,22 +1,28 @@
 <!--
 Thank you for your pull request.
 Contributors guide: ./CONTRIBUTING.adoc
-Development info:   ./README.md
+Development info:   ./README.adoc
 -->
 
-Fixes #
+Fixes #[FIX-ME Insert ID of previously created Issue, if any]
 
-## Required Checklist
+[...FIX-ME Insert your Bachelor Description, if any...]
+
+## **Required Checklist**
+
+<!-- FIX-ME: insert an "x" into the square brackets to verify that you've checked the required checklist entries. -->
 
 - [ ] documentation has been altered or extended appropriately
+- [ ] this pull request and its commits address only a single concern
+- [ ] i am a nice guy
+
+## Does this PR introduce a breaking change? (What changes might users need to make in their application due to this PR?)
 
 
+## *Optional* Checklist (Commented by default)
 
-## **Optional** Information
+<!-- FIX-ME: Remove the below comment delimiters when applicable. do not remove comment delimiters if checklist entry would be unchecked!! -->
 
-- [ ] commit messages follows the [conventional commit specification](https://gist.github.com/JonasPammer/4ea577854ae10afe644bff366d7b2a8a)
-- [ ] pre-commit was installed in local development environment (if not, a GitHub workflow will run pre-commit once you create the request)
+<!-- - [x] pre-commit was installed in local development environment (if not, a GitHub workflow will run pre-commit once you create the request) -->
 
-### Does this PR introduce a breaking change? (What changes might users need to make in their application due to this PR?)
-
-### Other information:
+<!-- - [x] my commits are small, single-purpose, detailed and maybe even follow the [conventional commit specification](https://gist.github.com/JonasPammer/4ea577854ae10afe644bff366d7b2a8a) for extra convenience of the reviewer -->
