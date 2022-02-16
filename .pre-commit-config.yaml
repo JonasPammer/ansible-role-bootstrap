@@ -63,10 +63,10 @@ repos:
   ## DOCKER ##
 
   # verifies that docker-compose files are valid by using 'docker-compose config' to parse them
-  - repo: https://github.com/IamTheFij/docker-pre-commit
-    rev: v2.0.1
-    hooks:
-      - id: docker-compose-check
+#  - repo: https://github.com/IamTheFij/docker-pre-commit
+#    rev: v2.0.1
+#    hooks:
+#      - id: docker-compose-check
 
   # Dockerfile linter / best practice checker.
   # even uses `shellcheck` to check the RUN instructions.
