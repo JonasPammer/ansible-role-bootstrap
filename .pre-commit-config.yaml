@@ -70,10 +70,10 @@ repos:
 
   # Dockerfile linter / best practice checker.
   # even uses `shellcheck` to check the RUN instructions.
-  - repo: https://github.com/hadolint/hadolint
-    rev: v2.8.0
-    hooks:
-      - id: hadolint-docker
+  # - repo: https://github.com/hadolint/hadolint
+  #   rev: v2.8.0
+  #   hooks:
+  #     - id: hadolint-docker
 
   ### PYTHON ###
 
