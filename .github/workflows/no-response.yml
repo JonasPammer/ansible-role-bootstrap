@@ -7,7 +7,7 @@ on:
     types: [created]
   schedule:
     # "At 00:00"
-    - cron: '0 0 * * *'
+    - cron: "0 0 * * *"
 
 jobs:
   noResponse:
@@ -15,5 +15,5 @@ jobs:
     steps:
       - uses: lee-dohm/no-response@v0.5.0
         with:
-          responseRequiredLabel: 'question'  # standard label created by github ;)
+          responseRequiredLabel: "question" # standard label created by github ;)
           token: ${{ github.token }}
