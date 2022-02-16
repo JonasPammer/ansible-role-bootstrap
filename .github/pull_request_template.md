@@ -18,8 +18,7 @@ Fixes #[FIX-ME Insert ID of previously created Issue, if any]
 
 ## Does this PR introduce a breaking change? (What changes might users need to make in their application due to this PR?)
 
-
-## *Optional* Checklist (Commented by default)
+## _Optional_ Checklist (Commented by default)
 
 <!-- FIX-ME: Remove the below comment delimiters when applicable. do not remove comment delimiters if checklist entry would be unchecked!! -->
 
