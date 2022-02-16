@@ -10,8 +10,6 @@ name: CI (Lint + Molecule)
         type: boolean
   pull_request:
   push:
-    branches:
-      - master
     paths-ignore:
       - 'README.adoc'
       - 'CHANGELOG.adoc'
