@@ -6,12 +6,12 @@
   },
   {
     "name": "dependencies",
-    "color": "d73a4a",
+    "color": "ededed",
     "description": "Pull requests that update a dependency file"
   },
   {
     "name": "documentation",
-    "color": "d73a4a",
+    "color": "0075ca",
     "description": "Improvements or additions to documentation"
   },
   {
@@ -48,5 +48,35 @@
     "name": "wontfix",
     "color": "ffffff",
     "description": "This will not be worked on"
+  },
+  {
+    "name": "size/XS",
+    "color": "#009900",
+    "description": "Denotes a PR that changes 0-9 lines, ignoring generated files."
+  },
+  {
+    "name": "size/S",
+    "color": "#77bb00",
+    "description": "Denotes a PR that changes 10-29 lines, ignoring generated files."
+  },
+  {
+    "name": "size/M",
+    "color": "#eebb00",
+    "description": "Denotes a PR that changes 30-99 lines, ignoring generated files."
+  },
+  {
+    "name": "size/L",
+    "color": "#ee9900",
+    "description": "Denotes a PR that changes 100-499 lines, ignoring generated files."
+  },
+  {
+    "name": "size/XL",
+    "color": "#ee5500",
+    "description": "Denotes a PR that changes 500-999 lines, ignoring generated files."
+  },
+  {
+    "name": "size/XXL",
+    "color": "#ee0000",
+    "description": "Denotes a PR that changes 1000+ lines, ignoring generated files."
   }
 ]
