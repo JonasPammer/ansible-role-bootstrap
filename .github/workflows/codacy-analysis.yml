@@ -1,3 +1,4 @@
+---
 # This workflow checks out code, performs a Codacy security scan
 # and integrates the results with the
 # GitHub Advanced Security code scanning feature.  For more information on
@@ -8,14 +9,15 @@
 
 name: Codacy Security Scan
 
-on:
+"on":
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
     # The branches below must be a subset of the branches above
-    branches: [ master ]
+    branches: [master]
   schedule:
-    - cron: '45 17 * * 6'
+    # At 17:45 on Saturday.
+    - cron: "45 17 * * 6"
 
 permissions:
   contents: read
