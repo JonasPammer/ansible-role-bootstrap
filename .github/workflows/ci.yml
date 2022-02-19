@@ -13,6 +13,7 @@ name: CI (Lint + Molecule)
     paths-ignore:
       - "README.adoc"
       - "CHANGELOG.adoc"
+      - "CODE_OF_CONDUCT.md"
       - "LICENSE"
   schedule:
     - cron: "0 5 * * 0"
