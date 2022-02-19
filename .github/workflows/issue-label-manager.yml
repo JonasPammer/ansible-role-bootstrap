@@ -3,7 +3,7 @@
   issues:
   push:
     paths:
-      - ".github/workflows/labels.json"
+      - ".github/labels.json"
 
 name: Create declared labels
 

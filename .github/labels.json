@@ -30,6 +30,11 @@
     "description": "Categorizes issues related to questions."
   },
   {
+    "name": "kind/security",
+    "color": "775fcb",
+    "description": "Categorizes issue or PR as related to security."
+  },
+  {
     "name": "good first issue",
     "color": "7057ff",
     "description": "Denotes an issue ready for a new contributor."
