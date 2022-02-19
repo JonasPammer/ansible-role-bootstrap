@@ -25,7 +25,7 @@
     "description": "Categorizes issue or PR as related to a new feature."
   },
   {
-    "name": "kind/question",
+    "name": "kind/support",
     "color": "775fcb",
     "description": "Categorizes issues related to questions."
   },
