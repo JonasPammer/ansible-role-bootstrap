@@ -175,7 +175,7 @@ Take a look at my general ansible role development guidelines at .
 
 
 == 💪 Contributing
-include::CHANGELOG.adoc[]
+include::CONTRIBUTING.adoc[]
 
 
 [[changelog]]
