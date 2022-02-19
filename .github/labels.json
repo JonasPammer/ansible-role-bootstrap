@@ -1,38 +1,43 @@
 [
   {
-    "name": "bug",
+    "name": "kind/bug",
     "color": "d73a4a",
-    "description": "Something isn't working"
+    "description": "Categorizes issue or PR as related to a bug (i.e. something is not working)."
   },
   {
-    "name": "dependencies",
+    "name": "kind/dependencies",
     "color": "ededed",
-    "description": "Pull requests that update a dependency file"
+    "description": "Categorizes pull requests that update a dependency file."
   },
   {
-    "name": "documentation",
+    "name": "kind/documentation",
     "color": "0075ca",
-    "description": "Improvements or additions to documentation"
+    "description": "Categorizes issue or PR as related to documentation."
   },
   {
-    "name": "duplicate",
+    "name": "kind/duplicate",
     "color": "cfd3d7",
-    "description": "This issue or pull request already exists"
+    "description": "Categorizes issue or PR as being a duplicate of another."
   },
   {
-    "name": "enhancement",
+    "name": "kind/enhancement",
     "color": "a2eeef",
-    "description": "New feature or request"
+    "description": "Categorizes issue or PR as related to a new feature."
+  },
+  {
+    "name": "kind/question",
+    "color": "775fcb",
+    "description": "Categorizes issues related to questions."
   },
   {
     "name": "good first issue",
     "color": "7057ff",
-    "description": "Good for newcomers"
+    "description": "Denotes an issue ready for a new contributor."
   },
   {
     "name": "help wanted",
     "color": "008672",
-    "description": "Needs help from the community / Extra attention is needed"
+    "description": "Denotes an issue that needs help from a contributor."
   },
   {
     "name": "invalid",
