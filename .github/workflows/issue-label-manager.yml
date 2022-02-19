@@ -1,8 +1,11 @@
 ---
 "on":
   issues:
+  push:
+    paths:
+      - ".github/workflows/labels.json"
 
-name: Ensure declared labels are created
+name: Create declared labels
 
 jobs:
   labels:
