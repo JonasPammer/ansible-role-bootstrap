@@ -185,6 +185,7 @@ include::CHANGELOG.adoc[]
 
 == ⚖️ License
 
+.link:LICENSE[]
 ----
 include::LICENSE[]
 ----
