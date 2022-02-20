@@ -15,12 +15,7 @@
     "description": "Categorizes issue or PR as related to documentation."
   },
   {
-    "name": "kind/duplicate",
-    "color": "cfd3d7",
-    "description": "Categorizes issue or PR as being a duplicate of another."
-  },
-  {
-    "name": "kind/enhancement",
+    "name": "kind/feature",
     "color": "a2eeef",
     "description": "Categorizes issue or PR as related to a new feature."
   },
@@ -35,6 +30,38 @@
     "description": "Categorizes issue or PR as related to security."
   },
   {
+    "name": "needs-triage",
+    "color": "EDEDED",
+    "description": "Indicates an issue or PR lacks a `kind/foo` label and requires one."
+  },
+
+  {
+    "name": "triage/duplicate",
+    "color": "D455D0",
+    "description": "Indicates an issue is a duplicate of other open issue."
+  },
+  {
+    "name": "triage/needs-information",
+    "color": "D455D0",
+    "description": "Indicates an issue needs more information in order to work on it."
+  },
+  {
+    "name": "triage/not-reproducible",
+    "color": "D455D0",
+    "description": "Indicates an issue can not be reproduced as described."
+  },
+  {
+    "name": "triage/accepted",
+    "color": "8FC951",
+    "description": "Indicates an issue or PR is ready to be actively worked on."
+  },
+  {
+    "name": "needs-triage",
+    "color": "EDEDED",
+    "description": "Indicates an issue or PR lacks a `triage/foo` label and requires one."
+  },
+
+  {
     "name": "good first issue",
     "color": "7057ff",
     "description": "Denotes an issue ready for a new contributor."
@@ -43,16 +70,6 @@
     "name": "help wanted",
     "color": "008672",
     "description": "Denotes an issue that needs help from a contributor."
-  },
-  {
-    "name": "invalid",
-    "color": "e4e669",
-    "description": "Not resolvable in any way / This doesn't seem right"
-  },
-  {
-    "name": "question",
-    "color": "d876e3",
-    "description": "Contains a question that needs to be answered / Further information is requested."
   },
   {
     "name": "wontfix",
