@@ -22,7 +22,8 @@ jobs:
 
       ### Create local changes
       - name: Install Tools
-        run: sudo apt install -qy pandoc asciidoc
+        run: |
+          sudo apt install -qy pandoc asciidoctor
       - name: Convert
         run: |
           asciidoctor -b docbook README.adoc
