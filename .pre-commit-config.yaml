@@ -61,17 +61,17 @@ repos:
   ## DOCKER ##
 
   # verifies that docker-compose files are valid by using 'docker-compose config' to parse them
-  #  - repo: https://github.com/IamTheFij/docker-pre-commit
-  #    rev: v2.0.1
-  #    hooks:
-  #      - id: docker-compose-check
+  - repo: https://github.com/IamTheFij/docker-pre-commit
+    rev: v2.0.1
+    hooks:
+      - id: docker-compose-check
 
   # Dockerfile linter / best practice checker.
   # even uses `shellcheck` to check the RUN instructions.
-  # - repo: https://github.com/hadolint/hadolint
-  #   rev: v2.8.0
-  #   hooks:
-  #     - id: hadolint-docker
+  - repo: https://github.com/AleksaC/hadolint-py
+    rev: v2.8.0
+    hooks:
+      - id: hadolint
 
   ### PYTHON ###
 
@@ -115,6 +115,7 @@ repos:
 default_language_version:
   python: python3
 ci:
+  skip: [docker-compose-check]
   autofix_commit_msg: |
     chore(pre-commit): auto fixes from hooks :rotating_light:
 
