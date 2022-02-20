@@ -173,6 +173,19 @@ Once you've opened a folder in a container, any terminal window you open in VS C
 //  assignees: jonaspammer
 Take a look at my general ansible role development guidelines at .
 
+[[cookiecutter]]
+=== 🍪 CookieCutter
+
+This Project shall be kept in sync with
+https://github.com/JonasPammer/cookiecutter-ansible-role[the CookieCutter it was originally templated from]
+using https://github.com/cruft/cruft[cruft] (if possible) or manual alteration (if needed)
+to the best extend possible.
+
+.Official Example Usage of `cruft update`
+____
+image::https://raw.githubusercontent.com/cruft/cruft/master/art/example_update.gif[Official Example Usage of `cruft update`]
+____
+
 
 == 💪 Contributing
 include::CONTRIBUTING.adoc[]
