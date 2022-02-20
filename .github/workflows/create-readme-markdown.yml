@@ -22,7 +22,7 @@ jobs:
 
       ### Create local changes
       - name: Install Tools
-        run: apt install pandoc asciidoc
+        run: sudo apt install -qy pandoc asciidoc
       - name: Convert
         run: |
           asciidoctor -b docbook README.adoc

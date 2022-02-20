@@ -30,7 +30,7 @@ In most cases, you want to use this role in combination with the `ansible-core_d
 
 toc::[]
 
- 
+
 [[meta]]
 == 🔎 Metadata
 Below you can find information on…
