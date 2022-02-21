@@ -13,17 +13,16 @@ os-determination-system) to install the minimum required set of packages
 In most cases, you want to use this role in combination with the
 `ansible-core_dependencies`-role.
 
-🔎 Metadata
-==========
+# 🔎 Metadata
 
 Below you can find information on…
 
--   the role’s required Ansible version
+- the role’s required Ansible version
 
--   the role’s supported platforms
+- the role’s supported platforms
 
--   the role’s [role
-    dependencies](https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html#role-dependencies)
+- the role’s [role
+  dependencies](https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html#role-dependencies)
 
 **[meta/main.yml](meta/main.yml).**
 
@@ -61,13 +60,11 @@ Below you can find information on…
 
     dependencies: []
 
-📌 Requirements
-==============
+# 📌 Requirements
 
 User needs to be able to `become`
 
-📜 Role Variables
-================
+# 📜 Role Variables
 
     bootstrap_user: root
 
@@ -82,11 +79,9 @@ Whether to wait for the host to be available on `ansible_port` (22).
 Maximum number of seconds to wait for the remote system to be
 reachable/usable before failing.
 
-👫 Dependencies
-==============
+# 👫 Dependencies
 
-📚 Example Playbook Usages
-=========================
+# 📚 Example Playbook Usages
 
 > **Note**
 >
@@ -115,11 +110,9 @@ reachable/usable before failing.
         - role: jonaspammer.bootstrap
         - role: jonaspammer.core_dependencies
 
-💪 Development
-=============
+# 💪 Development
 
-📦 Versioning
-------------
+## 📦 Versioning
 
 Versions are defined using
 [Tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging), which in turn
@@ -132,10 +125,9 @@ workflow](https://github.com/JonasPammer/ansible-role-bootstrap/actions/workflow
 takes care of importing the role to my Ansible Galaxy Account. ![Release
 CI](https://github.com/JonasPammer/ansible-role-bootstrap/actions/workflows/release-to-galaxy.yml/badge.svg)
 
-🧃 Recommended Development Environment [![]()](https://open.vscode.dev/jonaspammer/ansible-role-bootstrap)
----------------------------------------------------------------------------------------------------------
+## 🧃 Recommended Development Environment [![]()](https://open.vscode.dev/jonaspammer/ansible-role-bootstrap)
 
-The *Visual Studio Code Remote - Containers* extension lets one use a
+The _Visual Studio Code Remote - Containers_ extension lets one use a
 Docker container as a full-featured development environment.
 
 This Project offers such a devcontainer definition. By looking at its
@@ -159,7 +151,7 @@ To use it:
     left in the lower status bar) to activate the environment.
 
     ![remote containers
-    reopen](https://code.visualstudio.com/assets/docs/remote/containers/remote-containers-reopen.png)
+reopen](https://code.visualstudio.com/assets/docs/remote/containers/remote-containers-reopen.png)
 
 5.  You may need to configure your host system to enable the container
     to use your SSH Keys. The procedure is described [in the official
@@ -170,13 +162,11 @@ Once you’ve opened a folder in a container, any terminal window you open
 in VS Code (Terminal &gt; New Terminal) will automatically run in the
 container rather than locally.
 
-💁 Tips
-------
+## 💁 Tips
 
 Take a look at my general ansible role development guidelines at .
 
-🍪 CookieCutter
---------------
+## 🍪 CookieCutter
 
 This Project shall be kept in sync with [the CookieCutter it was
 originally templated
@@ -184,14 +174,12 @@ from](https://github.com/JonasPammer/cookiecutter-ansible-role) using
 [cruft](https://github.com/cruft/cruft) (if possible) or manual
 alteration (if needed) to the best extend possible.
 
-> ![Official Example Usage of \`cruft
-> update\`](https://raw.githubusercontent.com/cruft/cruft/master/art/example_update.gif)
+> ![Official Example Usage of `cruft
+update`](https://raw.githubusercontent.com/cruft/cruft/master/art/example_update.gif)
 
-💪 Contributing
-==============
+# 💪 Contributing
 
-Preamble
---------
+## Preamble
 
 First off, thank you for considering contributing to this Project.
 
@@ -200,34 +188,32 @@ time of the developers managing and developing this open source project.
 In return, they should reciprocate that respect in addressing your
 issue, assessing changes, and helping you finalize your pull requests.
 
-💬 Conventional Commits
-----------------------
+## 💬 Conventional Commits
 
-A casual contributor does not have to worry about following [*the
-spec*](https://gist.github.com/JonasPammer/4ea577854ae10afe644bff366d7b2a8a)
-[*by definition*](https://www.conventionalcommits.org/en/v1.0.0/), as
+A casual contributor does not have to worry about following [_the
+spec_](https://gist.github.com/JonasPammer/4ea577854ae10afe644bff366d7b2a8a)
+[_by definition_](https://www.conventionalcommits.org/en/v1.0.0/), as
 pull requests are being squash merged into one commit in the project.
 Only core contributors, i.e. those with rights to push to this project’s
 branches, must follow it (e.g. to allow for automatic version
 determination and changelog generation to work).
 
 🚨 **However, you still need to make sure that you create small,
-self-contained commits and pull requests.** *More on this general
+self-contained commits and pull requests.** _More on this general
 concept may be found in in the following sections and the blogs linked
-in it.*
+in it._
 
-🚀 Getting Started
------------------
+## 🚀 Getting Started
 
 Contributions are made to this repo via Issues and Pull Requests (PRs).
 A few general guidelines that cover both:
 
--   Search for existing Issues and PRs before creating your own.
+- Search for existing Issues and PRs before creating your own.
 
--   If you’ve never contributed before, see [the first timer’s guide on
-    Auth0’s
-    blog](https://auth0.com/blog/a-first-timers-guide-to-an-open-source-project/)
-    for resources and tips on how to get started.
+- If you’ve never contributed before, see [the first timer’s guide on
+  Auth0’s
+  blog](https://auth0.com/blog/a-first-timers-guide-to-an-open-source-project/)
+  for resources and tips on how to get started.
 
 ### Issues
 
@@ -252,18 +238,18 @@ your fix or improvement slated for the next release. [In
 general](https://blog.ploeh.dk/2015/01/15/10-tips-for-better-pull-requests/),
 PRs should:
 
--   Only fix/add the functionality in question **OR** address
-    wide-spread whitespace/style issues, not both.
+- Only fix/add the functionality in question **OR** address
+  wide-spread whitespace/style issues, not both.
 
--   Add unit or integration tests for fixed or changed functionality (if
-    a test suite already exists).
+- Add unit or integration tests for fixed or changed functionality (if
+  a test suite already exists).
 
--   **Address a single concern**
+- **Address a single concern**
 
--   **Include documentation** in the repo
+- **Include documentation** in the repo
 
--   Be accompanied by a complete Pull Request template (loaded
-    automatically when a PR is created).
+- Be accompanied by a complete Pull Request template (loaded
+  automatically when a PR is created).
 
 For changes that address core functionality or would require breaking
 changes (e.g. a major release), it’s best to open an Issue to discuss
@@ -287,8 +273,7 @@ In general, we follow the "fork-and-pull" Git workflow
 7.  Open a PR in our repository and follow the PR template so that we
     can efficiently review the changes.
 
-📝 Changelog
-===========
+# 📝 Changelog
 
     The following Changelog format was inspired by Keep a Changelog.
 
@@ -302,17 +287,14 @@ In general, we follow the "fork-and-pull" Git workflow
     ==== Fixed
     ==== Security
 
-\[1.0\] - 2022-02-02
---------------------
+## \[1.0\] - 2022-02-02
 
 Initial version.
 
 All credits for the science behind this role go to
-[robertdebock/ansible-role-bootstrap v5.2.12 on GitHub (27 January,
-2022)](https://github.com/robertdebock/ansible-role-bootstrap/releases/tag/5.2.12).
+[robertdebock/ansible-role-bootstrap v5.2.12 on GitHub (27 January, 2022)](https://github.com/robertdebock/ansible-role-bootstrap/releases/tag/5.2.12).
 
-⚖️ License
-==========
+# ⚖️ License
 
 **[LICENSE](LICENSE).**
 
@@ -346,8 +328,8 @@ todo edit from auto cloned repo in dev container
 
 ; :toc: :toclevels: 3 :toc-placement!: ifdef::env-github\[\] //
 https://gist.github.com/dcode/0cfbf2699a1fe9b46ff04c41721dda74\#admonitions
-:tip-caption: :bulb: :note-caption: :information\_source:
-:important-caption: :heavy\_exclamation\_mark: :caution-caption: :fire:
+:tip-caption: :bulb: :note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark: :caution-caption: :fire:
 :warning-caption: :warning: endif::\[\]
 https://github.com/JonasPammer/ansible-role-bootstrap/actions/workflows/ci.yml\[image:https://github.com/JonasPammer/ansible-role-bootstrap/actions/workflows/ci.yml/badge.svg\[Testing
 CI\]\]
@@ -363,7 +345,7 @@ preparing a linux system to be managed by ansible. This role uses the
 raw module (in combination with its own os-determination-system) to
 install the minimum required set of packages (python and sudo) to allow
 Ansible to manage a system. In most cases, you want to use this role in
-combination with the \`ansible-core\_dependencies\`-role. toc::\[\]
+combination with the \`ansible-core_dependencies\`-role. toc::\[\]
 \[\[meta\]\] == 🔎 Metadata Below you can find information on… \* the
 role's required Ansible version \* the role's supported platforms \* the
 role's
@@ -377,29 +359,29 @@ variables for this role should go here // and any variables that
 can/should be set via parameters to the role. // Any variables that are
 read from other roles and/or the global scope (ie. hostvars, group vars,
 etc.) // should be mentioned here as well. \[source,yaml\] ----
-bootstrap\_user: root ---- Username used to connect to the machine.
-\[source,yaml\] ---- bootstrap\_wait\_for\_host: false ---- Whether to
-wait for the host to be available on \`ansible\_port\` (22).
-\[source,yaml\] ---- bootstrap\_timeout: 3 ---- Maximum number of
+bootstrap_user: root ---- Username used to connect to the machine.
+\[source,yaml\] ---- bootstrap_wait_for_host: false ---- Whether to
+wait for the host to be available on \`ansible_port\` (22).
+\[source,yaml\] ---- bootstrap_timeout: 3 ---- Maximum number of
 seconds to wait for the remote system to be reachable/usable before
 failing. \[\[dependencies\]\] == 👫 Dependencies // A list of other roles
 should go here, // plus any details in regard to parameters that may
 need to be set for other roles, // or variables that are used from other
-roles. \[\[example\_playbooks\]\] == 📚 Example Playbook Usages //
+roles. \[\[example_playbooks\]\] == 📚 Example Playbook Usages //
 Including examples of how to use this role in a playbook for common
 scenarios is always nice for users too: \[NOTE\] ==== You must disable
-the \`gather\_facts\`-property of the play this role is used in. If this
+the \`gather_facts\`-property of the play this role is used in. If this
 role finished successfully it'll call
 https://docs.ansible.com/ansible/latest/collections/ansible/builtin/setup\_module.html\[
-ansible's setup module\] itself (equivalent effect that \`gather\_facts:
+ansible's setup module\] itself (equivalent effect that \`gather_facts:
 true\` would give). No tasks must come before this role. ==== .Minimum
 Viable Play ==== \[source,yaml\] ----- --- - hosts: servers:&provisioned
-name: Bootstrap linux machines to be managed by Ansible. gather\_facts:
+name: Bootstrap linux machines to be managed by Ansible. gather_facts:
 false roles: - role: jonaspammer.bootstrap ----- ==== .Preferred Play
 ==== \[source,yaml\] ----- --- - hosts: servers:&provisioned name:
-Bootstrap linux machines to be managed by Ansible. gather\_facts: false
+Bootstrap linux machines to be managed by Ansible. gather_facts: false
 roles: - role: jonaspammer.bootstrap - role:
-jonaspammer.core\_dependencies ----- ==== \[\[development\]\] == 💪
+jonaspammer.core_dependencies ----- ==== \[\[development\]\] == 💪
 Development \[\[development--versioning\]\] === 📦 Versioning Versions
 are defined using
 https://git-scm.com/book/en/v2/Git-Basics-Tagging\[Tags\], which in turn
@@ -428,8 +410,7 @@ extension pack.\] 4. Issue the VS Code command \`Remote-Containers:
 Reopen in Container\` (e.g. by pressing F1, \*or\* clicking on the icon
 found on the most left in the lower status bar) to activate the
 environment. +
-image:https://code.visualstudio.com/assets/docs/remote/containers/remote-containers-reopen.png\[\]
-5. You may need to configure your host system to enable the container to
+image:https://code.visualstudio.com/assets/docs/remote/containers/remote-containers-reopen.png\[\] 5. You may need to configure your host system to enable the container to
 use your SSH Keys. The procedure is described
 https://code.visualstudio.com/docs/remote/containers\#\_sharing-git-credentials-with-your-container\[in
 the official devcontainer docs under "Sharing Git credentials with your
