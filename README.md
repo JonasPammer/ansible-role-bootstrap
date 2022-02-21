@@ -130,7 +130,7 @@ Ansible Galaxy.
 When a new tag is pushed, [a GitHub CI
 workflow](https://github.com/JonasPammer/ansible-role-bootstrap/actions/workflows/release.yml)
 takes care of importing the role to my Ansible Galaxy Account. ![Release
-CI](https://github.com/JonasPammer/ansible-role-bootstrap/actions/workflows/release.yml/badge.svg)
+CI](https://github.com/JonasPammer/ansible-role-bootstrap/actions/workflows/release-to-galaxy.yml/badge.svg)
 
 🧃 Recommended Development Environment [![]()](https://open.vscode.dev/jonaspammer/ansible-role-bootstrap)
 ---------------------------------------------------------------------------------------------------------
@@ -409,7 +409,7 @@ and used\] by Ansible Galaxy. When a new tag is pushed,
 https://github.com/JonasPammer/ansible-role-bootstrap/actions/workflows/release.yml\[
 a GitHub CI workflow\] takes care of importing the role to my Ansible
 Galaxy Account.
-image:https://github.com/JonasPammer/ansible-role-bootstrap/actions/workflows/release.yml/badge.svg\[Release
+image:https://github.com/JonasPammer/ansible-role-bootstrap/actions/workflows/release-to-galaxy.yml/badge.svg\[Release
 CI\] \[\[development--environment\]\] === 🧃 Recommended Development
 Environment
 https://open.vscode.dev/jonaspammer/ansible-role-bootstrap\[image:https://open.vscode.dev/badges/open-in-vscode.svg\[Open
