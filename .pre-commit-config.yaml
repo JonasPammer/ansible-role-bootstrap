@@ -32,7 +32,7 @@ repos:
       - id: trailing-whitespace
 
   - repo: https://github.com/jumanjihouse/pre-commit-hooks
-    rev: 2.1.5
+    rev: 2.1.6
     hooks:
       - id: git-check # Configure in .gitattributes
       - id: script-must-have-extension
