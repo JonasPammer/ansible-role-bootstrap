@@ -25,6 +25,16 @@ jobs:
         with:
           path: "jonaspammer.bootstrap"
 
+      ## GENERATE MARKDOWN ##
+      - name: Install Tools to Generate README in Markdown Format.
+        run: |
+          sudo apt install -qy pandoc asciidoctor
+      - name: Generate README in Markdown Format.
+        run: |
+          asciidoctor -b docbook README.adoc
+          pandoc -f docbook -t markdown_strict README.xml README.adoc -o README.md
+
+      ## RELEASE TO GALAXY ##
       - name: Set up Python 3.
         uses: actions/setup-python@v2
         with:
