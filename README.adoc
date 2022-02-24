@@ -13,13 +13,20 @@ ifdef::env-github[]
 :warning-caption: :warning:
 endif::[]
 
+// Very Relevant Status Badges
 https://github.com/JonasPammer/ansible-role-bootstrap/actions/workflows/ci.yml[image:https://github.com/JonasPammer/ansible-role-bootstrap/actions/workflows/ci.yml/badge.svg[Testing CI]]
-https://results.pre-commit.ci/latest/github/JonasPammer/ansible-role-bootstrap/master[image:https://results.pre-commit.ci/badge/github/JonasPammer/ansible-role-bootstrap/master.svg[pre-commit.ci
-status]]
 https://app.fossa.com/projects/git%2Bgithub.com%2FJonasPammer%2Fansible-role-bootstrap?ref=badge_shield[image:https://app.fossa.com/api/projects/git%2Bgithub.com%2FJonasPammer%2Fansible-role-bootstrap.svg?type=shield[FOSSA Status]]
 
+// Badges about Conventions in this Project
 https://conventionalcommits.org[image:https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg[Conventional Commits]]
+https://results.pre-commit.ci/latest/github/JonasPammer/ansible-role-bootstrap/master[image:https://results.pre-commit.ci/badge/github/JonasPammer/ansible-role-bootstrap/master.svg[pre-commit.ci
+status]]
 // image:https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white[pre-commit, link=https://github.com/pre-commit/pre-commit]
+
+// 1-Click Development Environments
+https://open.vscode.dev/jonaspammer/ansible-role-bootstrap[image:https://open.vscode.dev/badges/open-in-vscode.svg[Open in Visual Studio Code]] or
+https://gitpod.io/#https://github.com/JonasPammer/ansible-role-bootstrap[image:https://gitpod.io/button/open-in-gitpod.svg[Open in Gitpod]]
+
 
 An Ansible role for preparing a linux system to be managed by ansible.
 
@@ -29,7 +36,6 @@ to install the minimum required set of packages (python and sudo) to allow Ansib
 In most cases, you want to use this role in combination with the `ansible-core_dependencies`-role.
 
 toc::[]
-
 
 [[meta]]
 == 🔎 Metadata
@@ -138,11 +144,10 @@ No tasks must come before this role.
 Versions are defined using https://git-scm.com/book/en/v2/Git-Basics-Tagging[Tags],
 which in turn are https://galaxy.ansible.com/docs/contributing/version.html[recognized and used] by Ansible Galaxy.
 
-When a new tag is pushed, https://github.com/JonasPammer/ansible-role-bootstrap/actions/workflows/release.yml[
+When a new tag is pushed, https://github.com/JonasPammer/ansible-role-bootstrap/actions/workflows/release-to-galaxy.yml[
 a GitHub CI workflow] takes care of importing the role to my Ansible Galaxy Account.
 image:https://github.com/JonasPammer/ansible-role-bootstrap/actions/workflows/release-to-galaxy.yml/badge.svg[Release CI]
 
-[[development--environment]]
 === 🧃 Recommended Development Environment https://open.vscode.dev/jonaspammer/ansible-role-bootstrap[image:https://open.vscode.dev/badges/open-in-vscode.svg[Open in Visual Studio Code]]
 
 The _Visual Studio Code Remote - Containers_ extension lets one use a Docker container
@@ -167,10 +172,9 @@ image:https://code.visualstudio.com/assets/docs/remote/containers/remote-contain
 
 Once you've opened a folder in a container, any terminal window you open in VS Code (Terminal > New Terminal) will automatically run in the container rather than locally.
 
+[[development--tips]]
 === 💁 Tips
 
-// TODO Add Link to my general ansible role development guideline docs once they're finished
-//  assignees: jonaspammer
 Take a look at my general ansible role development guidelines at .
 
 [[cookiecutter]]
@@ -204,5 +208,3 @@ include::LICENSE[]
 ----
 
 https://app.fossa.com/projects/git%2Bgithub.com%2FJonasPammer%2Fansible-role-bootstrap?ref=badge_large[image:https://app.fossa.com/api/projects/git%2Bgithub.com%2FJonasPammer%2Fansible-role-bootstrap.svg?type=large[FOSSA Status]]
-
-todo edit from auto cloned repo in dev container

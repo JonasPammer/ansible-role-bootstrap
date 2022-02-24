@@ -1,6 +1,6 @@
 ---
 name: "\U0001F680 Feature Request"
-description: "Suggest an idea for this project"
+description: "Suggest a general idea for this project."
 title: "[Feature Request]: "
 labels: ["kind/feature", "needs-triage"]
 body:

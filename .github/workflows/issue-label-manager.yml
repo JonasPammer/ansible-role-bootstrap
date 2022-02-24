@@ -1,11 +1,10 @@
 ---
+name: create declared labels
 "on":
   issues:
   push:
     paths:
       - ".github/labels.json"
-
-name: Create declared labels
 
 jobs:
   labels:
