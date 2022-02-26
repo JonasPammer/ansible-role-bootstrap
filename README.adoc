@@ -176,7 +176,7 @@ allowing for molecule execution.
 
 [NOTE]
 =====
-You absolutely do not need to use it. 
+You absolutely do not need to use it.
 Your development environment can be whatever you want.
 You don't even need to run tests on your local machine. This Project uses the magic of CI/CD to automatically check your contributions' validness (linting, most formatting, tests).
 =====
@@ -221,7 +221,7 @@ in the official devcontainer docs under "Sharing Git credentials with your conta
 
 [TIP]
 ====
-The "Open in Visual Studio Code" badge even got other fancy options worth checking out, especially for non-relevant Ad-Hoc On-The-Go changes, being 
+The "Open in Visual Studio Code" badge even got other fancy options worth checking out, especially for non-relevant Ad-Hoc On-The-Go changes, being
 "Open with Remote Repositories" or
 "Open in VS Code for the Web".
 ====
@@ -237,7 +237,7 @@ __It's basically like what you would get by clicking on "Open in VS Code for the
 with the exception that there's an actual machine running docker somewhere for you,
 so you basically got *all* the features --
 but also with all the benefits of a pre-defined, Containerized Development Environment.
-It even has a free plan. 
+It even has a free plan.
 It's great for Ad-Hoc changes / fiddling around from anywhere on any kind of Computer Device I'm on right now.
 Big Baller's can even Self-Host the service.__
 
