@@ -25,12 +25,14 @@ status]]
 
 https://open.vscode.dev/jonaspammer/ansible-role-bootstrap[image:https://open.vscode.dev/badges/open-in-vscode.svg[Open in Visual Studio Code]]
 
+
 An Ansible role for preparing a linux system to be managed by ansible.
 
 This role uses the raw module (in combination with its own os-determination-system)
 to install the minimum required set of packages (python and sudo) to allow Ansible to manage a system.
 
 In most cases, you want to use this role in combination with the `ansible-core_dependencies`-role.
+
 
 toc::[]
 
