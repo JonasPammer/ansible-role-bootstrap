@@ -178,7 +178,10 @@ allowing for molecule execution.
 =====
 You absolutely do not need to use it.
 Your development environment can be whatever you want.
-You don't even need to run tests on your local machine. This Project uses the magic of CI/CD to automatically check your contributions' validness (linting, most formatting, tests).
+
+You don't even need to run tests on your local machine.
+This Project uses the magic of CI/CD to automatically check your contributions' validness
+(linting, most formatting, tests).
 =====
 
 ==== Local Containerized Development Environment
