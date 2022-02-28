@@ -53,6 +53,7 @@ jobs:
           yamllint . -f github
 
       - name: Lint code (Standard Output)
+        if: always()
         run: yamllint . -f standard
   molecule:
     name: Molecule
