@@ -6,7 +6,7 @@ name: CI (Lint + Molecule)
       lint:
         description: "Lint"
         required: true
-        default: "true"
+        default: true
         type: boolean
   pull_request:
   push:
@@ -88,26 +88,16 @@ jobs:
         with:
           path: |
             ~/.cache/pip
-            **/molecule/default/requirements.txt
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/molecule/default/requirements.in') }}
-
-      - name: compile python requirements.txt from requirements.in if cache did not hit
-        run: |
-          pip3 install pip-tools
-          pip-compile molecule/default/requirements.in > molecule/default/requirements.txt
+          key: ${{ runner.os }}-pip-${{ hashFiles('tox.ini') }}
 
       - name: Install test dependencies.
-        run: pip-sync molecule/default/requirements.txt
+        run: pip3 install tox~=3.24.5
 
       - name: Run Molecule tests.
-        run: |
-          molecule --version
-          molecule test
+        run: tox
         env:
-          PY_COLORS: "1"
-          ANSIBLE_FORCE_COLOR: "1"
           MOLECULE_DISTRO: ${{ matrix.distro }}
 
-      - name: Setup tmate session if previous step failed and if this is a manual run
+      - name: setup tmate session if previous step failed and if this is a manual run
         if: ${{ failure() && github.event_name == 'workflow_dispatch' }}
         uses: mxschmitt/action-tmate@v3
