@@ -23,7 +23,7 @@ https://results.pre-commit.ci/latest/github/JonasPammer/ansible-role-bootstrap/m
 status]]
 // image:https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white[pre-commit, link=https://github.com/pre-commit/pre-commit]
 
-https://open.vscode.dev/jonaspammer/ansible-role-bootstrap[image:https://open.vscode.dev/badges/open-in-vscode.svg[Open in Visual Studio Code]]
+https://open.vscode.dev/jonaspammer/ansible-role-bootstrap[image:https://img.shields.io/static/v1?logo=visualstudiocode&label=&message=Open%20in%20Visual%20Studio%20Code&labelColor=2c2c32&color=007acc&logoColor=007acc[Open in Visual Studio Code]]
 
 
 An Ansible role for preparing a linux system to be managed by ansible.
@@ -201,7 +201,7 @@ how to setup the ideal development environment,
 To use it:
 
 1. Install https://code.visualstudio.com/[Visual Studio Code].
-2. Click on the following badge (which is even linked at the top of most of my projects) and press "Clone repo in container volume": https://open.vscode.dev/jonaspammer/ansible-role-bootstrap[image:https://open.vscode.dev/badges/open-in-vscode.svg[Open in Visual Studio Code]].
+2. Click on the following badge (which is even linked at the top of most of my projects) and press "Clone repo in container volume": https://open.vscode.dev/jonaspammer/ansible-role-bootstrap[image:https://img.shields.io/static/v1?logo=visualstudiocode&label=&message=Open%20in%20Visual%20Studio%20Code&labelColor=2c2c32&color=007acc&logoColor=007acc[Open in Visual Studio Code]]
 
 [NOTE]
 =====
