@@ -26,7 +26,7 @@ name: CI (Lint + Molecule)
 
 defaults:
   run:
-    working-directory: "${{ github.repository }}"
+    working-directory: "$GITHUB_REPOSITORY"
 
 jobs:
   lint:
