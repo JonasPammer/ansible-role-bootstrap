@@ -24,6 +24,10 @@ name: CI (Lint + Molecule)
     # At 05:00 on Sunday.
     - cron: "0 5 * * 0"
 
+defaults:
+  run:
+    working-directory: "${{ github.repository }}"
+
 jobs:
   lint:
     name: Lint
