@@ -8,7 +8,7 @@ driver:
   name: docker
 platforms:
   # service-enabled Docker image by geerlingguy
-  - name: instance
+  - name: instance-${TOX_ENVNAME}
     image: "geerlingguy/docker-${MOLECULE_DISTRO:-debian10}-ansible:latest"
     command: ${MOLECULE_DOCKER_COMMAND:-""}
     volumes:
@@ -21,10 +21,5 @@ provisioner:
     converge: ${MOLECULE_PLAYBOOK:-converge.yml}
   options:
     v: true
-  config_options:
-    defaults:
-      interpreter_python: auto_silent
-      callbacks_enabled: profile_tasks, timer, yaml
-      stdout_callback: yaml
 verifier:
   name: ansible
