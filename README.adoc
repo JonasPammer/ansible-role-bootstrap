@@ -135,7 +135,7 @@ No tasks must come before this role.
 
 
 [[development]]
-== 💪 Development
+== 🗒 Development
 include::DEVELOPMENT.adoc[]
 
 
