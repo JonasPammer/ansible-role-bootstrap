@@ -135,7 +135,7 @@ No tasks must come before this role.
 
 
 [[development]]
-== 🗒 Development
+== 📝 Development
 include::DEVELOPMENT.adoc[]
 
 
@@ -144,7 +144,7 @@ include::CONTRIBUTING.adoc[]
 
 
 [[changelog]]
-== 📝 Changelog
+== 🗒 Changelog
 include::CHANGELOG.adoc[]
 
 
