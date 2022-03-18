@@ -30,7 +30,6 @@
 	"features": {
 		"git": "os-provided",
 		"git-lfs": "latest",
-		"github-cli": "latest",
-		"python": "latest"
+		"github-cli": "latest"
 	}
 }
