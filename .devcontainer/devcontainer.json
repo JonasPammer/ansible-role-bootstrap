@@ -27,6 +27,7 @@
 			"UPGRADE_PACKAGES": "true"
 		}
 	},
+	// All available 'features': https://github.com/microsoft/vscode-dev-containers/tree/main/script-library/docs
 	"features": {
 		"git": "os-provided",
 		"git-lfs": "latest",
