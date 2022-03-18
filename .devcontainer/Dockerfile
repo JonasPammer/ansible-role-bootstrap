@@ -4,7 +4,7 @@ FROM mcr.microsoft.com/vscode/devcontainers/base:0-buster
 ############################################################
 ### INSTRUCTIONS FROM VSCODE TEMPLATE 'Docker-in-Docker' ###
 ARG INSTALL_ZSH="true"
-ARG UPGRADE_PACKAGES="false"
+ARG UPGRADE_PACKAGES="true"
 ARG ENABLE_NONROOT_DOCKER="true"
 # Use the OSS Moby Engine instead of the licensed Docker Engine
 ARG USE_MOBY="true"
