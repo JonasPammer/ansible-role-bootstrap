@@ -1,7 +1,7 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.224.3/containers/docker-in-docker
 {
-	"name": "Docker in Docker",
+	"name": "ansible-role-dind",
 	"dockerFile": "Dockerfile",
 	"runArgs": ["--init", "--privileged"],
 	"mounts": ["source=dind-var-lib-docker,target=/var/lib/docker,type=volume"],
@@ -11,7 +11,20 @@
 	"settings": {},
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
-		"ms-azuretools.vscode-docker"
+		// ## Ansible Development ##
+		"redhat.ansible",
+		"redhat.vscode-yaml",
+		"wholroyd.jinja",
+		"samuelcolvin.jinjahtml",
+	
+		// ## General ##
+		"ms-azuretools.vscode-docker",
+		"asciidoctor.asciidoctor-vscode",
+		"Gruntfuggly.todo-tree",
+		"eamodio.gitlens",
+		"donjayamanne.githistory",
+		"mhutchie.git-graph"
+		// "mutantdino.resourcemonitor"
 	],
 	
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
