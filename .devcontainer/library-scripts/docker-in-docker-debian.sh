@@ -82,7 +82,7 @@ find_version_from_git_tags() {
     local repository=$2
     local prefix=${3:-"tags/v"}
     local separator=${4:-"."}
-    local last_part_optional=${5:-"false"}    
+    local last_part_optional=${5:-"false"}
     if [ "$(echo "${requested_version}" | grep -o "." | wc -l)" != "2" ]; then
         local escaped_separator=${separator//./\\.}
         local last_part
@@ -243,7 +243,7 @@ if [ "${ENABLE_NONROOT_DOCKER}" = "true" ]; then
 fi
 
 tee /usr/local/share/docker-init.sh > /dev/null \
-<< 'EOF'
+    << 'EOF'
 #!/bin/sh
 #-------------------------------------------------------------------------------------------------------------
 # Copyright (c) Microsoft Corporation. All rights reserved.
@@ -308,9 +308,9 @@ INNEREOF
 
 # Start using sudo if not invoked as root
 if [ "$(id -u)" -ne 0 ]; then
-    sudo /bin/sh -c "${dockerd_start}"
+sudo /bin/sh -c "${dockerd_start}"
 else
-    eval "${dockerd_start}"
+eval "${dockerd_start}"
 fi
 
 set +e

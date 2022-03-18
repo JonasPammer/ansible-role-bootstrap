@@ -13,8 +13,8 @@ ARG DOCKER_VERSION="latest"
 # Enable new "BUILDKIT" mode for Docker CLI
 ENV DOCKER_BUILDKIT=1
 
-# Install needed packages and setup non-root user. 
-# Use a separate RUN statement to add your own dependencies. 
+# Install needed packages and setup non-root user.
+# Use a separate RUN statement to add your own dependencies.
 # A user of "automatic" attempts to reuse an user ID if one already exists.
 ARG USERNAME=automatic
 ARG USER_UID=1000
@@ -29,8 +29,8 @@ RUN apt-get update \
 
 VOLUME [ "/var/lib/docker" ]
 
-# Setting the ENTRYPOINT to docker-init.sh will start up the Docker Engine 
-# inside the container "overrideCommand": false is set in devcontainer.json. 
+# Setting the ENTRYPOINT to docker-init.sh will start up the Docker Engine
+# inside the container "overrideCommand": false is set in devcontainer.json.
 # The script will also execute CMD if you need to alter startup behaviors.
 ENTRYPOINT [ "/usr/local/share/docker-init.sh" ]
 CMD [ "sleep", "infinity" ]
