@@ -108,7 +108,7 @@ repos:
 default_language_version:
   python: python3
 ci:
-  skip: [docker-compose-check]
+  skip: [docker-compose-check, shellcheck]
   autofix_commit_msg: |
     chore(pre-commit): auto fixes from hooks :rotating_light:
 
