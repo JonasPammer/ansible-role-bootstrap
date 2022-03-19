@@ -41,3 +41,10 @@ CMD [ "sleep", "infinity" ]
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends python3 python3-pip python3-setuptools \
     && python3 -m pip install --upgrade pip && python3 -m pip install tox
+
+# Install shellcheck script to system as needed by pre-commit hook
+COPY https://github.com/koalaman/shellcheck/releases/download/v0.8.0/shellcheck-v0.8.0.linux.x86_64.tar.xz /tmp/shellcheck
+RUN apt-get -y install --no-install-recommends xz-utils \
+    && mkdir -p /tmp/shellcheckd \
+    && tar -xJf /tmp/shellcheck --directory /tmp/shellcheckd \
+    && cp /tmp/shellcheckd/shellcheck-v0.8.0/shellcheck /usr/local/bin/
