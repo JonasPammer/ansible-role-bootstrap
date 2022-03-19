@@ -40,4 +40,4 @@ CMD [ "sleep", "infinity" ]
 ### OWN INSTRUCTIONS ###
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends python3 python3-pip python3-setuptools \
-    && sudo python3 -m pip install --upgrade pip && sudo python3 -m pip install tox
+    && python3 -m pip install --upgrade pip && python3 -m pip install tox
