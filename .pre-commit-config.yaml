@@ -32,19 +32,12 @@ repos:
       - id: trailing-whitespace
 
   - repo: https://github.com/jumanjihouse/pre-commit-hooks
-    rev: 2.1.6
+    rev: 2.1.5
     hooks:
       - id: git-check # Configure in .gitattributes
       - id: script-must-have-extension
       - id: script-must-not-have-extension
       - id: shellcheck
-      - id: shfmt
-
-  # takes up the taunting task of formatting bash scripts
-  - repo: https://github.com/lovesegfault/beautysh
-    rev: v6.2.1
-    hooks:
-      - id: beautysh
 
   # opinionated code formatter for all things frontend (also includes Markdown, JSON, YAML)
   - repo: https://github.com/pre-commit/mirrors-prettier
