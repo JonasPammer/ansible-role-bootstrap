@@ -64,7 +64,7 @@ as a full-featured development environment.
 To use it:
 
 1. Ensure you fullfill the link:https://code.visualstudio.com/docs/remote/containers#_system-requirements[
-   the System requirements of Visual Studio Code Development Containers], 
+   the System requirements of Visual Studio Code Development Containers],
    optionally following the _Installation_-Section of the linked page section. +
    This includes: Installing Docker, Installing Visual Studio Code itself, and Installing the necessarry Extension.
 2. Clone the project to your machine
@@ -77,12 +77,12 @@ devcontainer definition, you can press the accompanying button to enter it.
 // [NOTE]
 // =====
 // You may need to...
-// 
+//
 // * Install and configure https://www.docker.com/get-started[Docker] for your operating system.
-// 
-// 
+//
+//
 // * Install the https://aka.ms/vscode-remote/download/extension[Remote Development extension pack.]
-// 
+//
 // , even though modern VSCode offers to automatically do all that too
 // by just clicking a button that pops up (crazy).
 // =====
