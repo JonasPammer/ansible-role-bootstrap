@@ -45,26 +45,28 @@ Your development environment can be whatever you want.
 You don't even need to run tests on your local machine.
 This Project uses the magic of CI/CD to automatically check your contributions' validness
 (linting, most formatting, tests).
+
+Though,
+one may inform himself about the required development environment and its procedures
+by looking at the devcontainer definition (and the CI configuration).
 =====
+
+[TIP]
+====
+Once you've opened a folder in a container, any terminal window you open in VS Code (Terminal > New Terminal) will automatically run in the container rather than locally.
+====
 
 ==== Local Containerized Development Environment
 
 The _Visual Studio Code Remote - Containers_ extension lets one use a Docker container
 as a full-featured development environment.
 
-This Project offers such a devcontainer definition.
-By looking at its docker-compose and dockerfile definition,
-one may inform himself about everything there is to know about
-how to setup the ideal development environment,
-*even if you do not use this editor in combination with this feature*
-(Code as Documentation).
-
 To use it:
 
-1. Ensure you fullfill the https://code.visualstudio.com/docs/remote/containers#_system-requirements[
-  the System requirements of Visual Studio Code Development Containers
-], optionally following the _Installation_-Section of the linked page section. +
-This includes: Installing Docker, Installing Visual Studio Code itself, and Installing the necessarry Extension.
+1. Ensure you fullfill the link:https://code.visualstudio.com/docs/remote/containers#_system-requirements[
+   the System requirements of Visual Studio Code Development Containers], 
+   optionally following the _Installation_-Section of the linked page section. +
+   This includes: Installing Docker, Installing Visual Studio Code itself, and Installing the necessarry Extension.
 2. Clone the project to your machine
 3. Open the folder of the repo in Visual Studio Code (_File - Open Folder…_).
 4. If you get a prompt at the lower right corner informing you about the presence of the
@@ -100,11 +102,6 @@ in the official devcontainer docs under "Sharing Git credentials with your conta
 // "Open with Remote Repositories" or
 // "Open in VS Code for the Web".
 // ====
-
-[TIP]
-====
-Once you've opened a folder in a container, any terminal window you open in VS Code (Terminal > New Terminal) will automatically run in the container rather than locally.
-====
 
 ==== Gitpod Containerized Development Environment
 
