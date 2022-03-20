@@ -61,21 +61,29 @@ how to setup the ideal development environment,
 
 To use it:
 
-1. Install https://code.visualstudio.com/[Visual Studio Code].
-2. Click on the following badge (which is even linked at the top of most of my projects) and press "Clone repo in container volume": https://open.vscode.dev/jonaspammer/ansible-role-bootstrap[image:https://img.shields.io/static/v1?logo=visualstudiocode&label=&message=Open%20in%20Visual%20Studio%20Code&labelColor=2c2c32&color=007acc&logoColor=007acc[Open in Visual Studio Code]]
+1. Ensure you fullfill the https://code.visualstudio.com/docs/remote/containers#_system-requirements[
+  the System requirements of Visual Studio Code Development Containers
+], optionally following the _Installation_-Section of the linked page section. +
+This includes: Installing Docker, Installing Visual Studio Code itself, and Installing the necessarry Extension.
+2. Clone the project to your machine
+3. Open the folder of the repo in Visual Studio Code (_File - Open Folder…_).
+4. If you get a prompt at the lower right corner informing you about the presence of the
+devcontainer definition, you can press the accompanying button to enter it.
+*Otherwise,* you can also execute the Visual Studio Command `Remote-Containers: Open Folder in Container` yourself (_View - Command Palette_ -> _type in the mentioned command_).
 
-[NOTE]
-=====
-You may need to...
-
-* Install and configure https://www.docker.com/get-started[Docker] for your operating system.
-
-
-* Install the https://aka.ms/vscode-remote/download/extension[Remote Development extension pack.]
-
-, even though modern VSCode offers to automatically do all that too
-by just clicking a button that pops up (crazy).
-=====
+// commented out as open.vscode.com does not currently work as tracked in https://github.com/JonasPammer/ansible-role-bootstrap/issues/33
+// [NOTE]
+// =====
+// You may need to...
+// 
+// * Install and configure https://www.docker.com/get-started[Docker] for your operating system.
+// 
+// 
+// * Install the https://aka.ms/vscode-remote/download/extension[Remote Development extension pack.]
+// 
+// , even though modern VSCode offers to automatically do all that too
+// by just clicking a button that pops up (crazy).
+// =====
 
 [NOTE]
 =====
@@ -85,12 +93,13 @@ The procedure is described https://code.visualstudio.com/docs/remote/containers#
 in the official devcontainer docs under "Sharing Git credentials with your container"].
 =====
 
-[TIP]
-====
-The "Open in Visual Studio Code" badge even got other fancy options worth checking out, especially for non-relevant Ad-Hoc On-The-Go changes, being
-"Open with Remote Repositories" or
-"Open in VS Code for the Web".
-====
+// commented out as open.vscode.com does not currently work as tracked in https://github.com/JonasPammer/ansible-role-bootstrap/issues/33
+// [TIP]
+// ====
+// The "Open in Visual Studio Code" badge even got other fancy options worth checking out, especially // for non-relevant Ad-Hoc On-The-Go changes, being
+// "Open with Remote Repositories" or
+// "Open in VS Code for the Web".
+// ====
 
 [TIP]
 ====
