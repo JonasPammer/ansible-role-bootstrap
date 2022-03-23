@@ -44,7 +44,6 @@ https://github.com/JonasPammer/ansible-role-core_dependencies[`core_dependencies
 
 toc::[]
 
-
 [[meta]]
 == 🔎 Metadata
 Below you can find information on…
