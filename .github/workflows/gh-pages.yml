@@ -23,6 +23,8 @@ jobs:
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "2.x"
 
       - name: Install Asciidoctor
         run: gem install --no-document asciidoctor rouge coderay
