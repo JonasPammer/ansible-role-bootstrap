@@ -3,6 +3,8 @@ name: create declared labels
 "on":
   issues:
   push:
+    branches:
+      - master
     paths:
       - ".github/labels.json"
 
