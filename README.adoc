@@ -34,7 +34,12 @@ to install the minimum required set of packages (python and sudo) to allow Ansib
 In most cases, you want to use this role in combination with the `ansible-core_dependencies`-role.
 
 
+[TIP]
+A better, single-page version of this README can be found at https://jonaspammer.github.io/ansible-role-bootstrap[
+jonaspammer.github.io/ansible-role-bootstrap].
+
 toc::[]
+
 
 [[meta]]
 == 🔎 Metadata
