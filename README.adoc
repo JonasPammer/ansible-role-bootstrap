@@ -15,7 +15,7 @@ ifdef::env-github[]
 endif::[]
 ifdef::env-github[]
 [TIP]
-__A better, single-page version of this README can be found at https://jonaspammer.github.io/ansible-role-bootstrap[
+__A single-page version of this README can be found at https://jonaspammer.github.io/ansible-role-bootstrap[
 jonaspammer.github.io/ansible-role-bootstrap].__
 endif::[]
 
