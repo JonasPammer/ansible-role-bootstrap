@@ -38,7 +38,7 @@ An Ansible role for preparing a linux system to be managed by ansible.
 This role uses the raw module (in combination with its own os-determination-system)
 to install the minimum required set of packages (python and sudo) to allow Ansible to manage a system.
 
-In most cases, you will want to use this role in combination with my 
+In most cases, you will want to use this role in combination with my
 https://github.com/JonasPammer/ansible-role-core_dependencies[`core_dependencies`-role].
 
 
