@@ -95,6 +95,7 @@ jobs:
         run: tox --parallel
         env:
           MOLECULE_DISTRO: ${{ matrix.distro }}
+          TOX_PARALLEL_NO_SPINNER: 1
 
       - name: setup tmate session if previous step failed and if this is a manual run
         if: ${{ failure() && github.event_name == 'workflow_dispatch' }}
