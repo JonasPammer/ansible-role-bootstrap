@@ -92,7 +92,7 @@ jobs:
         run: pip3 install tox~=3.24.5
 
       - name: Run Molecule tests.
-        run: tox
+        run: tox --parallel
         env:
           MOLECULE_DISTRO: ${{ matrix.distro }}
 
