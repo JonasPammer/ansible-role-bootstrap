@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   role_name: bootstrap
-  description: An ansible role for prepare a linux system to be managed by ansible. Based on robertdebock's role.
+  description: An ansible role for preparing a linux system to be managed by ansible. Based on robertdebock's role.
 
   author: jonaspammer
   license: MIT

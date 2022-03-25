@@ -17,7 +17,7 @@ Optional Description
 ==== Security
 ----
 
-=== [1.0] - 2022-02-02
+=== [1.0] - 2022-03-25
 Initial version.
 
 All credits for the science behind this role go to https://github.com/robertdebock/ansible-role-bootstrap/releases/tag/5.2.12[
