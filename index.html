@@ -694,7 +694,11 @@ to install the minimum required set of packages (python and sudo) to allow Ansib
 <li><a href="#example_playbooks">📚 Example Playbook Usages</a></li>
 <li><a href="#development">📝 Development</a>
 <ul class="sectlevel2">
-<li><a href="#development--versioning">📦 Versioning</a></li>
+<li><a href="#development--versioning">📦 Versioning</a>
+<ul class="sectlevel3">
+<li><a href="#_changelog_by_means_of_releases">Changelog by means of Releases</a></li>
+</ul>
+</li>
 <li><a href="#development--tips">💁 Tips</a></li>
 <li><a href="#cookiecutter">🍪 CookieCutter</a></li>
 <li><a href="#_ideal_containerized_development_environments">🧃 Ideal, Containerized Development Environments</a>
@@ -717,11 +721,7 @@ to install the minimum required set of packages (python and sudo) to allow Ansib
 </li>
 </ul>
 </li>
-<li><a href="#changelog">🗒 Changelog</a>
-<ul class="sectlevel2">
-<li><a href="#_1_0_2022_03_25">[1.0] - 2022-03-25</a></li>
-</ul>
-</li>
+<li><a href="#changelog">🗒 Changelog</a></li>
 <li><a href="#_️_license">⚖️ License</a></li>
 </ul>
 </div>
@@ -899,6 +899,13 @@ which in turn are <a href="https://galaxy.ansible.com/docs/contributing/version.
 <p>When a new tag is pushed, <a href="https://github.com/JonasPammer/ansible-role-bootstrap/actions/workflows/release-to-galaxy.yml">
 a GitHub CI workflow</a> takes care of importing the role to my Ansible Galaxy Account.
 <span class="image"><img src="https://github.com/JonasPammer/ansible-role-bootstrap/actions/workflows/release-to-galaxy.yml/badge.svg" alt="Release CI"></span></p>
+</div>
+<div class="sect3">
+<h4 id="_changelog_by_means_of_releases">Changelog by means of Releases</h4>
+<div class="paragraph">
+<p>When a new tag is pushed, an appropriate GitHub Release will be created
+by the Repository Maintainer to provide a proper human change log with a title and description.</p>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -1174,30 +1181,15 @@ it&#8217;s best to open an Issue to discuss your proposal first.</p>
 <div class="sect1">
 <h2 id="changelog">🗒 Changelog</h2>
 <div class="sectionbody">
-<div class="listingblock">
-<div class="content">
-<pre>The following Changelog format was inspired by <a href="https://keepachangelog.com/en/1.0.0/">Keep a Changelog</a>.
-
-=== [major.minor.patch] - year-month-day
-Optional Description
-
-==== Added
-==== Changed
-==== Deprecated
-==== Removed
-==== Fixed
-==== Security</pre>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_1_0_2022_03_25">[1.0] - 2022-03-25</h3>
 <div class="paragraph">
-<p>Initial version.</p>
+<p>Please refer to the
+<a href="https://github.com/JonasPammer/ansible-role-bootstrap/releases">Release Page of this Repository</a>
+for a human changelog of the corresponding
+<a href="https://github.com/JonasPammer/ansible-role-bootstrap/tags">Tags (Versions) of this Project</a>.</p>
 </div>
 <div class="paragraph">
-<p>All credits for the science behind this role go to <a href="https://github.com/robertdebock/ansible-role-bootstrap/releases/tag/5.2.12">
- robertdebock/ansible-role-bootstrap v5.2.12 on GitHub (27 January, 2022)</a>.</p>
-</div>
+<p>Note that this Project adheres to Semantic Versioning.
+Please report any accidental breaking changes of a minor version update.</p>
 </div>
 </div>
 </div>
@@ -1238,7 +1230,7 @@ SOFTWARE.</pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-03-25 11:35:18 UTC
+Last updated 2022-03-25 12:14:18 UTC
 </div>
 </div>
 </body>
