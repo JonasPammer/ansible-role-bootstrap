@@ -153,7 +153,13 @@ include::CONTRIBUTING.adoc[]
 
 [[changelog]]
 == 🗒 Changelog
-include::CHANGELOG.adoc[]
+Please refer to the 
+https://github.com/JonasPammer/ansible-role-bootstrap/releases[Release Page of this Repository]
+for a human changelog of the corresponding
+https://github.com/JonasPammer/ansible-role-bootstrap/tags[Tags (Versions) of this Project].
+
+Note that this Project adheres to Semantic Versioning.
+Please report any accidental breaking changes of a minor version update.
 
 
 == ⚖️ License

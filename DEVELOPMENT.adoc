@@ -8,6 +8,10 @@ When a new tag is pushed, https://github.com/JonasPammer/ansible-role-bootstrap/
 a GitHub CI workflow] takes care of importing the role to my Ansible Galaxy Account.
 image:https://github.com/JonasPammer/ansible-role-bootstrap/actions/workflows/release-to-galaxy.yml/badge.svg[Release CI]
 
+==== Changelog by means of Releases
+When a new tag is pushed, an appropriate GitHub Release will be created
+by the Repository Maintainer to provide a proper human change log with a title and description.
+
 [[development--tips]]
 === 💁 Tips
 
