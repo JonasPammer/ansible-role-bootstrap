@@ -82,7 +82,7 @@ jobs:
 
       - name: activate pip dependencies cache for future workflow runs
         id: molecule-pip-cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3.0.1
         with:
           path: |
             ~/.cache/pip
