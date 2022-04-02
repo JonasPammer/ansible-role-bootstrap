@@ -4,9 +4,10 @@ Fixes #
 
 ## **Required Checklist**
 
-- [ ] documentation has been altered or extended appropriately
-- [ ] this pull request and its commits address only a single concern
-- [ ] i am a nice guy <!-- FYI, that's the TL;DR of the CODE_OF_CONDUCT.md -->
+- [ ] Documentation has been altered or extended appropriately
+- [ ] This pull request and its commits address only a single concern
+- [ ] I have followed [JonasPammer's Ansible Role Development Guidelines](https://github.com/JonasPammer/cookiecutter-ansible-role/blob/master/ROLE_DEVELOPMENT_GUIDELINES.adoc)
+- [ ] I am a nice guy <!-- FYI, that's the TL;DR of the CODE_OF_CONDUCT.md -->
 
 ## Does this PR introduce a breaking change? (What changes might users need to make in their application due to this PR?)
 

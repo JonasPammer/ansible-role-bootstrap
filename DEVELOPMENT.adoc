@@ -12,10 +12,14 @@ image:https://github.com/JonasPammer/ansible-role-bootstrap/actions/workflows/re
 When a new tag is pushed, an appropriate GitHub Release will be created
 by the Repository Maintainer to provide a proper human change log with a title and description.
 
-[[development--tips]]
-=== 💁 Tips
+[[development--guidelines]]
+=== 💁 Ansible Role Development Guidelines
 
-Take a look at my general ansible role development guidelines at .
+Please take a look at my https://github.com/JonasPammer/cookiecutter-ansible-role/blob/master/ROLE_DEVELOPMENT_GUIDELINES.adoc[
+Ansible Role Development Guidelines].
+
+If interested, also take a look at my https://github.com/JonasPammer/cookiecutter-ansible-role/blob/master/ROLE_DEVELOPMENT_TIPS.adoc[
+Ansible Role Development (Best) Practices].
 
 [[cookiecutter]]
 === 🍪 CookieCutter
