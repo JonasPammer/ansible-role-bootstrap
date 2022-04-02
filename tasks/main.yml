@@ -61,10 +61,53 @@
     - name: gather ansible facts
       ansible.builtin.setup:
 
-    - name: install bootstrap packages (package)
-      ansible.builtin.package:
-        name: "{{ item }}"
-        state: present
-      loop: "{{ bootstrap_facts_packages.split() }}"
+    - name: update cache and install bootstrap packages (apt)
+      ansible.builtin.apt:
+        name: "{{ bootstrap_facts_packages.split() }}"
+        update_cache: true
+      changed_when: false
+      when: ansible_pkg_mgr == "apt"
+
+    - name: update cache and install bootstrap packages (yum)
+      ansible.builtin.yum:
+        name: "{{ bootstrap_facts_packages.split() }}"
+        update_cache: true
+      changed_when: false
+      when: ansible_pkg_mgr == "yum"
+
+    - name: update cache and install bootstrap packages (apk)
+      community.general.apk:
+        name: "{{ bootstrap_facts_packages.split() }}"
+        update_cache: true
+      changed_when: false
+      when: ansible_pkg_mgr == "apk"
+
+    - name: update cache and install bootstrap packages (dnf)
+      ansible.builtin.dnf:
+        name: "{{ bootstrap_facts_packages.split() }}"
+        update_cache: true
+      changed_when: false
+      when: ansible_pkg_mgr == "dnf"
+
+    - name: update cache and install bootstrap packages (zypper)
+      community.general.zypper:
+        name: "{{ bootstrap_facts_packages.split() }}"
+        update_cache: true
+      changed_when: false
+      when: ansible_pkg_mgr == "zypper"
+
+    - name: update cache and install bootstrap packages (pacman)
+      community.general.pacman:
+        name: "{{ bootstrap_facts_packages.split() }}"
+        update_cache: true
+      changed_when: false
+      when: ansible_pkg_mgr == "pacman"
+
+    - name: update cache and install bootstrap packages (portage)
+      community.general.portage:
+        package: "{{ bootstrap_facts_packages.split() }}"
+        sync: true
+      changed_when: false
+      when: ansible_pkg_mgr == "portage"
   become: true
   become_user: "{{ bootstrap_ansible_user | default(bootstrap_user) }}"
