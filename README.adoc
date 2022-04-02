@@ -62,9 +62,10 @@ include::meta/main.yml[]
 [[requirements]]
 == 📌 Requirements
 // Any prerequisites that may not be covered by this role or Ansible itself should be mentioned here.
-User needs to be able to `become`
+The Ansible User needs to be able to `become`.
 
-
+The https://galaxy.ansible.com/community/general[`community.general` collection]
+must be installed on the Ansible controller.
 
 [[variables]]
 == 📜 Role Variables

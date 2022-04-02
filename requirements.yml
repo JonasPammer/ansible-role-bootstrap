@@ -1,3 +1,4 @@
 ---
 collections:
-  - name: community.docker
+  - name: community.docker # only needed for molecule execution
+  - name: community.general
