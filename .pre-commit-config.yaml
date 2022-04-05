@@ -41,7 +41,7 @@ repos:
 
   # opinionated code formatter for all things frontend (also includes Markdown, JSON, YAML)
   - repo: https://github.com/pre-commit/mirrors-prettier
-    rev: v2.6.1
+    rev: v2.6.2
     hooks:
       - id: prettier
 
@@ -62,7 +62,7 @@ repos:
   # Dockerfile linter / best practice checker.
   # even uses `shellcheck` to check the RUN instructions.
   - repo: https://github.com/AleksaC/hadolint-py
-    rev: v2.9.3
+    rev: v2.10.0
     hooks:
       - id: hadolint
 
@@ -70,7 +70,7 @@ repos:
 
   # 'setup.cfg' line sorter
   - repo: https://github.com/asottile/setup-cfg-fmt
-    rev: v1.20.0
+    rev: v1.20.1
     hooks:
       - id: setup-cfg-fmt
 
@@ -83,7 +83,7 @@ repos:
 
   # the uncompromising (opinionated / barely configurable) PEP8 Python code formatter.
   - repo: https://github.com/psf/black
-    rev: "22.1.0"
+    rev: "22.3.0"
     hooks:
       - id: black
 
