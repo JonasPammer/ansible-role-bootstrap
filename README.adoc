@@ -104,7 +104,8 @@ Maximum number of seconds to wait for the remote system to be reachable/usable b
 == 📚 Example Playbook Usages
 // Including examples of how to use this role in a playbook for common scenarios is always nice for users too:
 
-
+[NOTE]
+====
 The machine needs to be prepared. In CI this is done using `molecule/default/prepare.yml`:
 
 .link:molecule/default/prepare.yml[]
@@ -112,8 +113,7 @@ The machine needs to be prepared. In CI this is done using `molecule/default/pre
 ----
 include::molecule/default/prepare.yml[]
 ----
-
-Below you can find examples showcasing how this role may be used:
+====
 
 [NOTE]
 ====
