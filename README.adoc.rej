@@ -1,0 +1,21 @@
+diff a/README.adoc b/README.adoc	(rejected hunks)
+@@ -104,15 +104,16 @@ Description
+ == 📚 Example Playbook Usages
+ // Including examples of how to use this role in a playbook for common scenarios is always nice for users.
+ 
+-The machine needs to be prepared. In CI this is done using `molecule/default/prepare.yml`:
++[NOTE]
++====
++The machine needs to be prepared. In CI, this is done using `molecule/default/prepare.yml`:
+ 
+ .link:molecule/default/prepare.yml[]
+ [source,yaml]
+ ----
+ include::molecule/default/prepare.yml[]
+ ----
+-
+-Below you can find examples showcasing how this role may be used:
++====
+ 
+ .Minimum Viable Play
+ ====
