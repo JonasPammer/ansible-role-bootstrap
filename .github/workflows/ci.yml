@@ -46,7 +46,7 @@ jobs:
       - name: Install test dependencies.
         run: pip3 install yamllint
 
-      - name: Lint code (GitHub Annotations)
+      - name: Lint YAML (GitHub Annotations)
         run: |
           cat <<HEREDOC
           Wondering about why there are no file names?
@@ -55,7 +55,7 @@ jobs:
           HEREDOC
           yamllint . -f github
 
-      - name: Lint code (Standard Output)
+      - name: Lint YAML (Standard Output)
         if: always()
         run: yamllint . -f standard
   molecule:
@@ -80,19 +80,11 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: activate pip dependencies cache for future workflow runs
-        id: molecule-pip-cache
-        uses: actions/cache@v3.0.1
-        with:
-          path: |
-            ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('tox.ini') }}
-
       - name: Install test dependencies.
         run: pip3 install tox~=3.24.5
 
       - name: Run Molecule tests.
-        run: tox --parallel
+        run: tox
         env:
           MOLECULE_DISTRO: ${{ matrix.distro }}
           TOX_PARALLEL_NO_SPINNER: 1
