@@ -100,32 +100,30 @@ Maximum number of seconds to wait for the remote system to be reachable/usable b
 // or variables that are used from other roles.
 
 
-.Overview of related roles
-[NOTE]
-====
-Most roles have a “soft dependency” described in their `requirements.yml` file.
-The following diagram is a compilation of the soft dependencies of this role
-as well as the recursive soft dependencies of their `requirements.yml`.
-
-image:https://raw.githubusercontent.com/JonasPammer/ansible-roles/master/graphs/dependencies_bootstrap.svg[
-requirements.yml dependency graph of jonaspammer.bootstrap]
-====
-
-
 [[example_playbooks]]
 == 📚 Example Playbook Usages
 // Including examples of how to use this role in a playbook for common scenarios is always nice for users too:
 
 [NOTE]
 ====
+This role is part of https://github.com/JonasPammer/ansible-roles[
+many compatible purpose-specific roles of mine].
+
 The machine needs to be prepared.
-In CI this is done using `molecule/default/prepare.yml`:
+In CI, this is done in `molecule/default/prepare.yml`
+which sources its soft dependencies from `requirements.yml`:
 
 .link:molecule/default/prepare.yml[]
 [source,yaml]
 ----
 include::molecule/default/prepare.yml[]
 ----
+
+The following diagram is a compilation of the "soft dependencies" of this role 
+as well as the recursive tree of their soft dependencies.
+
+image:https://raw.githubusercontent.com/JonasPammer/ansible-roles/master/graphs/dependencies_bootstrap.svg[
+requirements.yml dependency graph of jonaspammer.bootstrap]
 ====
 
 [NOTE]
