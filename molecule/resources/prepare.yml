@@ -3,7 +3,3 @@
   hosts: all
   become: true
   gather_facts: false
-
-  roles:
-    - role: jonaspammer.bootstrap
-    - role: jonaspammer.core_dependencies
