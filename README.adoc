@@ -119,7 +119,7 @@ which sources its soft dependencies from `requirements.yml`:
 include::molecule/default/prepare.yml[]
 ----
 
-The following diagram is a compilation of the "soft dependencies" of this role 
+The following diagram is a compilation of the "soft dependencies" of this role
 as well as the recursive tree of their soft dependencies.
 
 image:https://raw.githubusercontent.com/JonasPammer/ansible-roles/master/graphs/dependencies_bootstrap.svg[
