@@ -1,5 +1,6 @@
 ---
 name: CI (Lint + Molecule)
+permissions: read-all
 "on":
   workflow_dispatch:
     inputs:

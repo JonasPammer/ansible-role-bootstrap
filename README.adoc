@@ -16,7 +16,6 @@ endif::[]
 
 // Very Relevant Status Badges
 https://github.com/JonasPammer/ansible-role-bootstrap/actions/workflows/ci.yml[image:https://github.com/JonasPammer/ansible-role-bootstrap/actions/workflows/ci.yml/badge.svg[Testing CI]]
-https://app.fossa.com/projects/git%2Bgithub.com%2FJonasPammer%2Fansible-role-bootstrap?ref=badge_shield[image:https://app.fossa.com/api/projects/git%2Bgithub.com%2FJonasPammer%2Fansible-role-bootstrap.svg?type=shield[FOSSA Status]]
 
 // Badges about Conventions in this Project
 https://conventionalcommits.org[image:https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg[Conventional Commits]]
@@ -91,6 +90,14 @@ Whether to wait for the host to be available on `ansible_port` (22).
 bootstrap_timeout: 3
 ----
 Maximum number of seconds to wait for the remote system to be reachable/usable before failing.
+
+
+[[public_vars]]
+== 📜 Facts/Variables defined by this role
+
+Each variable listed in this section
+is dynamically defined when executing this role (and can only be overwritten using `ansible.builtin.set_facts`) _and_
+is meant to be used not just internally.
 
 
 [[dependencies]]
@@ -191,5 +198,3 @@ Please report any accidental breaking changes of a minor version update.
 ----
 include::LICENSE[]
 ----
-
-https://app.fossa.com/projects/git%2Bgithub.com%2FJonasPammer%2Fansible-role-bootstrap?ref=badge_large[image:https://app.fossa.com/api/projects/git%2Bgithub.com%2FJonasPammer%2Fansible-role-bootstrap.svg?type=large[FOSSA Status]]
