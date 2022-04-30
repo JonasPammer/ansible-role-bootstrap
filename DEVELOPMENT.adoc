@@ -55,8 +55,8 @@ at least by hooks that automatically alter files.
 
 [NOTE]
 Not to confuse:
-Although some pre-commit hooks may be able to warn you about script-analyzed flaws in syntax or even code to some extend,
-it does not run any real Test Suites.
+Although some pre-commit hooks may be able to warn you about script-analyzed flaws in syntax or even code to some extend (for which reason pre-commit's hooks are *part of* the test suite),
+pre-commit itself does not run any real Test Suites.
 For Information on Testing, see <<testing>>.
 
 [TIP]
