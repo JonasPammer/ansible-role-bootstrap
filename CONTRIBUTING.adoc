@@ -1,7 +1,9 @@
-// Contribution File for ansible-role "jonaspammer.bootstrap"
 // Included in README.adoc
 :toc:
 :toclevels: 3
+
+The following sections are generic in nature and are used to help new contributors.
+The actual "Development Documentation" of this project is found under <<development>>.
 
 === Preamble
 First off, thank you for considering contributing to this Project.
@@ -18,7 +20,7 @@ as pull requests are being squash merged into one commit in the project.
 Only core contributors, i.e. those with rights to push to this project's branches, must follow it
 (e.g. to allow for automatic version determination and changelog generation to work).
 
-🚨 **However, you still need to make sure that you create small, self-contained commits and pull requests.**
+🚨 **However, it is still a good idea to make sure that you create small, self-contained commits and pull requests.**
 _More on this general concept may be found in in the following sections and the blogs linked in it._
 
 === 🚀 Getting Started
