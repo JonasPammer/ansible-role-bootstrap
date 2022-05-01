@@ -696,7 +696,7 @@ to install the minimum required set of packages (python and sudo) to allow Ansib
 <ul class="sectlevel2">
 <li><a href="#development-dependencies">Development Dependencies</a></li>
 <li><a href="#cookiecutter">🍪 CookieCutter</a></li>
-<li><a href="#development--versioning">📦 Versioning</a>
+<li><a href="#versioning">📦 Versioning</a>
 <ul class="sectlevel3">
 <li><a href="#_changelog">Changelog</a></li>
 </ul>
@@ -704,12 +704,13 @@ to install the minimum required set of packages (python and sudo) to allow Ansib
 <li><a href="#pre-commit">General Linting and Styling Conventions</a></li>
 <li><a href="#testing">Testing</a></li>
 <li><a href="#development-guidelines">💁 Ansible Role Development Guidelines</a></li>
-<li><a href="#_tip_containerized_ideal_development_environment">🧃 TIP: Containerized Ideal Development Environment</a></li>
+<li><a href="#development-container-extra">🧃 TIP: Containerized Ideal Development Environment</a></li>
 </ul>
 </li>
 <li><a href="#_contributing">💪 Contributing</a>
 <ul class="sectlevel2">
 <li><a href="#_preamble">Preamble</a></li>
+<li><a href="#cookiecutter--contributing">🍪 CookieCutter</a></li>
 <li><a href="#_conventional_commits">💬 Conventional Commits</a></li>
 <li><a href="#_getting_started">🚀 Getting Started</a>
 <ul class="sectlevel3">
@@ -972,7 +973,7 @@ to the best extend possible.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="development--versioning">📦 Versioning</h3>
+<h3 id="versioning">📦 Versioning</h3>
 <div class="paragraph">
 <p>Versions are defined using <a href="https://git-scm.com/book/en/v2/Git-Basics-Tagging">Tags</a>,
 which in turn are <a href="https://galaxy.ansible.com/docs/contributing/version.html">recognized and used</a> by Ansible Galaxy.</p>
@@ -1066,7 +1067,7 @@ as detailed in <a href="https://github.com/JonasPammer/ansible-roles">JonasPamme
 </ul>
 </div>
 <div class="paragraph">
-<p>To run the tests, simply issue <code>tox</code> on the command line.
+<p>To run the tests, simply run <code>tox</code> on the command line.
 You can pass an optional environment variable to define the distribution of the
 Docker container that will be spun up by molecule:</p>
 </div>
@@ -1093,7 +1094,7 @@ General Ansible Role Development (Best) Practices</a>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_tip_containerized_ideal_development_environment">🧃 TIP: Containerized Ideal Development Environment</h3>
+<h3 id="development-container-extra">🧃 TIP: Containerized Ideal Development Environment</h3>
 <div class="paragraph">
 <p>This Project offers a definition for a "1-Click Containerized Development Environment".</p>
 </div>
@@ -1177,6 +1178,20 @@ The actual "Development Documentation" of this project is found under <a href="#
 <div class="paragraph">
 <p>Following these guidelines helps to communicate that you respect the time of the developers managing and developing this open source project.
 In return, they should reciprocate that respect in addressing your issue, assessing changes, and helping you finalize your pull requests.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="cookiecutter--contributing">🍪 CookieCutter</h3>
+<div class="paragraph">
+<p>This Project owns many of its files to
+<a href="https://github.com/JonasPammer/cookiecutter-ansible-role">the CookieCutter it was originally templated from</a>.</p>
+</div>
+<div class="paragraph">
+<p>Please check if the edit you have in mind is actually applicable to the template
+and if so make an appropriate change there instead.
+Your change may also be applicable partly to the template
+as well as partly to something specific to this project,
+in which case you would be creating multiple PRs.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1335,7 +1350,7 @@ SOFTWARE.</pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-04-30 21:07:45 UTC
+Last updated 2022-05-01 17:18:52 UTC
 </div>
 </div>
 </body>
