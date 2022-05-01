@@ -1,6 +1,6 @@
 {
   "template": "https://github.com/JonasPammer/cookiecutter-ansible-role",
-  "commit": "a3b2a7966e47ad732d033871b25bb0d9cf79ad7f",
+  "commit": "610dd7d3928b051585e06894aff2f9bdd8ec1958",
   "context": {
     "cookiecutter": {
       "full_name": "Jonas Pammer",
@@ -12,6 +12,7 @@
       "allow_duplicates": "no",
       "ansible_user_needs_to_become": "True",
       "role_name": "bootstrap",
+      "project_slug": "ansible-role-bootstrap",
       "project_short_purpose": "preparing a linux system to be managed by ansible",
       "_template": "https://github.com/JonasPammer/cookiecutter-ansible-role"
     }

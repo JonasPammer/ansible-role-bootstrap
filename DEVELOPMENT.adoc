@@ -27,7 +27,7 @@ image::https://raw.githubusercontent.com/cruft/cruft/master/art/example_update.g
 ____
 
 
-[[development--versioning]]
+[[versioning]]
 === 📦 Versioning
 
 Versions are defined using https://git-scm.com/book/en/v2/Git-Basics-Tagging[Tags],
@@ -86,7 +86,7 @@ The System Requirements for local testing are as follows:
 * Python3 with <<development--dependencies>> installed
 * Docker
 
-To run the tests, simply issue `tox` on the command line.
+To run the tests, simply run `tox` on the command line.
 You can pass an optional environment variable to define the distribution of the
 Docker container that will be spun up by molecule:
 
@@ -109,6 +109,7 @@ https://github.com/JonasPammer/cookiecutter-ansible-role/blob/master/ROLE_DEVELO
 General Ansible Role Development (Best) Practices].
 
 
+[[development-container-extra]]
 === 🧃 TIP: Containerized Ideal Development Environment
 
 This Project offers a definition for a "1-Click Containerized Development Environment".
