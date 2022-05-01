@@ -67,11 +67,8 @@ jobs:
         distro:
           - centos7
           - centos8
-          - debian9
           - debian10
           - debian11
-          - fedora33
-          - fedora34
           - fedora35
           - rockylinux8
           - ubuntu1604
