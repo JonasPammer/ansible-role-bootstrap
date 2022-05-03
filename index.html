@@ -694,16 +694,20 @@ to install the minimum required set of packages (python and sudo) to allow Ansib
 <li><a href="#example_playbooks">📚 Example Playbook Usages</a></li>
 <li><a href="#development">📝 Development</a>
 <ul class="sectlevel2">
-<li><a href="#development-dependencies">Development Dependencies</a></li>
+<li><a href="#development-dependencies">📌 Development Dependencies</a></li>
 <li><a href="#cookiecutter">🍪 CookieCutter</a></li>
 <li><a href="#versioning">📦 Versioning</a>
 <ul class="sectlevel3">
-<li><a href="#_changelog">Changelog</a></li>
+<li><a href="#_changelog">🕗 Changelog</a></li>
 </ul>
 </li>
-<li><a href="#pre-commit">General Linting and Styling Conventions</a></li>
-<li><a href="#testing">Testing</a></li>
-<li><a href="#development-guidelines">💁 Ansible Role Development Guidelines</a></li>
+<li><a href="#pre-commit">ℹ️ General Linting and Styling Conventions</a></li>
+<li><a href="#development-guidelines">ℹ️ Ansible Role Development Guidelines</a></li>
+<li><a href="#testing">🧪 Testing</a>
+<ul class="sectlevel3">
+<li><a href="#_debugging_a_molecule_container">🐛 Debugging a Molecule Container</a></li>
+</ul>
+</li>
 <li><a href="#development-container-extra">🧃 TIP: Containerized Ideal Development Environment</a></li>
 </ul>
 </li>
@@ -936,7 +940,7 @@ ansible&#8217;s setup module</a> itself (equivalent effect that <code>gather_fac
 <h2 id="development">📝 Development</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="development-dependencies">Development Dependencies</h3>
+<h3 id="development-dependencies">📌 Development Dependencies</h3>
 <div class="paragraph">
 <p>Development Dependencies are defined in a
 <a href="https://pip.pypa.io/en/stable/user_guide/#requirements-files">pip requirements file</a>
@@ -984,7 +988,7 @@ a GitHub CI workflow</a> takes care of importing the role to my Ansible Galaxy A
 <span class="image"><img src="https://github.com/JonasPammer/ansible-role-bootstrap/actions/workflows/release-to-galaxy.yml/badge.svg" alt="Release CI"></span></p>
 </div>
 <div class="sect3">
-<h4 id="_changelog">Changelog</h4>
+<h4 id="_changelog">🕗 Changelog</h4>
 <div class="paragraph">
 <p>When a new tag is pushed, an appropriate GitHub Release will be created
 by the Repository Maintainer to provide a proper human change log with a title and description.</p>
@@ -992,7 +996,7 @@ by the Repository Maintainer to provide a proper human change log with a title a
 </div>
 </div>
 <div class="sect2">
-<h3 id="pre-commit">General Linting and Styling Conventions</h3>
+<h3 id="pre-commit">ℹ️ General Linting and Styling Conventions</h3>
 <div class="paragraph">
 <p>General Linting and Styling Conventions are
 <a href="https://stackoverflow.blog/2020/07/20/linters-arent-in-your-way-theyre-on-your-side/"><strong>automatically</strong> held up to Standards</a>
@@ -1014,7 +1018,7 @@ at least by hooks that automatically alter files.</p>
 Not to confuse:
 Although some pre-commit hooks may be able to warn you about script-analyzed flaws in syntax or even code to some extend (for which reason pre-commit&#8217;s hooks are <strong>part of</strong> the test suite),
 pre-commit itself does not run any real Test Suites.
-For Information on Testing, see <a href="#testing">Testing</a>.
+For Information on Testing, see <a href="#testing">🧪 Testing</a>.
 </td>
 </tr>
 </table>
@@ -1043,7 +1047,19 @@ aborting the commit themselves if a hook alarm&#8217;ed.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="testing">Testing</h3>
+<h3 id="development-guidelines">ℹ️ Ansible Role Development Guidelines</h3>
+<div class="paragraph">
+<p>Please take a look at my <a href="https://github.com/JonasPammer/cookiecutter-ansible-role/blob/master/ROLE_DEVELOPMENT_GUIDELINES.adoc">
+Ansible Role Development Guidelines</a>.</p>
+</div>
+<div class="paragraph">
+<p>If interested, I&#8217;ve also written down some
+<a href="https://github.com/JonasPammer/cookiecutter-ansible-role/blob/master/ROLE_DEVELOPMENT_TIPS.adoc">
+General Ansible Role Development (Best) Practices</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="testing">🧪 Testing</h3>
 <div class="paragraph">
 <p>Automatic Tests are run on each Contribution using GitHub Workflows.</p>
 </div>
@@ -1059,7 +1075,7 @@ as detailed in <a href="https://github.com/JonasPammer/ansible-roles">JonasPamme
 <div class="ulist">
 <ul>
 <li>
-<p>Python3 with <a href="development&.html#8212;&#8203;dependencies">development&.html</a> installed</p>
+<p>Python3 with <a href="#development-dependencies">📌 Development Dependencies</a> installed</p>
 </li>
 <li>
 <p>Docker</p>
@@ -1080,17 +1096,63 @@ Docker container that will be spun up by molecule:</p>
 <p>For a list of possible values fed to <code>MOLECULE_DISTRO</code>,
 take a look at the matrix defined in <a href=".github/workflows/ci.yml" class="bare">.github/workflows/ci.yml</a>.</p>
 </div>
+<div class="sect3">
+<h4 id="_debugging_a_molecule_container">🐛 Debugging a Molecule Container</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Run your molecule tests with the option <code>MOLECULE_DESTROY=never</code>, e.g.:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ <strong>MOLECULE_DESTROY=never MOLECULE_DISTRO=<mark>ubuntu1604</mark> tox -e py3-ansible-<mark>2.9</mark></strong>
+...
+  TASK [ansible-role-pip : (redacted).] ************************
+  failed: [instance-py3-ansible-2.9] => changed=false
+...
+ ___________________________________ summary ____________________________________
+  pre-commit: commands succeeded
+ERROR:   py3-ansible-2.9: commands failed</pre>
 </div>
-<div class="sect2">
-<h3 id="development-guidelines">💁 Ansible Role Development Guidelines</h3>
-<div class="paragraph">
-<p>Please take a look at my <a href="https://github.com/JonasPammer/cookiecutter-ansible-role/blob/master/ROLE_DEVELOPMENT_GUIDELINES.adoc">
-Ansible Role Development Guidelines</a>.</p>
 </div>
-<div class="paragraph">
-<p>If interested, I&#8217;ve also written down some
-<a href="https://github.com/JonasPammer/cookiecutter-ansible-role/blob/master/ROLE_DEVELOPMENT_TIPS.adoc">
-General Ansible Role Development (Best) Practices</a>.</p>
+</li>
+<li>
+<p>Find out the name of the molecule-provisioned docker container:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ <strong>docker ps</strong>
+<mark>30e9b8d59cdf</mark>   geerlingguy/docker-debian10-ansible:latest   "/lib/systemd/systemd"   8 minutes ago   Up 8 minutes                                                                                                    instance-py3-ansible-2.9</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get into a bash Shell of the container, and do your debugging:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ <strong>docker exec -it <mark>30e9b8d59cdf</mark> /bin/bash</strong>
+
+root@instance-py3-ansible-2:/#
+root@instance-py3-ansible-2:/# python3 --version
+Python 3.8.10
+root@instance-py3-ansible-2:/# ...</pre>
+</div>
+</div>
+</li>
+<li>
+<p>After you finished your debugging, exit it and destroy the container:</p>
+<div class="listingblock">
+<div class="content">
+<pre>root@instance-py3-ansible-2:/# <strong>exit</strong>
+
+$ <strong>docker stop <mark>30e9b8d59cdf</mark></strong>
+
+$ <strong>docker container rm <mark>30e9b8d59cdf</mark></strong>
+<em>or</em>
+$ <strong>docker container prune</strong></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -1108,9 +1170,9 @@ allowing for molecule execution.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Ensure you fullfill the <a href="https://code.visualstudio.com/docs/remote/containers#<em>system-requirements">
+<p>Ensure you fullfill the <a href="https://code.visualstudio.com/docs/remote/containers#_system-requirements">
 the System requirements of Visual Studio Code Development Containers</a>,
-optionally following the _Installation</em>-Section of the linked page section.<br>
+optionally following the <em>Installation</em>-Section of the linked page section.<br>
 This includes: Installing Docker, Installing Visual Studio Code itself, and Installing the necessary Extension.</p>
 </li>
 <li>
@@ -1350,7 +1412,7 @@ SOFTWARE.</pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-05-02 12:00:07 UTC
+Last updated 2022-05-03 10:06:28 UTC
 </div>
 </div>
 </body>
