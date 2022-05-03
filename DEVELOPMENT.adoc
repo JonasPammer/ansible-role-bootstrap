@@ -1,5 +1,5 @@
 [[development-dependencies]]
-=== Development Dependencies
+=== 📌 Development Dependencies
 Development Dependencies are defined in a
 https://pip.pypa.io/en/stable/user_guide/#requirements-files[pip requirements file]
 named `requirements-dev.txt`.
@@ -37,13 +37,13 @@ When a new tag is pushed, https://github.com/JonasPammer/ansible-role-bootstrap/
 a GitHub CI workflow] takes care of importing the role to my Ansible Galaxy Account.
 image:https://github.com/JonasPammer/ansible-role-bootstrap/actions/workflows/release-to-galaxy.yml/badge.svg[Release CI]
 
-==== Changelog
+==== 🕗 Changelog
 When a new tag is pushed, an appropriate GitHub Release will be created
 by the Repository Maintainer to provide a proper human change log with a title and description.
 
 
 [[pre-commit]]
-=== General Linting and Styling Conventions
+=== ℹ️ General Linting and Styling Conventions
 General Linting and Styling Conventions are
 https://stackoverflow.blog/2020/07/20/linters-arent-in-your-way-theyre-on-your-side/[*automatically* held up to Standards]
 by various https://pre-commit.com/[`pre-commit`] hooks, at least to some extend.
@@ -72,8 +72,19 @@ You can also, for example, execute pre-commit's hooks at any time by running `pr
 ====
 
 
+[[development-guidelines]]
+=== ℹ️ Ansible Role Development Guidelines
+
+Please take a look at my https://github.com/JonasPammer/cookiecutter-ansible-role/blob/master/ROLE_DEVELOPMENT_GUIDELINES.adoc[
+Ansible Role Development Guidelines].
+
+If interested, I've also written down some
+https://github.com/JonasPammer/cookiecutter-ansible-role/blob/master/ROLE_DEVELOPMENT_TIPS.adoc[
+General Ansible Role Development (Best) Practices].
+
+
 [[testing]]
-=== Testing
+=== 🧪 Testing
 Automatic Tests are run on each Contribution using GitHub Workflows.
 
 The Tests primarily resolve around running
@@ -83,7 +94,7 @@ as detailed in https://github.com/JonasPammer/ansible-roles[JonasPammer/ansible-
 
 The System Requirements for local testing are as follows:
 
-* Python3 with <<development--dependencies>> installed
+* Python3 with <<development-dependencies>> installed
 * Docker
 
 To run the tests, simply run `tox` on the command line.
@@ -97,16 +108,54 @@ $ MOLECULE_DISTRO=centos7 tox
 For a list of possible values fed to `MOLECULE_DISTRO`,
 take a look at the matrix defined in link:.github/workflows/ci.yml[].
 
+==== 🐛 Debugging a Molecule Container
 
-[[development-guidelines]]
-=== 💁 Ansible Role Development Guidelines
+1. Run your molecule tests with the option `MOLECULE_DESTROY=never`, e.g.:
++
+[subs="quotes,macros"]
+----
+$ *MOLECULE_DESTROY=never MOLECULE_DISTRO=#ubuntu1604# tox -e py3-ansible-#2.9#*
+...
+  TASK [ansible-role-pip : (redacted).] pass:[************************]
+  failed: [instance-py3-ansible-2.9] => changed=false
+...
+ pass:[___________________________________ summary ____________________________________]
+  pre-commit: commands succeeded
+ERROR:   py3-ansible-2.9: commands failed
+----
 
-Please take a look at my https://github.com/JonasPammer/cookiecutter-ansible-role/blob/master/ROLE_DEVELOPMENT_GUIDELINES.adoc[
-Ansible Role Development Guidelines].
+2. Find out the name of the molecule-provisioned docker container:
++
+[subs="quotes"]
+----
+$ *docker ps*
+#30e9b8d59cdf#   geerlingguy/docker-debian10-ansible:latest   "/lib/systemd/systemd"   8 minutes ago   Up 8 minutes                                                                                                    instance-py3-ansible-2.9
+----
 
-If interested, I've also written down some
-https://github.com/JonasPammer/cookiecutter-ansible-role/blob/master/ROLE_DEVELOPMENT_TIPS.adoc[
-General Ansible Role Development (Best) Practices].
+3. Get into a bash Shell of the container, and do your debugging:
++
+[subs="quotes"]
+----
+$ *docker exec -it #30e9b8d59cdf# /bin/bash*
+
+root@instance-py3-ansible-2:/#
+root@instance-py3-ansible-2:/# python3 --version
+Python 3.8.10
+root@instance-py3-ansible-2:/# ...
+----
+
+4. After you finished your debugging, exit it and destroy the container:
++
+[subs="quotes"]
+----
+root@instance-py3-ansible-2:/# *exit*
+
+$ *docker stop #30e9b8d59cdf#*
+
+$ *docker container rm #30e9b8d59cdf#*
+_or_
+$ *docker container prune*
+----
 
 
 [[development-container-extra]]
@@ -121,7 +170,7 @@ To use it:
 
 1. Ensure you fullfill the link:https://code.visualstudio.com/docs/remote/containers#_system-requirements[
    the System requirements of Visual Studio Code Development Containers],
-   optionally following the _Installation_-Section of the linked page section. +
+   optionally following the __Installation__-Section of the linked page section. +
    This includes: Installing Docker, Installing Visual Studio Code itself, and Installing the necessary Extension.
 2. Clone the project to your machine
 3. Open the folder of the repo in Visual Studio Code (_File - Open Folder…_).
