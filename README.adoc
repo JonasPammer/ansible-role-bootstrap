@@ -133,7 +133,7 @@ image:https://raw.githubusercontent.com/JonasPammer/ansible-roles/master/graphs/
 requirements.yml dependency graph of jonaspammer.bootstrap]
 ====
 
-[NOTE]
+[IMPORTANT]
 ====
 You must disable the `gather_facts`-property of the play this role is used in.
 If this role finished successfully it'll call https://docs.ansible.com/ansible/latest/collections/ansible/builtin/setup_module.html[
