@@ -90,7 +90,7 @@ repos:
   # pip-compile`s 'requirements.in' files as its recommended to have the 'requirements.txt' version
   # checked into source control too.
   - repo: https://github.com/jazzband/pip-tools
-    rev: 6.6.0
+    rev: 6.6.1
     hooks:
       - id: pip-compile
 
