@@ -28,6 +28,7 @@
   rescue:
     - name: "NOTE - wait_for_connection failed for hosts listed in this Task"
       debug: var=bootstrap_timeout
+      changed_when: true
   always:
     - name: include tasks to gather bootstrap facts (raw)
       ansible.builtin.include_tasks:
