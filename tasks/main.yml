@@ -26,9 +26,10 @@
       register: bootstrap_connect
       changed_when: false
   rescue:
-    - name: "NOTE - wait_for_connection failed for hosts listed in this Task. Trying to bootstrap them using ansible's raw module.."
+    - name: "NOTE - wait_for_connection failed for hosts listed in this Task"
       debug: var=bootstrap_timeout
-
+      changed_when: true
+  always:
     - name: include tasks to gather bootstrap facts (raw)
       ansible.builtin.include_tasks:
         file: gather_facts.yml
@@ -43,7 +44,7 @@
           bootstrap_os_family in [ "Debian", "RedHat", "Rocky", "Suse" ])
       vars:
         ansible_user: "{{ bootstrap_user }}"
-  always:
+
     - name: set 'bootstrap_ansible_user' to value of 'ansible_user' (when wait_for_connection succeeded)
       ansible.builtin.set_fact:
         bootstrap_ansible_user: "{{ ansible_user }}"
@@ -57,58 +58,16 @@
       when:
         - bootstrap_connect is failed
 
-- name: ensure system is prepared by issuing ansible modules.
+- name: ensure system is prepared by issuing ansible modules as bootstrap_ansible_user.
   block:
-    - name: gather ansible facts
+    - name: Gather ansible facts.
       ansible.builtin.setup:
 
-    - name: Update cache and install bootstrap packages (apt).
-      ansible.builtin.apt:
-        name: "{{ bootstrap_facts_packages.split() }}"
+    - name: Install bootstrap packages (package).
+      ansible.builtin.package:
+        name: "{{ item }}"
+        state: present
         update_cache: true
-      changed_when: false
-      when: ansible_pkg_mgr == "apt"
-
-    - name: Update cache and install bootstrap packages (yum).
-      ansible.builtin.yum:
-        name: "{{ bootstrap_facts_packages.split() }}"
-        update_cache: true
-      changed_when: false
-      when: ansible_pkg_mgr == "yum"
-
-    - name: Update cache and install bootstrap packages (apk).
-      community.general.apk:
-        name: "{{ bootstrap_facts_packages.split() }}"
-        update_cache: true
-      changed_when: false
-      when: ansible_pkg_mgr == "apk"
-
-    - name: Update cache and install bootstrap packages (dnf).
-      ansible.builtin.dnf:
-        name: "{{ bootstrap_facts_packages.split() }}"
-        update_cache: true
-      changed_when: false
-      when: ansible_pkg_mgr == "dnf"
-
-    - name: Update cache and install bootstrap packages (zypper).
-      community.general.zypper:
-        name: "{{ bootstrap_facts_packages.split() }}"
-        update_cache: true
-      changed_when: false
-      when: ansible_pkg_mgr == "zypper"
-
-    - name: Update cache and install bootstrap packages (pacman).
-      community.general.pacman:
-        name: "{{ bootstrap_facts_packages.split() }}"
-        update_cache: true
-      changed_when: false
-      when: ansible_pkg_mgr == "pacman"
-
-    - name: Update cache and install bootstrap packages (portage).
-      community.general.portage:
-        package: "{{ bootstrap_facts_packages.split() }}"
-        sync: true
-      changed_when: false
-      when: ansible_pkg_mgr == "portage"
+      loop: "{{ bootstrap_facts_packages.split() }}"
   become: true
   become_user: "{{ bootstrap_ansible_user | default(bootstrap_user) }}"
