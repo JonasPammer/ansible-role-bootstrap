@@ -10,6 +10,7 @@
   ansible.builtin.wait_for:
     port: "{{ ansible_port | default('22') }}"
     host: "{{ (ansible_ssh_host | default(ansible_host) | default(inventory_hostname)) }}"
+    timeout: "{{ bootstrap_timeout }}"
   connection: local
   become: false
   when:
