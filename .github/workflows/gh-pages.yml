@@ -38,7 +38,7 @@ jobs:
       - name: Commit generated README.
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: "docs: reduce README.orig.adoc \n ${{ github.event.head_commit.message }}"
+          commit_message: "${{ github.event.head_commit.message }}  \n as per ${{ github.sha }}"
           file_pattern: README.adoc
           disable_globbing: true
 
