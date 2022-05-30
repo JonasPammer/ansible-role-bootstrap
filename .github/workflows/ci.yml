@@ -42,7 +42,7 @@ jobs:
       - name: set up python 3
         uses: actions/setup-python@v3
         with:
-          python-version: "3.7"
+          python-version: "3.8"
 
       - name: Install yamllint package.
         run: pip3 install "yamllint==1.*" "ansible==5.*" "ansible-lint==5.*"
@@ -86,7 +86,7 @@ jobs:
       - name: set up python 3
         uses: actions/setup-python@v3
         with:
-          python-version: "3.7"
+          python-version: "3.8"
 
       - name: Install test dependencies.
         run: pip3 install tox~=3.24.5
