@@ -86,6 +86,12 @@ jobs:
         with:
           python-version: "3.8"
 
+      - name: setup/activate pre-commit cache
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pre-commit
+          key: ${{ hashFiles('**/.pre-commit-config.yaml') }}
+
       - name: Install test dependencies.
         run: pip3 install tox~=3.24.5
 
