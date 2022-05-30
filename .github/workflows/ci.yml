@@ -21,6 +21,7 @@ permissions: read-all
       - "molecule/**"
       - "tasks/*"
       - "vars/*"
+      - ".ansible-lint"
       - ".gitattributes"
       - ".yamllint"
       - "pyproject.toml"
