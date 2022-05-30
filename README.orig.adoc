@@ -1,7 +1,7 @@
 = ansible-role-bootstrap
 Jonas Pammer <opensource@jonaspammer.at>;
 :toc:
-:toclevels: 3
+:toclevels: 2
 :toc-placement!:
 :source-highlighter: rouge
 
