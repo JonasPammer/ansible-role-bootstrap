@@ -45,7 +45,7 @@ jobs:
           python-version: "3.7"
 
       - name: Install yamllint package.
-        run: pip3 install yamllint
+        run: pip3 install "yamllint==1.*" "ansible-lint==5.*"
 
       - name: Lint YAML (GitHub Annotations)
         run: |
