@@ -45,7 +45,7 @@ jobs:
           python-version: "3.8"
 
       - name: Install yamllint package.
-        run: pip3 install "yamllint==1.*" "ansible==5.*" "ansible-lint==5.*"
+        run: pip3 install "yamllint==1.*"
 
       - name: Lint YAML (GitHub Annotations)
         run: |
@@ -60,9 +60,6 @@ jobs:
         if: always()
         run: yamllint . -f standard
 
-      - name: Lint Ansible (GitHub Annotations)
-        if: always()
-        run: ansible-lint
   molecule:
     name: Molecule
     runs-on: ubuntu-latest

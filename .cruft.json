@@ -1,6 +1,6 @@
 {
   "template": "https://github.com/JonasPammer/cookiecutter-ansible-role",
-  "commit": "cb693423c50e28251f5a56d1658cf5791b908355",
+  "commit": "2d4292d42002ccbd5a3aaa870d3f5625b7875511",
   "context": {
     "cookiecutter": {
       "full_name": "Jonas Pammer",
