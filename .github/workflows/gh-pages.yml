@@ -15,7 +15,7 @@ permissions:
       - "CONTRIBUTING.adoc"
       - "DEVELOPMENT.adoc"
       - "LICENSE"
-      - "README.adoc"
+      - "README.orig.adoc"
 
 jobs:
   gh-pages:
