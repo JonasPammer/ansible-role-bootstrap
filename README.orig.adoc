@@ -17,21 +17,6 @@ endif::[]
 // Very Relevant Status Badges
 https://github.com/JonasPammer/ansible-role-bootstrap/actions/workflows/ci.yml[image:https://github.com/JonasPammer/ansible-role-bootstrap/actions/workflows/ci.yml/badge.svg[Testing CI]]
 
-// Badges about Conventions in this Project
-https://conventionalcommits.org[image:https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg[Conventional Commits]]
-https://results.pre-commit.ci/latest/github/JonasPammer/ansible-role-bootstrap/master[image:https://results.pre-commit.ci/badge/github/JonasPammer/ansible-role-bootstrap/master.svg[pre-commit.ci
-status]]
-// image:https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white[pre-commit, link=https://github.com/pre-commit/pre-commit]
-https://open.vscode.dev/jonaspammer/ansible-role-bootstrap[image:https://img.shields.io/static/v1?logo=visualstudiocode&label=&message=Open%20in%20Visual%20Studio%20Code&labelColor=2c2c32&color=007acc&logoColor=007acc[Open in Visual Studio Code]]
-image:https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square[PRs Welcome]
-
-ifdef::env-github[]
-[TIP]
-__A single-page version of this README can be found at https://jonaspammer.github.io/ansible-role-bootstrap[
-jonaspammer.github.io/ansible-role-bootstrap].__
-endif::[]
-
-
 An Ansible role for preparing a linux system to be managed by ansible.
 
 This role uses the raw module (in combination with its own os-determination-system)
@@ -171,10 +156,19 @@ No tasks must come before this role.
 
 [[development]]
 == 📝 Development
+// Badges about Conventions in this Project
+https://conventionalcommits.org[image:https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg[Conventional Commits]]
+https://results.pre-commit.ci/latest/github/JonasPammer/ansible-role-bootstrap/master[image:https://results.pre-commit.ci/badge/github/JonasPammer/ansible-role-bootstrap/master.svg[pre-commit.ci
+status]]
+// image:https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white[pre-commit, link=https://github.com/pre-commit/pre-commit]
+
 include::DEVELOPMENT.adoc[]
 
 
 == 💪 Contributing
+https://open.vscode.dev/jonaspammer/ansible-role-bootstrap[image:https://img.shields.io/static/v1?logo=visualstudiocode&label=&message=Open%20in%20Visual%20Studio%20Code&labelColor=2c2c32&color=007acc&logoColor=007acc[Open in Visual Studio Code]]
+image:https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square[PRs Welcome]
+
 include::CONTRIBUTING.adoc[]
 
 
