@@ -1,4 +1,3 @@
 ---
 # list all collections used here (even if included in `ansible`)
-collections:
-  - name: community.general
+collections: []
