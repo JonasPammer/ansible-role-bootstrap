@@ -36,15 +36,15 @@ jobs:
     if: ${{ github.event.inputs.lint != 'false' }}
     runs-on: ubuntu-latest
     steps:
-      - name: Check out the codebase.
+      - name: check out the codebase
         uses: actions/checkout@v3
 
-      - name: Set up Python 3.
+      - name: set up python 3
         uses: actions/setup-python@v3
         with:
-          python-version: "3.x"
+          python-version: "3.7"
 
-      - name: Install test dependencies.
+      - name: Install yamllint package.
         run: pip3 install yamllint
 
       - name: Lint YAML (GitHub Annotations)
@@ -59,6 +59,10 @@ jobs:
       - name: Lint YAML (Standard Output)
         if: always()
         run: yamllint . -f standard
+
+      - name: Lint Ansible (GitHub Annotations)
+        if: always()
+        run: ansible-lint
   molecule:
     name: Molecule
     runs-on: ubuntu-latest
@@ -76,13 +80,13 @@ jobs:
           - ubuntu2004
 
     steps:
-      - name: Check out the codebase.
+      - name: check out the codebase
         uses: actions/checkout@v3
 
-      - name: Set up Python 3.
+      - name: set up python 3
         uses: actions/setup-python@v3
         with:
-          python-version: "3.x"
+          python-version: "3.7"
 
       - name: Install test dependencies.
         run: pip3 install tox~=3.24.5
