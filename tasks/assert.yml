@@ -1,5 +1,5 @@
 ---
-# tasks file for testing that variables of ansible-role {{ cookiecutter.galaxy_name }}.{{ cookiecutter.role_name }} are set correctly
+# tasks file for testing that variables of ansible-role jonaspammer.bootstrap are set correctly
 
 - name: test if 'bootstrap_user' is set correctly
   ansible.builtin.assert:
