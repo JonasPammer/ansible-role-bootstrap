@@ -68,6 +68,6 @@
         name: "{{ item }}"
         state: present
         update_cache: true
-      loop: "{{ bootstrap_facts_packages.split() }}"
+      loop: "{{ bootstrap__facts_packages.split() }}"
   become: true
   become_user: "{{ bootstrap_ansible_user | default(bootstrap_user) }}"
