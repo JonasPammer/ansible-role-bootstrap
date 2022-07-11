@@ -123,13 +123,17 @@ This role is part of https://github.com/JonasPammer/ansible-roles[
 many compatible purpose-specific roles of mine].
 
 The machine needs to be prepared.
-In CI, this is done in `molecule/default/prepare.yml`
+In CI, this is done in `molecule/resources/prepare.yml`
 which sources its soft dependencies from `requirements.yml`:
 
-.link:molecule/default/prepare.yml[]
+.link:molecule/resources/prepare.yml[]
 [source,yaml]
 ----
-Unresolved directive in README.orig.adoc - include::molecule/default/prepare.yml[]
+---
+- name: prepare
+  hosts: all
+  become: true
+  gather_facts: false
 ----
 
 The following diagram is a compilation of the "soft dependencies" of this role
@@ -233,13 +237,12 @@ Automatic Tests are run on each Contribution using GitHub Workflows.
 
 The Tests primarily resolve around running
 https://molecule.readthedocs.io/en/latest/[Molecule]
-on a varying set of virtualized distributions and using various ansible versions,
+on a varying set of linux distributions and using various ansible versions,
 as detailed in https://github.com/JonasPammer/ansible-roles[JonasPammer/ansible-roles].
 
-The System Requirements for local testing are as follows:
-
-* Python3 with <<development-dependencies>> installed
-* Docker
+The molecule test also includes a step which lints all ansible playbooks using
+https://github.com/ansible/ansible-lint#readme[`ansible-lint`]
+to check for best practices and behaviour that could potentially be improved.
 
 To run the tests, simply run `tox` on the command line.
 You can pass an optional environment variable to define the distribution of the
@@ -258,14 +261,14 @@ take a look at the matrix defined in link:.github/workflows/ci.yml[].
 +
 [subs="quotes,macros"]
 ----
-$ *MOLECULE_DESTROY=never MOLECULE_DISTRO=#ubuntu1604# tox -e py3-ansible-#2.9#*
+$ *MOLECULE_DESTROY=never MOLECULE_DISTRO=#ubuntu1604# tox -e py3-ansible-#5#*
 ...
   TASK [ansible-role-pip : (redacted).] pass:[************************]
-  failed: [instance-py3-ansible-2.9] => changed=false
+  failed: [instance-py3-ansible-5] => changed=false
 ...
  pass:[___________________________________ summary ____________________________________]
   pre-commit: commands succeeded
-ERROR:   py3-ansible-2.9: commands failed
+ERROR:   py3-ansible-5: commands failed
 ----
 
 2. Find out the name of the molecule-provisioned docker container:
@@ -273,7 +276,7 @@ ERROR:   py3-ansible-2.9: commands failed
 [subs="quotes"]
 ----
 $ *docker ps*
-#30e9b8d59cdf#   geerlingguy/docker-debian10-ansible:latest   "/lib/systemd/systemd"   8 minutes ago   Up 8 minutes                                                                                                    instance-py3-ansible-2.9
+#30e9b8d59cdf#   geerlingguy/docker-debian10-ansible:latest   "/lib/systemd/systemd"   8 minutes ago   Up 8 minutes                                                                                                    instance-py3-ansible-5
 ----
 
 3. Get into a bash Shell of the container, and do your debugging:
@@ -287,6 +290,28 @@ root@instance-py3-ansible-2:/# python3 --version
 Python 3.8.10
 root@instance-py3-ansible-2:/# ...
 ----
++
+[TIP]
+====
+If the failure you try to debug is part of `verify.yml` step and not the actual `converge.yml`,
+you may want to know that the output of ansible's modules (`vars`), hosts (`hostvars`) and environment variables have been printed and stored into files
+on both the provisioner and inside the docker machine
+by `molecule/resources/debug.yml` under:
+
+* `/var/tmp/vars.yml`
+* `/var/tmp/hostvars.yml`
+* `/var/tmp/environment.yml`
+
+`grep`, `cat` or transfer these as you wish!
+
+[TIP]
+=====
+You may also want to know that these files are attached
+to the *GitHub CI Artifacts* of a given Workflow run.
+This allows one to check the difference between runs
+and thus help in debugging what caused the bit-rot or failure in general.
+=====
+====
 
 4. After you finished your debugging, exit it and destroy the container:
 +
@@ -419,7 +444,7 @@ in which case you would be creating multiple PRs.
 === 💬 Conventional Commits
 
 A casual contributor does not have to worry about following
-https://gist.github.com/JonasPammer/4ea577854ae10afe644bff366d7b2a8a[__the spec__]
+https://github.com/JonasPammer/JonasPammer/blob/master/demystifying/conventional_commits.adoc[__the spec__]
 https://www.conventionalcommits.org/en/v1.0.0/[__by definition__],
 as pull requests are being squash merged into one commit in the project.
 Only core contributors, i.e. those with rights to push to this project's branches, must follow it
