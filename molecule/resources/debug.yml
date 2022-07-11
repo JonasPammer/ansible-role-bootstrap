@@ -1,12 +1,18 @@
 ---
-- name: DEBUG module variables ("vars")
-  ansible.builtin.debug: msg="{{ vars | to_nice_yaml }}"
-  tags: vars
+- name: DEBUG module variables ("vars") into /var/tmp/vars.yml on controller
+  ansible.builtin.copy:
+    content: "{{ vars | to_nice_yaml }}"
+    dest: /var/tmp/vars.yml
+  delegate_to: localhost
 
-- name: DEBUG environment variables ("environment")
-  ansible.builtin.debug: msg="{{ environment | to_nice_yaml }}"
-  tags: environment
+- name: DEBUG environment variables ("environment") into /var/tmp/environment.yml on controller
+  ansible.builtin.copy:
+    content: "{{ environment | to_nice_yaml }}"
+    dest: /var/tmp/environment.yml
+  delegate_to: localhost
 
-- name: DEBUG host variables ("hostvars")
-  ansible.builtin.debug: msg="{{ hostvars | to_nice_yaml }}"
-  tags: hostvars
+- name: DEBUG host variables ("hostvars") create /var/tmp/hostvars.yml on controller
+  ansible.builtin.copy:
+    content: "{{ hostvars | to_nice_yaml }}"
+    dest: /var/tmp/hostvars.yml
+  delegate_to: localhost
