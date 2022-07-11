@@ -840,13 +840,17 @@ many compatible purpose-specific roles of mine</a>.</p>
 </div>
 <div class="paragraph">
 <p>The machine needs to be prepared.
-In CI, this is done in <code>molecule/default/prepare.yml</code>
+In CI, this is done in <code>molecule/resources/prepare.yml</code>
 which sources its soft dependencies from <code>requirements.yml</code>:</p>
 </div>
 <div class="listingblock">
-<div class="title"><a href="molecule/default/prepare.yml" class="bare">molecule/default/prepare.yml</a></div>
+<div class="title"><a href="molecule/resources/prepare.yml" class="bare">molecule/resources/prepare.yml</a></div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="yaml"><span class="s">Unresolved directive in README.orig.adoc - include::molecule/default/prepare.yml[]</span></code></pre>
+<pre class="rouge highlight"><code data-lang="yaml"><span class="nn">---</span>
+<span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">prepare</span>
+  <span class="na">hosts</span><span class="pi">:</span> <span class="s">all</span>
+  <span class="na">become</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">gather_facts</span><span class="pi">:</span> <span class="no">false</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -984,21 +988,13 @@ a GitHub CI workflow</a> takes care of importing the role to my Ansible Galaxy A
 <div class="paragraph">
 <p>The Tests primarily resolve around running
 <a href="https://molecule.readthedocs.io/en/latest/">Molecule</a>
-on a varying set of virtualized distributions and using various ansible versions,
+on a varying set of linux distributions and using various ansible versions,
 as detailed in <a href="https://github.com/JonasPammer/ansible-roles">JonasPammer/ansible-roles</a>.</p>
 </div>
 <div class="paragraph">
-<p>The System Requirements for local testing are as follows:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Python3 with <a href="#development-dependencies">📌 Development Dependencies</a> installed</p>
-</li>
-<li>
-<p>Docker</p>
-</li>
-</ul>
+<p>The molecule test also includes a step which lints all ansible playbooks using
+<a href="https://github.com/ansible/ansible-lint#readme"><code>ansible-lint</code></a>
+to check for best practices and behaviour that could potentially be improved.</p>
 </div>
 <div class="paragraph">
 <p>To run the tests, simply run <code>tox</code> on the command line.
@@ -1022,14 +1018,14 @@ take a look at the matrix defined in <a href=".github/workflows/ci.yml" class="b
 <p>Run your molecule tests with the option <code>MOLECULE_DESTROY=never</code>, e.g.:</p>
 <div class="listingblock">
 <div class="content">
-<pre>$ <strong>MOLECULE_DESTROY=never MOLECULE_DISTRO=<mark>ubuntu1604</mark> tox -e py3-ansible-<mark>2.9</mark></strong>
+<pre>$ <strong>MOLECULE_DESTROY=never MOLECULE_DISTRO=<mark>ubuntu1604</mark> tox -e py3-ansible-<mark>5</mark></strong>
 ...
   TASK [ansible-role-pip : (redacted).] ************************
-  failed: [instance-py3-ansible-2.9] => changed=false
+  failed: [instance-py3-ansible-5] => changed=false
 ...
  ___________________________________ summary ____________________________________
   pre-commit: commands succeeded
-ERROR:   py3-ansible-2.9: commands failed</pre>
+ERROR:   py3-ansible-5: commands failed</pre>
 </div>
 </div>
 </li>
@@ -1038,7 +1034,7 @@ ERROR:   py3-ansible-2.9: commands failed</pre>
 <div class="listingblock">
 <div class="content">
 <pre>$ <strong>docker ps</strong>
-<mark>30e9b8d59cdf</mark>   geerlingguy/docker-debian10-ansible:latest   "/lib/systemd/systemd"   8 minutes ago   Up 8 minutes                                                                                                    instance-py3-ansible-2.9</pre>
+<mark>30e9b8d59cdf</mark>   geerlingguy/docker-debian10-ansible:latest   "/lib/systemd/systemd"   8 minutes ago   Up 8 minutes                                                                                                    instance-py3-ansible-5</pre>
 </div>
 </div>
 </li>
@@ -1261,7 +1257,7 @@ in which case you would be creating multiple PRs.</p>
 <h3 id="_conventional_commits">💬 Conventional Commits</h3>
 <div class="paragraph">
 <p>A casual contributor does not have to worry about following
-<a href="https://gist.github.com/JonasPammer/4ea577854ae10afe644bff366d7b2a8a"><em>the spec</em></a>
+<a href="https://github.com/JonasPammer/JonasPammer/blob/master/demystifying/conventional_commits.adoc"><em>the spec</em></a>
 <a href="https://www.conventionalcommits.org/en/v1.0.0/"><em>by definition</em></a>,
 as pull requests are being squash merged into one commit in the project.
 Only core contributors, i.e. those with rights to push to this project&#8217;s branches, must follow it
@@ -1409,7 +1405,7 @@ SOFTWARE.</pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-05-30 14:39:02 UTC
+Last updated 2022-07-11 14:26:57 UTC
 </div>
 </div>
 </body>
