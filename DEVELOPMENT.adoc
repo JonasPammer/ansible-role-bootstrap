@@ -45,13 +45,12 @@ Automatic Tests are run on each Contribution using GitHub Workflows.
 
 The Tests primarily resolve around running
 https://molecule.readthedocs.io/en/latest/[Molecule]
-on a varying set of virtualized distributions and using various ansible versions,
+on a varying set of linux distributions and using various ansible versions,
 as detailed in https://github.com/JonasPammer/ansible-roles[JonasPammer/ansible-roles].
 
-The System Requirements for local testing are as follows:
-
-* Python3 with <<development-dependencies>> installed
-* Docker
+The molecule test also includes a step which lints all ansible playbooks using
+https://github.com/ansible/ansible-lint#readme[`ansible-lint`]
+to check for best practices and behaviour that could potentially be improved.
 
 To run the tests, simply run `tox` on the command line.
 You can pass an optional environment variable to define the distribution of the
@@ -70,14 +69,14 @@ take a look at the matrix defined in link:.github/workflows/ci.yml[].
 +
 [subs="quotes,macros"]
 ----
-$ *MOLECULE_DESTROY=never MOLECULE_DISTRO=#ubuntu1604# tox -e py3-ansible-#2.9#*
+$ *MOLECULE_DESTROY=never MOLECULE_DISTRO=#ubuntu1604# tox -e py3-ansible-#5#*
 ...
   TASK [ansible-role-pip : (redacted).] pass:[************************]
-  failed: [instance-py3-ansible-2.9] => changed=false
+  failed: [instance-py3-ansible-5] => changed=false
 ...
  pass:[___________________________________ summary ____________________________________]
   pre-commit: commands succeeded
-ERROR:   py3-ansible-2.9: commands failed
+ERROR:   py3-ansible-5: commands failed
 ----
 
 2. Find out the name of the molecule-provisioned docker container:
@@ -85,7 +84,7 @@ ERROR:   py3-ansible-2.9: commands failed
 [subs="quotes"]
 ----
 $ *docker ps*
-#30e9b8d59cdf#   geerlingguy/docker-debian10-ansible:latest   "/lib/systemd/systemd"   8 minutes ago   Up 8 minutes                                                                                                    instance-py3-ansible-2.9
+#30e9b8d59cdf#   geerlingguy/docker-debian10-ansible:latest   "/lib/systemd/systemd"   8 minutes ago   Up 8 minutes                                                                                                    instance-py3-ansible-5
 ----
 
 3. Get into a bash Shell of the container, and do your debugging:

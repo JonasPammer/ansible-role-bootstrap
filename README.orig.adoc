@@ -99,13 +99,13 @@ This role is part of https://github.com/JonasPammer/ansible-roles[
 many compatible purpose-specific roles of mine].
 
 The machine needs to be prepared.
-In CI, this is done in `molecule/default/prepare.yml`
+In CI, this is done in `molecule/resources/prepare.yml`
 which sources its soft dependencies from `requirements.yml`:
 
-.link:molecule/default/prepare.yml[]
+.link:molecule/resources/prepare.yml[]
 [source,yaml]
 ----
-include::molecule/default/prepare.yml[]
+include::molecule/resources/prepare.yml[]
 ----
 
 The following diagram is a compilation of the "soft dependencies" of this role
