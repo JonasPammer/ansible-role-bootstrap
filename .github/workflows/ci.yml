@@ -144,6 +144,15 @@ jobs:
           TOX_PARALLEL_NO_SPINNER: 1
         if: env.WORKFLOW_DISPATCH_IF == 'true'
 
+      - name: Upload output of /molecule/resources/debug.yml as CI Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: debug-${{ matrix.distro }}.yml
+          path: |
+            /var/tmp/vars.yml
+            /var/tmp/environment.yml
+            /var/tmp/hostvars.yml
+
       - name: setup tmate session if previous step failed and if this is a manual run
         if: failure() && env.WORKFLOW_DISPATCH_IF == 'true'
         uses: mxschmitt/action-tmate@v3
