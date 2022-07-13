@@ -25,6 +25,16 @@ permissions: read-all
           - ubuntu1604
           - ubuntu1804
           - ubuntu2004
+      ansible_version:
+        description: "Select Ansible Versions to run"
+        required: false
+        type: choice
+        default: "ansible-5,ansible-4"
+        options:
+          - ansible-5,ansible-4
+          - ansible-4,ansible-5
+          - ansible-4
+          - ansible-5
   pull_request:
   push:
     branches:
@@ -138,6 +148,7 @@ jobs:
       - name: Run Molecule tests (debug).
         run: tox
         env:
+          TOXENV: py3-${{ github.event.inputs.ansible_version }}
           TOX_SKIP_ENV: pre-commit
           MOLECULE_DESTROY: never
           MOLECULE_DISTRO: ${{ matrix.distro }}
