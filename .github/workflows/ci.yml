@@ -148,7 +148,7 @@ jobs:
       - name: Run Molecule tests (debug).
         run: tox
         env:
-          TOX_ENV: py3-${{ github.event.inputs.ansible }}
+          TOX_ENV: py3-${{ github.event.inputs.ansible_version }}
           TOX_SKIP_ENV: pre-commit
           MOLECULE_DESTROY: never
           MOLECULE_DISTRO: ${{ matrix.distro }}
