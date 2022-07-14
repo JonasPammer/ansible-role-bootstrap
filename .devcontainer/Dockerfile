@@ -54,9 +54,6 @@ RUN apt-get -qy update \
     && python3 -m pip install --no-cache-dir wheel \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# as per requirements-dev.txt
-RUN python3 -m pip install cruft pre-commit tox
-
 COPY postCreateCommand.sh /home/vscode/postCreateCommand.sh
 USER root
 RUN chmod u+x /home/vscode/postCreateCommand.sh
