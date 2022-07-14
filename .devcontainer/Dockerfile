@@ -57,6 +57,8 @@ RUN apt-get -qy update \
 # as per requirements-dev.txt
 RUN python3 -m pip install cruft pre-commit tox
 
-COPY shrc-addition.sh /tmp/shrc-addition.sh
-RUN cat /tmp/shrc-addition.sh >> /home/vscode/.bashrc && \
-    cat /tmp/shrc-addition.sh >> /home/vscode/.zshrc
+COPY postCreateCommand.sh /home/vscode/postCreateCommand.sh
+USER root
+RUN chmod u+x /home/vscode/postCreateCommand.sh
+
+USER vscode
