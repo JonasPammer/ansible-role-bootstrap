@@ -38,13 +38,25 @@ CMD [ "sleep", "infinity" ]
 
 ########################
 ### OWN INSTRUCTIONS ###
-RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends python3 python3-pip python3-setuptools \
-    && python3 -m pip install --upgrade pip && python3 -m pip install tox
+ENV LANG C.UTF-8
+ENV LC_ALL C.UTF-8
+ENV PYTHONUNBUFFERED=1
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get -qy update \
+    && apt-get -qy upgrade \
+    && apt-get -qy install --no-install-recommends apt-utils tini \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Install shellcheck script to system as needed by pre-commit hook
-ADD https://github.com/koalaman/shellcheck/releases/download/v0.8.0/shellcheck-v0.8.0.linux.x86_64.tar.xz /tmp/shellcheck
-RUN apt-get -y install --no-install-recommends xz-utils \
-    && mkdir -p /tmp/shellcheckd \
-    && tar -xJf /tmp/shellcheck --directory /tmp/shellcheckd \
-    && cp /tmp/shellcheckd/shellcheck-v0.8.0/shellcheck /usr/local/bin/
+RUN apt-get -qy update \
+    && apt-get -qqy install --no-install-recommends python3-pip python3-wheel \
+    && python3 -m pip install --no-cache-dir --upgrade pip \
+    && python3 -m pip install --no-cache-dir wheel \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# as per requirements-dev.txt
+RUN python3 -m pip install cruft pre-commit tox
+
+COPY shrc-addition.sh /tmp/shrc-addition.sh
+RUN cat /tmp/shrc-addition.sh >> /home/vscode/.bashrc && \
+    cat /tmp/shrc-addition.sh >> /home/vscode/.zshrc
