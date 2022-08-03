@@ -1,8 +1,7 @@
 {
   $schema: "https://docs.renovatebot.com/renovate-schema.json",
   extends: [
-    // explicit version of "config:base" from https://docs.renovatebot.com/presets-config
-    ":dependencyDashboard",
+    // partial explicit version of "config:base" from https://docs.renovatebot.com/presets-config
     ":semanticPrefixFixDepsChoreOthers",
     ":ignoreModulesAndTests",
     ":autodetectPinVersions",
@@ -11,15 +10,24 @@
     "group:monorepos",
     "group:recommended",
     "workarounds:all",
+
     // other
     "schedule:monthly",
+    ":prImmediately",
+    ":rebaseStalePrs",
+
+    ":semanticCommits",
+    ":semanticCommitScope(deps)",
+    "docker:enableMajor",
+    "docker:pinDigests",
+    "helpers:pinGitHubActionDigests",
+
     ":gitSignOff",
     ":renovatePrefix",
   ],
   configMigration: true,
   lockFileMaintenance: { enabled: true },
-  semanticCommits: "enabled",
-  stabilityDays: 3,
+  stabilityDays: 7,
 
   labels: ["kind/dependencies"],
   packageRules: [
