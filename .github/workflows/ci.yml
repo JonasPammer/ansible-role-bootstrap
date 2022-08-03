@@ -141,8 +141,8 @@ jobs:
         run: tox
         env:
           TOX_SKIP_ENV: pre-commit
-          MOLECULE_DISTRO: ${{ matrix.distro }}
           TOX_PARALLEL_NO_SPINNER: 1
+          MOLECULE_DISTRO: ${{ matrix.distro }}
         if: ${{ github.event_name != 'workflow_dispatch' }}
 
       - name: Run Molecule tests (debug).
@@ -150,9 +150,9 @@ jobs:
         env:
           TOXENV: py3-${{ github.event.inputs.ansible_version }}
           TOX_SKIP_ENV: pre-commit
+          TOX_PARALLEL_NO_SPINNER: 1
           MOLECULE_DESTROY: never
           MOLECULE_DISTRO: ${{ matrix.distro }}
-          TOX_PARALLEL_NO_SPINNER: 1
         if: env.WORKFLOW_DISPATCH_IF == 'true'
 
       - name: Upload output of /molecule/resources/debug.yml as CI Artifact
