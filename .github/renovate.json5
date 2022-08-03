@@ -37,7 +37,6 @@
       labels: ["kind/dependencies", "priority/low"],
     },
     {
-      // do not know if the following pattern is correct yet
       matchDepTypes: ["action"],
       labels: ["kind/dependencies", "kind/infrastructure"],
     },
