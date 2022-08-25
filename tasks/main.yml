@@ -12,7 +12,8 @@
     host: "{{ (ansible_ssh_host | default(ansible_host) | default(inventory_hostname)) }}"
     timeout: "{{ bootstrap_timeout }}"
   connection: local
-  become: false
+  become: "{{ bootstrap_become | default(omit) }}"
+  become_user: "{{ bootstrap_user }}"
   when:
     - ansible_connection is defined
     - ansible_connection not in [ "container", "docker", "community.docker.docker" ]
@@ -44,6 +45,8 @@
           bootstrap_os_family in [ "Debian", "RedHat", "Rocky", "Suse" ])
       vars:
         ansible_user: "{{ bootstrap_user }}"
+      become: "{{ bootstrap_become | default(omit) }}"
+      become_user: "{{ bootstrap_user }}"
 
     - name: set 'bootstrap_ansible_user' to value of 'ansible_user' (when wait_for_connection succeeded)
       ansible.builtin.set_fact:
@@ -69,5 +72,5 @@
         state: present
         update_cache: true
       loop: "{{ bootstrap__facts_packages.split() }}"
-  become: true
+  become: "{{ bootstrap_become | default(omit) }}"
   become_user: "{{ bootstrap_ansible_user | default(bootstrap_user) }}"

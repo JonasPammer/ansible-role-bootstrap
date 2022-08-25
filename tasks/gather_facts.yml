@@ -1,8 +1,8 @@
 ---
 - name: lookup bootstrap facts (raw).
-  become: false
   ansible.builtin.raw: "cat /etc/os-release"
   check_mode: false
+  become: false
   register: bootstrap_facts
   changed_when: false
   vars:
@@ -19,6 +19,8 @@
     - bootstrap_facts.rc == 0
     - bootstrap_distribution is not defined
     - bootstrap_facts.stdout is regex('PRETTY_NAME=.'~ bootstrap__search[item] | default(item) ~'.*')
+  become: "{{ bootstrap_become | default(omit) }}"
+  become_user: "{{ bootstrap_user }}"
 
 - name: set bootstrap facts (II)
   ansible.builtin.set_fact:
@@ -28,3 +30,5 @@
     label: "{{ item.key }}"
   when:
     - bootstrap_distribution in item.value
+  become: "{{ bootstrap_become | default(omit) }}"
+  become_user: "{{ bootstrap_user }}"
