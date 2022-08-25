@@ -117,32 +117,6 @@ is meant to be used not just internally.
 == 📚 Example Playbook Usages
 // Including examples of how to use this role in a playbook for common scenarios is always nice for users too:
 
-[NOTE]
-====
-This role is part of https://github.com/JonasPammer/ansible-roles[
-many compatible purpose-specific roles of mine].
-
-The machine needs to be prepared.
-In CI, this is done in `molecule/resources/prepare.yml`
-which sources its soft dependencies from `requirements.yml`:
-
-.link:molecule/resources/prepare.yml[]
-[source,yaml]
-----
----
-- name: prepare
-  hosts: all
-  become: true
-  gather_facts: false
-----
-
-The following diagram is a compilation of the "soft dependencies" of this role
-as well as the recursive tree of their soft dependencies.
-
-image:https://raw.githubusercontent.com/JonasPammer/ansible-roles/master/graphs/dependencies_bootstrap.svg[
-requirements.yml dependency graph of jonaspammer.bootstrap]
-====
-
 [IMPORTANT]
 ====
 You must disable the `gather_facts`-property of the play this role is used in.
@@ -166,7 +140,7 @@ No tasks must come before this role.
 -----
 ====
 
-.Preferred Play
+.More Common Play
 ====
 [source,yaml]
 -----
