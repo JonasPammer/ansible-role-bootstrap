@@ -13,7 +13,7 @@
     timeout: "{{ bootstrap_timeout }}"
   connection: local
   become: "{{ bootstrap_become | default(omit) }}"
-  become_user: "{{ bootstrap_user }}"
+  become_user: "{{ bootstrap_become_user }}"
   when:
     - ansible_connection is defined
     - ansible_connection not in [ "container", "docker", "community.docker.docker" ]
@@ -46,7 +46,7 @@
       vars:
         ansible_user: "{{ bootstrap_user }}"
       become: "{{ bootstrap_become | default(omit) }}"
-      become_user: "{{ bootstrap_user }}"
+      become_user: "{{ bootstrap_become_user }}"
 
     - name: set 'bootstrap_ansible_user' to value of 'ansible_user' (when wait_for_connection succeeded)
       ansible.builtin.set_fact:
@@ -55,9 +55,9 @@
         - bootstrap_connect is succeeded
         - ansible_user is defined
 
-    - name: set 'bootstrap_ansible_user' to value of 'bootstrap_user' (when wait_for_connection failed)
+    - name: set 'bootstrap_ansible_user' to value of 'bootstrap_become_user' (when wait_for_connection failed)
       ansible.builtin.set_fact:
-        bootstrap_ansible_user: "{{ bootstrap_user }}"
+        bootstrap_ansible_user: "{{ bootstrap_become_user }}"
       when:
         - bootstrap_connect is failed
 
@@ -73,4 +73,4 @@
         update_cache: true
       loop: "{{ bootstrap__facts_packages.split() }}"
   become: "{{ bootstrap_become | default(omit) }}"
-  become_user: "{{ bootstrap_ansible_user | default(bootstrap_user) }}"
+  become_user: "{{ bootstrap_ansible_user | default(bootstrap_become_user) }}"

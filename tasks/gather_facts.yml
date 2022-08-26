@@ -20,7 +20,7 @@
     - bootstrap_distribution is not defined
     - bootstrap_facts.stdout is regex('PRETTY_NAME=.'~ bootstrap__search[item] | default(item) ~'.*')
   become: "{{ bootstrap_become | default(omit) }}"
-  become_user: "{{ bootstrap_user }}"
+  become_user: "{{ bootstrap_become_user }}"
 
 - name: set bootstrap facts (II)
   ansible.builtin.set_fact:
@@ -31,4 +31,4 @@
   when:
     - bootstrap_distribution in item.value
   become: "{{ bootstrap_become | default(omit) }}"
-  become_user: "{{ bootstrap_user }}"
+  become_user: "{{ bootstrap_become_user }}"
