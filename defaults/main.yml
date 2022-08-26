@@ -3,5 +3,8 @@
 # See README.adoc for documentation. If you change a default here, also update it in the README.
 
 bootstrap_user: root
+bootstrap_become: false
+bootstrap_become_user: "{{ bootstrap_user }}"
+
 bootstrap_wait_for_host: false
 bootstrap_timeout: 3
