@@ -5,11 +5,13 @@
 # See: https://github.com/marketplace/actions/publish-ansible-role-to-galaxy
 # See: https://github.com/ansible/galaxy/issues/46
 name: Release to Ansible Galaxy
-permissions: read-all
+
 "on":
   push:
     tags:
       - "*"
+
+permissions: read-all
 
 defaults:
   run:
