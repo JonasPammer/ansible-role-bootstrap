@@ -125,6 +125,7 @@ No tasks must come before this role.
 ---
 - hosts: servers:&provisioned
   name: Bootstrap linux machines to be managed by Ansible.
+  become: false
   gather_facts: false
 
   roles:
@@ -132,21 +133,43 @@ No tasks must come before this role.
 -----
 ====
 
-.More Common Play
+.Changing bootstrap user (e.g. when root is not an option)
 ====
 [source,yaml]
 -----
 ---
 - hosts: servers:&provisioned
   name: Bootstrap linux machines to be managed by Ansible.
+  become: false
   gather_facts: false
+
+  vars:
+    bootstrap_user: "{{ ansible_user }}"
 
   roles:
     - role: jonaspammer.bootstrap
-    - role: jonaspammer.core_dependencies
 -----
 ====
 
+
+.Using become true (e.g. when you know you at-least have an useable sudo)
+====
+[source,yaml]
+-----
+---
+- hosts: servers:&provisioned
+  name: Bootstrap linux machines to be managed by Ansible.
+  become: true
+  gather_facts: false
+
+  vars:
+    bootstrap_user: "{{ ansible_user }}"
+    bootstrap_become: true
+
+  roles:
+    - role: jonaspammer.bootstrap
+-----
+====
 
 [[development]]
 == 📝 Development
