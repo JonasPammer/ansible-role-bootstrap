@@ -48,20 +48,7 @@
       become: "{{ bootstrap_become | default(omit) }}"
       become_user: "{{ bootstrap_become_user }}"
 
-    - name: set 'bootstrap_ansible_user' to value of 'ansible_user' (when wait_for_connection succeeded)
-      ansible.builtin.set_fact:
-        bootstrap_ansible_user: "{{ ansible_user }}"
-      when:
-        - bootstrap_connect is succeeded
-        - ansible_user is defined
-
-    - name: set 'bootstrap_ansible_user' to value of 'bootstrap_become_user' (when wait_for_connection failed)
-      ansible.builtin.set_fact:
-        bootstrap_ansible_user: "{{ bootstrap_become_user }}"
-      when:
-        - bootstrap_connect is failed
-
-- name: ensure system is prepared by issuing ansible modules as bootstrap_ansible_user.
+- name: ensure system is prepared by issuing ansible modules.
   block:
     - name: Gather ansible facts.
       ansible.builtin.setup:
@@ -73,4 +60,4 @@
         update_cache: true
       loop: "{{ bootstrap__facts_packages.split() }}"
   become: "{{ bootstrap_become | default(omit) }}"
-  become_user: "{{ bootstrap_ansible_user | default(bootstrap_become_user) }}"
+  become_user: "{{ bootstrap_become_user }}"
