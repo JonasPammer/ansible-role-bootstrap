@@ -91,7 +91,7 @@ Username used to connect to the machine for the raw installation command task.
 [source,yaml]
 ----
 bootstrap_become: false
-bootstrap_become_user: "{{ bootstrap_user }}"
+bootstrap_become_user: root
 ----
 `become` and `become_user` variables passed to most actual tasks.
 
