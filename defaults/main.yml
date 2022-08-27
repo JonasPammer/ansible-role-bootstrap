@@ -4,7 +4,7 @@
 
 bootstrap_user: root
 bootstrap_become: false
-bootstrap_become_user: "{{ bootstrap_user }}"
+bootstrap_become_user: root
 
 bootstrap_wait_for_host: false
 bootstrap_timeout: 3
