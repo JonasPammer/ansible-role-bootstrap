@@ -1,13 +1,16 @@
 {
   "template": "https://github.com/JonasPammer/cookiecutter-ansible-role",
-  "commit": "83d931f9702db2b28b52fccc89f3ef0c683e1b69",
+  "commit": "81569d9cec1789a1d68dfe44f640b73bd340f2e8",
   "context": {
     "cookiecutter": {
       "full_name": "Jonas Pammer",
       "email": "opensource@jonaspammer.at",
       "code_of_conduct_enforcement_contact_email": "opensource@jonaspammer.at",
       "github_username": "JonasPammer",
-      "open_source_license": ["MIT License", "MIT"],
+      "open_source_license": [
+        "MIT License",
+        "MIT"
+      ],
       "galaxy_name": "jonaspammer",
       "min_ansible_version": "2.11",
       "allow_duplicates": "no",
