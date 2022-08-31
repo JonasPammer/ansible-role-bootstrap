@@ -3,6 +3,7 @@
 
 * Python 3.8 or greater
 * Docker
+* Podman
 
 [[development-dependencies]]
 === 📌 Development Dependencies
