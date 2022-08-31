@@ -69,9 +69,7 @@ Username used to connect to the machine for the raw installation command task.
 
 `become` and `become_user` variables passed to most actual tasks.
 
-The default values cover the 99.9% use case.
-
-The default variable of `bootstrap_become` is false as `sudo` is not available before bootstrapping out-of-the-box more often than it is.
+The default variable of `bootstrap_become` it is assumed that `sudo` is not available before bootstrapping out-of-the-box.
 
     bootstrap_wait_for_host: false
 
