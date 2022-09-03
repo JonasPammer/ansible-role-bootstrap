@@ -233,7 +233,6 @@ status]]
 * Python 3.8 or greater
 * Docker
 
-
 [[development-dependencies]]
 === 📌 Development Dependencies
 Development Dependencies are defined in a
