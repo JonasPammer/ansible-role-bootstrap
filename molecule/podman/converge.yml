@@ -4,5 +4,10 @@
   become: false
   gather_facts: false
 
+  pre_tasks:
+    - name: pause
+      ansible.builtin.pause:
+        seconds: 20
+
   roles:
     - role: ansible-role-bootstrap
