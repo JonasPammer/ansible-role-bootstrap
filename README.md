@@ -159,8 +159,6 @@ No tasks must come before this role.
 
 - Docker
 
-- Podman
-
 ## 📌 Development Dependencies
 
 Development Dependencies are defined in a [pip requirements file](https://pip.pypa.io/en/stable/user_guide/#requirements-files) named `requirements-dev.txt`. Example Installation Instructions for Linux are shown below:
