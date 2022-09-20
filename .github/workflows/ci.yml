@@ -31,10 +31,11 @@ name: CI (Lint + Molecule)
         type: choice
         default: "ansible-5,ansible-4"
         options:
-          - ansible-5,ansible-4
+          - ansible-4,ansible-5,ansible-6
           - ansible-4,ansible-5
           - ansible-4
           - ansible-5
+          - ansible-6
   pull_request:
   push:
     branches:
