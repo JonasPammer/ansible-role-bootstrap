@@ -29,7 +29,7 @@ Below you can find information on…
       author: jonaspammer
       license: "MIT"
 
-      min_ansible_version: 2.9
+      min_ansible_version: "2.9"
       platforms:
         - name: EL # (Enterprise Linux)
           versions:
