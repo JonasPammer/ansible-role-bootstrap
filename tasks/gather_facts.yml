@@ -8,7 +8,7 @@
   vars:
     ansible_user: "{{ bootstrap_user }}"
 
-- name: set bootstrap facts (I)
+- name: set bootstrap facts (I) # noqa jinja
   ansible.builtin.set_fact:
     bootstrap_distribution: "{{ item }}"
     bootstrap_distribution_major_version:
