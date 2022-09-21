@@ -21,6 +21,7 @@ Below you can find information on…
 **[meta/main.yml](meta/main.yml)**
 
     ---
+    # schema found at https://github.com/ansible/schemas/blob/main/f/ansible-meta.json
     galaxy_info:
       role_name: bootstrap
       description: An ansible role for preparing a linux system to be managed by ansible. Based on robertdebock's role.
@@ -33,8 +34,8 @@ Below you can find information on…
       platforms:
         - name: EL # (Enterprise Linux)
           versions:
-            - 7 # actively tested: centos7
-            - 8 # actively tested: rockylinux8, centos8
+            - "7" # actively tested: centos7
+            - "8" # actively tested: rockylinux8, centos8
         - name: Fedora
           versions:
             - "35" # fedora35 (actively tested)
