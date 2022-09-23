@@ -29,12 +29,12 @@ Below you can find information on…
       author: jonaspammer
       license: "MIT"
 
-      min_ansible_version: 2.9
+      min_ansible_version: "2.9"
       platforms:
         - name: EL # (Enterprise Linux)
           versions:
-            - 7 # actively tested: centos7
-            - 8 # actively tested: rockylinux8, centos8
+            - "7" # actively tested: centos7
+            - "8" # actively tested: rockylinux8, centos8
         - name: Fedora
           versions:
             - "35" # fedora35 (actively tested)
