@@ -123,7 +123,7 @@ No tasks must come before this role.
       gather_facts: false
 
       roles:
-        - role: jonaspammer.bootstrap
+        - name: jonaspammer.bootstrap
 
     ---
     - hosts: servers:&provisioned
@@ -135,7 +135,7 @@ No tasks must come before this role.
         bootstrap_user: "{{ ansible_user }}"
 
       roles:
-        - role: jonaspammer.bootstrap
+        - name: jonaspammer.bootstrap
 
     ---
     - hosts: servers:&provisioned
@@ -148,7 +148,7 @@ No tasks must come before this role.
         bootstrap_become: true
 
       roles:
-        - role: jonaspammer.bootstrap
+        - name: jonaspammer.bootstrap
 
 # 📝 Development
 
