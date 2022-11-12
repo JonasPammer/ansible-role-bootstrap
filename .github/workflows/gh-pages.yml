@@ -49,10 +49,17 @@ jobs:
           pre-commit run --files README.md || true
           pre-commit run --files README.md || true
 
-      - name: Commit generated README.
+      - name: get first line of commit message as env variable to be used in next step
+        shell: bash
+        run: |
+          echo "FIRST_LINE_OF_HEAD_COMMIT_MESSAGE=${HEAD_COMMIT_MESSAGE}" | head -1 >> $GITHUB_ENV
+        env:
+          HEAD_COMMIT_MESSAGE: "${{ github.event.head_commit.message }}"
+        
+      - name: Commit generated READMEs.
         uses: stefanzweifel/git-auto-commit-action@49620cd3ed21ee620a48530e81dba0d139c9cb80 # tag=v4
         with:
-          commit_message: "${{ github.event.head_commit.message }}  \n as per ${{ github.sha }}"
+          commit_message: "${{ env.FIRST_LINE_OF_HEAD_COMMIT_MESSAGE }} \n ${{ github.sha }}"
           file_pattern: README.adoc README.md
           disable_globbing: true
 
