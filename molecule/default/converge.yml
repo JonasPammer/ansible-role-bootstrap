@@ -5,4 +5,4 @@
   gather_facts: false
 
   roles:
-    - name: ansible-role-bootstrap
+    - role: ansible-role-bootstrap
