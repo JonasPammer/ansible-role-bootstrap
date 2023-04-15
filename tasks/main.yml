@@ -28,7 +28,8 @@
       changed_when: false
   rescue:
     - name: "NOTE - wait_for_connection failed for hosts listed in this Task"
-      ansible.builtin.debug: var=bootstrap_timeout
+      ansible.builtin.debug:
+        var: bootstrap_timeout
       changed_when: true
   always:
     - name: include tasks to gather bootstrap facts (raw)
@@ -51,6 +52,8 @@
       become_user: "{{ bootstrap_become_user }}"
 
 - name: ensure system is prepared by issuing ansible modules.
+  become: "{{ bootstrap_become | default(omit) }}"
+  become_user: "{{ bootstrap_become_user }}"
   block:
     - name: Gather ansible facts.
       ansible.builtin.setup:
@@ -61,5 +64,3 @@
         state: present
         update_cache: true
       loop: "{{ bootstrap__facts_packages.split() }}"
-  become: "{{ bootstrap_become | default(omit) }}"
-  become_user: "{{ bootstrap_become_user }}"

@@ -34,7 +34,7 @@ body:
           name: Role Test
 
           roles:
-            - bootstrap
+            - role: bootstrap
       render: yaml
     validations:
       required: true
