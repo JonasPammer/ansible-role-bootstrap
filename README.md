@@ -156,7 +156,7 @@ No tasks must come before this role.
 
 ## 📌 Development Machine Dependencies
 
-- Python 3.8 or greater
+- Python 3.9 or greater
 
 - Docker
 
