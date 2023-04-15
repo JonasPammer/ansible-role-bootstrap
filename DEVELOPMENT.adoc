@@ -1,7 +1,7 @@
 [[development-system-dependencies]]
 === 📌 Development Machine Dependencies
 
-* Python 3.8 or greater
+* Python 3.9 or greater
 * Docker
 
 [[development-dependencies]]
