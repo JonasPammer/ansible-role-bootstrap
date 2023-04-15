@@ -52,6 +52,8 @@
       become_user: "{{ bootstrap_become_user }}"
 
 - name: ensure system is prepared by issuing ansible modules.
+  become: "{{ bootstrap_become | default(omit) }}"
+  become_user: "{{ bootstrap_become_user }}"
   block:
     - name: Gather ansible facts.
       ansible.builtin.setup:
@@ -62,5 +64,3 @@
         state: present
         update_cache: true
       loop: "{{ bootstrap__facts_packages.split() }}"
-  become: "{{ bootstrap_become | default(omit) }}"
-  become_user: "{{ bootstrap_become_user }}"
