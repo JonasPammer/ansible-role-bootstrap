@@ -46,10 +46,9 @@ takes care of importing the role to my Ansible Galaxy Account.
 === 🧪 Testing
 Automatic Tests are run on each Contribution using GitHub Workflows.
 
-The Tests primarily resolve around running
-https://molecule.readthedocs.io/en/latest/[Molecule]
-on a varying set of linux distributions and using various ansible versions,
-as detailed in https://github.com/JonasPammer/ansible-roles[JonasPammer/ansible-roles].
+The Tests primarily resolve around running https://molecule.readthedocs.io/en/latest/[Molecule]
+on a <<tested-distributions,varying set of linux distributions>>
+and using <<tested-ansible-versions,various ansible versions>>.
 
 The molecule test also includes a step which lints all ansible playbooks using
 https://github.com/ansible/ansible-lint#readme[`ansible-lint`]
@@ -144,7 +143,7 @@ $ *docker container prune*
 
 This Project offers a definition for a "1-Click Containerized Development Environment".
 
-This Container even allow one to run docker containers inside of them (Docker-In-Docker, dind),
+This Container even enables one to run docker containers inside of it (Docker-In-Docker, dind),
 allowing for molecule execution.
 
 To use it:
@@ -168,9 +167,9 @@ changes made to its definition properly some times.
 
 [NOTE]
 =====
-You may need to configure your host system to enable the container to use your SSH Keys.
+You may need to configure your host system to enable the container to use your SSH/GPG Keys.
 
-The procedure is described https://code.visualstudio.com/docs/remote/containers#_sharing-git-credentials-with-your-container[
+The procedure is described https://code.visualstudio.com/remote/advancedcontainers/sharing-git-credentials[
 in the official devcontainer docs under "Sharing Git credentials with your container"].
 =====
 
