@@ -150,6 +150,95 @@ No tasks must come before this role.
       roles:
         - role: jonaspammer.bootstrap
 
+# 🧪 Tested Distributions
+
+A role may work on different **distributions**, like Red Hat Enterprise Linux (RHEL), even though there is no test for this exact distribution.
+
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">OS Family</th>
+<th style="text-align: left;">Distribution</th>
+<th style="text-align: left;">Distribution Release Date</th>
+<th style="text-align: left;">Distribution End of Life</th>
+<th style="text-align: left;">Accompanying Docker Image</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><p>RedHat</p></td>
+<td style="text-align: left;"><p>CentOS 7</p></td>
+<td style="text-align: left;"><p>2014-07</p></td>
+<td style="text-align: left;"><p>2024-06</p></td>
+<td style="text-align: left;"><p><a href="https://github.com/geerlingguy/docker-centos7-ansible/actions?query=workflow%3ABuild"><img src="https://github.com/geerlingguy/docker-centos7-ansible/workflows/Build/badge.svg?branch=master" alt="CI" /></a> (<a href="https://github.com/geerlingguy/docker-centos7-ansible/issues/18">*</a>)</p></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><p>Rocky</p></td>
+<td style="text-align: left;"><p>Rocky Linux 8 (<a href="https://www.howtogeek.com/devops/is-rocky-linux-the-new-centos/">RHEL/CentOS 8 in disguise</a>)</p></td>
+<td style="text-align: left;"><p>2021-06</p></td>
+<td style="text-align: left;"><p>2029-05</p></td>
+<td style="text-align: left;"><p><a href="https://github.com/geerlingguy/docker-rockylinux8-ansible/actions?query=workflow%3ABuild"><img src="https://github.com/geerlingguy/docker-rockylinux8-ansible/workflows/Build/badge.svg?branch=master" alt="CI" /></a></p></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><p>RedHat</p></td>
+<td style="text-align: left;"><p>Fedora 35</p></td>
+<td style="text-align: left;"><p>2021-11</p></td>
+<td style="text-align: left;"><p>2022-11</p></td>
+<td style="text-align: left;"><p><a href="https://github.com/geerlingguy/docker-fedora35-ansible/actions?query=workflow%3ABuild"><img src="https://github.com/geerlingguy/docker-fedora35-ansible/workflows/Build/badge.svg?branch=master" alt="CI" /></a></p></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><p>Debian</p></td>
+<td style="text-align: left;"><p>Ubuntu 1604</p></td>
+<td style="text-align: left;"><p>2016-04</p></td>
+<td style="text-align: left;"><p>2026-04</p></td>
+<td style="text-align: left;"><p><a href="https://github.com/geerlingguy/docker-ubuntu1604-ansible/actions?query=workflow%3ABuild"><img src="https://github.com/geerlingguy/docker-ubuntu1604-ansible/workflows/Build/badge.svg?branch=master" alt="CI" /></a></p></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><p>Debian</p></td>
+<td style="text-align: left;"><p>Ubuntu 1804</p></td>
+<td style="text-align: left;"><p>2018-04</p></td>
+<td style="text-align: left;"><p>2028-04</p></td>
+<td style="text-align: left;"><p><a href="https://github.com/geerlingguy/docker-ubuntu1804-ansible/actions?query=workflow%3ABuild"><img src="https://github.com/geerlingguy/docker-ubuntu1804-ansible/workflows/Build/badge.svg?branch=master" alt="CI" /></a></p></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><p>Debian</p></td>
+<td style="text-align: left;"><p>Ubuntu 2004</p></td>
+<td style="text-align: left;"><p>2021-09</p></td>
+<td style="text-align: left;"><p>2030-04</p></td>
+<td style="text-align: left;"><p><a href="https://github.com/geerlingguy/docker-ubuntu2004-ansible/actions?query=workflow%3ABuild"><img src="https://github.com/geerlingguy/docker-ubuntu2004-ansible/workflows/Build/badge.svg?branch=master" alt="CI" /></a></p></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><p>Debian</p></td>
+<td style="text-align: left;"><p>Debian 10</p></td>
+<td style="text-align: left;"><p>2019-07</p></td>
+<td style="text-align: left;"><p>2022-08</p></td>
+<td style="text-align: left;"><p><a href="https://github.com/geerlingguy/docker-debian10-ansible/actions?query=workflow%3ABuild"><img src="https://github.com/geerlingguy/docker-debian10-ansible/workflows/Build/badge.svg?branch=master" alt="CI" /></a></p></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><p>Debian</p></td>
+<td style="text-align: left;"><p>Debian 11</p></td>
+<td style="text-align: left;"><p>2021-08</p></td>
+<td style="text-align: left;"><p>?</p></td>
+<td style="text-align: left;"><p><a href="https://github.com/geerlingguy/docker-debian11-ansible/actions?query=workflow%3ABuild"><img src="https://github.com/geerlingguy/docker-debian11-ansible/workflows/Build/badge.svg?branch=master" alt="CI" /></a></p></td>
+</tr>
+</tbody>
+</table>
+
+# 🧪 Tested Ansible versions
+
+The tested ansible versions try to stay equivalent with the [ support pattern of Ansible’s `community.general` collection](https://github.com/ansible-collections/community.general#tested-with-ansible). As of writing this is:
+
+- 2.11 (Ansible 4)
+
+- 2.12 (Ansible 5)
+
 # 📝 Development
 
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org) [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/JonasPammer/ansible-role-bootstrap/master.svg)](https://results.pre-commit.ci/latest/github/JonasPammer/ansible-role-bootstrap/master)
@@ -188,7 +277,7 @@ When a new tag is pushed, [ a GitHub CI workflow](https://github.com/JonasPammer
 
 Automatic Tests are run on each Contribution using GitHub Workflows.
 
-The Tests primarily resolve around running [Molecule](https://molecule.readthedocs.io/en/latest/) on a varying set of linux distributions and using various ansible versions, as detailed in [JonasPammer/ansible-roles](https://github.com/JonasPammer/ansible-roles).
+The Tests primarily resolve around running [Molecule](https://molecule.readthedocs.io/en/latest/) on a [varying set of linux distributions](#tested-distributions) and using [various ansible versions](#tested-ansible-versions).
 
 The molecule test also includes a step which lints all ansible playbooks using [`ansible-lint`](https://github.com/ansible/ansible-lint#readme) to check for best practices and behaviour that could potentially be improved.
 
@@ -254,7 +343,7 @@ For a list of possible values fed to `MOLECULE_DISTRO`, take a look at the matri
 
 This Project offers a definition for a "1-Click Containerized Development Environment".
 
-This Container even allow one to run docker containers inside of them (Docker-In-Docker, dind), allowing for molecule execution.
+This Container even enables one to run docker containers inside of it (Docker-In-Docker, dind), allowing for molecule execution.
 
 To use it:
 
@@ -269,9 +358,9 @@ To use it:
 
 I recommend using `Remote-Containers: Rebuild Without Cache and Reopen in Container` once here and there as the devcontainer feature does have some problems recognizing changes made to its definition properly some times.
 
-You may need to configure your host system to enable the container to use your SSH Keys.
+You may need to configure your host system to enable the container to use your SSH/GPG Keys.
 
-The procedure is described [ in the official devcontainer docs under "Sharing Git credentials with your container"](https://code.visualstudio.com/docs/remote/containers#_sharing-git-credentials-with-your-container).
+The procedure is described [ in the official devcontainer docs under "Sharing Git credentials with your container"](https://code.visualstudio.com/remote/advancedcontainers/sharing-git-credentials).
 
 ## 🍪 CookieCutter
 
