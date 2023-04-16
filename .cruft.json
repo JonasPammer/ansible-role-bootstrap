@@ -15,7 +15,7 @@
       "min_ansible_version": "2.11",
       "allow_duplicates": "no",
       "ansible_user_needs_to_become": "True",
-      "use_renovate": "False",
+      "use_renovate": "y",
       "role_name": "bootstrap",
       "project_slug": "ansible-role-bootstrap",
       "project_short_purpose": "preparing a linux system to be managed by ansible",
