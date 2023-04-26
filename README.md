@@ -63,14 +63,14 @@ The Ansible User needs to be able to `become`.
 
     bootstrap_user: root
 
-Username used to connect to the machine for the raw installation command task.
+[Username](https://docs.ansible.com/ansible/latest/reference_appendices/special_variables.html#term-ansible_user) used to connect to the machine for the primary `raw` tasks of _gathering simple facts_ / _installing_.
 
     bootstrap_become: false
     bootstrap_become_user: root
 
 `become` and `become_user` variables passed to most actual tasks.
 
-The default variable of `bootstrap_become` it is assumed that `sudo` is not available before bootstrapping out-of-the-box.
+The default value of `bootstrap_become` was set to `false` because of the assumption that `sudo` is not available before bootstrapping.
 
     bootstrap_wait_for_host: false
 
