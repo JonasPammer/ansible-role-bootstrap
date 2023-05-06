@@ -341,6 +341,12 @@ For a list of possible values fed to `MOLECULE_DISTRO`, take a look at the matri
         or
         $ docker container prune
 
+### 🐛 Debugging installed package versions locally
+
+Although a standard feature in tox 3, this [now](https://github.com/tox-dev/tox/pull/2794) only happens when tox recognizes the presence of a CI variable. For example:
+
+    $ CI=true tox
+
 ## 🧃 TIP: Containerized Ideal Development Environment
 
 This Project offers a definition for a "1-Click Containerized Development Environment".
