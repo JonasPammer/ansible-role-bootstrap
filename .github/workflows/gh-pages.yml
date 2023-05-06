@@ -1,10 +1,11 @@
 ---
-name: build self-contained README
-permissions:
-  contents: write
-  pages: write
+name: build self-contained READMEs
+
 "on":
   push:
+
+permissions:
+  contents: read
 
 # Cancel a currently running workflow from the same PR, branch or tag when a new workflow is triggered for it
 concurrency:
@@ -14,12 +15,15 @@ concurrency:
 jobs:
   gh-pages:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
     steps:
       ### Setup
-      - name: check out the codebase.
+      - name: check out the codebase
         uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3
 
-      - name: setup Ruby
+      - name: setup ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: "2.7.0"
@@ -81,13 +85,6 @@ jobs:
           python3 -m pip install pre-commit
           pre-commit run --files README.md SECURITY.md || true
           pre-commit run --files README.md SECURITY.md || true
-
-      - name: get first line of commit message as variable to be used in next step
-        shell: bash
-        run: |
-          echo "FIRST_LINE_OF_HEAD_COMMIT_MESSAGE=${HEAD_COMMIT_MESSAGE}" | head -1 >> $GITHUB_ENV
-        env:
-          HEAD_COMMIT_MESSAGE: "${{ github.event.head_commit.message }}"
 
       - name: Commit generated files.
         uses: stefanzweifel/git-auto-commit-action@49620cd3ed21ee620a48530e81dba0d139c9cb80 # tag=v4
