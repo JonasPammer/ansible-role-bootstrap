@@ -249,7 +249,7 @@ A role may work on different **distributions**, like Red Hat Enterprise Linux (R
 <td style="text-align: left;"><p>Ubuntu 2204</p></td>
 <td style="text-align: left;"><p>2022-04</p></td>
 <td style="text-align: left;"><p>2032-04</p></td>
-<td style="text-align: left;"><p><a href="https://github.com/geerlingguy/docker-ubuntu2004-ansible/actions?query=workflow%3ABuild"><img src="https://github.com/geerlingguy/docker-ubuntu2004-ansible/workflows/Build/badge.svg?branch=master" alt="CI" /></a></p></td>
+<td style="text-align: left;"><p><a href="https://github.com/geerlingguy/docker-ubuntu2204-ansible/actions?query=workflow%3ABuild"><img src="https://github.com/geerlingguy/docker-ubuntu2204-ansible/workflows/Build/badge.svg?branch=master" alt="CI" /></a></p></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><p>Debian</p></td>
