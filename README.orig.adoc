@@ -272,7 +272,7 @@ even though there is no test for this exact distribution.
 | Ubuntu 2204
 | 2022-04
 | 2032-04
-| https://github.com/geerlingguy/docker-ubuntu2004-ansible/actions?query=workflow%3ABuild[image:https://github.com/geerlingguy/docker-ubuntu2004-ansible/workflows/Build/badge.svg?branch=master[CI]]
+| https://github.com/geerlingguy/docker-ubuntu2204-ansible/actions?query=workflow%3ABuild[image:https://github.com/geerlingguy/docker-ubuntu2204-ansible/workflows/Build/badge.svg?branch=master[CI]]
 
 | Debian
 | Debian 10
