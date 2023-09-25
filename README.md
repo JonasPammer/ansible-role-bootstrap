@@ -351,11 +351,9 @@ For a list of possible values fed to `MOLECULE_DISTRO`, take a look at the matri
         Python 3.8.10
         root@instance-py3-ansible-2:/# ...
 
-    If the failure you try to debug is part of `verify.yml` step and not the actual `converge.yml`, you may want to know that the output of ansible’s modules (`vars`), hosts (`hostvars`) and environment variables have been stored into files on both the provisioner and inside the docker machine under:
+    If the failure you try to debug is part of your `verify.yml` step and not the actual `converge.yml`, you may want to know that the output of ansible’s modules (`vars`), hosts (`hostvars`) and environment variables have been stored into files on both the provisioner and inside the docker machine under:
 
-    - `/var/tmp/vars.yml`
-
-    - `/var/tmp/hostvars.yml`
+    - `/var/tmp/vars.yml` (contains host variables under the `hostvars` key)
 
     - `/var/tmp/environment.yml`
 
