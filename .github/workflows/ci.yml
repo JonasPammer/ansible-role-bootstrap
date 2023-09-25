@@ -39,6 +39,8 @@ name: CI (Lint + Molecule)
           - ansible-5
           - ansible-6
   pull_request:
+    branches-ignore:
+      - renovate/**
   push:
     branches:
       - master
@@ -174,7 +176,6 @@ jobs:
           path: |
             /var/tmp/vars.yml
             /var/tmp/environment.yml
-            /var/tmp/hostvars.yml
 
       - name: setup tmate session if previous step failed and if this is a manual run
         if: failure() && env.WORKFLOW_DISPATCH_IF == 'true'

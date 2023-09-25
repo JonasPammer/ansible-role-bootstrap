@@ -3,6 +3,8 @@ name: build self-contained READMEs
 
 "on":
   push:
+    branches-ignore:
+      - renovate/**
 
 permissions:
   contents: read
