@@ -23,11 +23,11 @@ jobs:
       id-token: write
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: "${{ steps.deployment.outputs.page_url }}"
     steps:
       ### Setup
       - name: check out the codebase
-        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4
+        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
 
       - name: setup ruby
         uses: ruby/setup-ruby@v1
@@ -40,7 +40,7 @@ jobs:
           python-version: "3.x"
 
       - name: setup/activate pre-commit cache
-        uses: actions/cache@704facf57e6136b1bc63b828d79edcd491f0ee84 # v3
+        uses: actions/cache@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8 # v3
         with:
           path: ~/.cache/pre-commit
           key: "${{ hashFiles('.pre-commit-config.yaml') }}"
@@ -63,7 +63,7 @@ jobs:
         run: asciidoctor -b docbook README.adoc
 
       - name: Generate README.md from README.xml using pandoc
-        uses: docker://pandoc/core@sha256:222badaf55d35aa19a54294721b2669a55737e8a96e78f038b89c2b70bccd13f
+        uses: docker://pandoc/core@sha256:d2c4aa0c26e9480b8ab15eb952f49cb6c33ca5635417e1bb064e715a5a32a9e9
         with:
           args: "-f docbook -t markdown_strict README.xml -o README.md --wrap=none"
 
@@ -93,7 +93,7 @@ jobs:
           pre-commit run --files README.md SECURITY.md || true
 
       - name: Commit generated files.
-        uses: stefanzweifel/git-auto-commit-action@3ea6ae190baf489ba007f7c92608f33ce20ef04a # v4
+        uses: stefanzweifel/git-auto-commit-action@49620cd3ed21ee620a48530e81dba0d139c9cb80 # tag=v4
         with:
           commit_message: "${{ env.FIRST_LINE_OF_HEAD_COMMIT_MESSAGE }}\n${{ github.sha }}"
           file_pattern: README.adoc README.md SECURITY.md
