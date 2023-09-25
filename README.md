@@ -278,6 +278,10 @@ The tested ansible versions try to stay equivalent with the [ support pattern of
 
 - 2.13 (Ansible 6)
 
+- 2.14 (Ansible 7)
+
+- 2.15 (Ansible 8)
+
 # 📝 Development
 
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org) [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/JonasPammer/ansible-role-bootstrap/master.svg)](https://results.pre-commit.ci/latest/github/JonasPammer/ansible-role-bootstrap/master)
@@ -364,9 +368,7 @@ For a list of possible values fed to `MOLECULE_DISTRO`, take a look at the matri
     You may also want to know that the files mentioned in the admonition above are attached to the **GitHub CI Artifacts** of a given Workflow run.
     This allows one to check the difference between runs and thus help in debugging what caused the bit-rot or failure in general.
 
-    <figure>
-    <img src="https://user-images.githubusercontent.com/32995541/178442403-e15264ca-433a-4bc7-95db-cfadb573db3c.png" alt="178442403 e15264ca 433a 4bc7 95db cfadb573db3c" />
-    </figure>
+    ![178442403 e15264ca 433a 4bc7 95db cfadb573db3c](https://user-images.githubusercontent.com/32995541/178442403-e15264ca-433a-4bc7-95db-cfadb573db3c.png)
 
 4.  After you finished your debugging, exit it and destroy the container:
 
@@ -411,9 +413,7 @@ The procedure is described [ in the official devcontainer docs under "Sharing Gi
 
 This Project shall be kept in sync with [the CookieCutter it was originally templated from](https://github.com/JonasPammer/cookiecutter-ansible-role) using [cruft](https://github.com/cruft/cruft) (if possible) or manual alteration (if needed) to the best extend possible.
 
-> <figure>
-> <img src="https://raw.githubusercontent.com/cruft/cruft/master/art/example_update.gif" alt="Official Example Usage of `cruft update`" />
-> </figure>
+> ![Official Example Usage of `cruft update`](https://raw.githubusercontent.com/cruft/cruft/master/art/example_update.gif)
 
 ### 🕗 Changelog
 
