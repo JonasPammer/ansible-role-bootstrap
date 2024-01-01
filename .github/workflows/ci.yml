@@ -75,7 +75,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: check out the codebase
-        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
 
       - name: set up python 3
         uses: actions/setup-python@61a6322f88396a6271a6ee3565807d608ecaddd1 # v4
@@ -138,7 +138,7 @@ jobs:
         if: github.event_name != 'workflow_dispatch' || env.WORKFLOW_DISPATCH_IF == 'true'
 
       - name: check out the codebase
-        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
 
       - name: set up python 3
         uses: actions/setup-python@61a6322f88396a6271a6ee3565807d608ecaddd1 # v4
