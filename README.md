@@ -2,8 +2,6 @@
 
 [![Version on Galaxy](https://img.shields.io/badge/available%20on%20ansible%20galaxy-jonaspammer.bootstrap-brightgreen)](https://galaxy.ansible.com/jonaspammer/bootstrap) [![Testing CI](https://github.com/JonasPammer/ansible-role-bootstrap/actions/workflows/ci.yml/badge.svg)](https://github.com/JonasPammer/ansible-role-bootstrap/actions/workflows/ci.yml)
 
-Test123
-
 An Ansible role for preparing a linux system to be managed by ansible.
 
 This role uses the raw module (in combination with its own os-determination-system) to install the minimum required set of packages (python and sudo) to allow Ansible to manage a system.
