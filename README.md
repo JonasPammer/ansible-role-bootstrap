@@ -332,19 +332,19 @@ For a list of possible values fed to `MOLECULE_DISTRO`, take a look at the matri
 
 1.  Run your molecule tests with the option `MOLECULE_DESTROY=never`, e.g.:
 
-        $ MOLECULE_DESTROY=never MOLECULE_DISTRO=ubuntu1604 tox -e py3-ansible-5
+        $ MOLECULE_DESTROY=never MOLECULE_DISTRO=ubuntu1604 tox -e py3-ansible-9
         ...
           TASK [ansible-role-pip : (redacted).] ************************
-          failed: [instance-py3-ansible-5] => changed=false
+          failed: [instance-py3-ansible-9] => changed=false
         ...
          ___________________________________ summary ____________________________________
           pre-commit: commands succeeded
-        ERROR:   py3-ansible-5: commands failed
+        ERROR:   py3-ansible-9: commands failed
 
 2.  Find out the name of the molecule-provisioned docker container:
 
         $ docker ps
-        30e9b8d59cdf   geerlingguy/docker-debian10-ansible:latest   "/lib/systemd/systemd"   8 minutes ago   Up 8 minutes                                                                                                    instance-py3-ansible-5
+        30e9b8d59cdf   geerlingguy/docker-debian10-ansible:latest   "/lib/systemd/systemd"   8 minutes ago   Up 8 minutes                                                                                                    instance-py3-ansible-9
 
 3.  Get into a bash Shell of the container, and do your debugging:
 
