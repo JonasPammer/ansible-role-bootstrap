@@ -1,7 +1,7 @@
 [[development-system-dependencies]]
 === 📌 Development Machine Dependencies
 
-* Python 3.9 or greater
+* Python 3.10 or greater
 * Docker
 
 [[development-dependencies]]
@@ -96,9 +96,6 @@ $ *docker ps*
 $ *docker exec -it #30e9b8d59cdf# /bin/bash*
 
 root@instance-py3-ansible-2:/#
-root@instance-py3-ansible-2:/# python3 --version
-Python 3.8.10
-root@instance-py3-ansible-2:/# ...
 ----
 +
 [TIP]
