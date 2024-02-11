@@ -1,6 +1,6 @@
 {
   "template": "https://github.com/JonasPammer/cookiecutter-ansible-role",
-  "commit": "806ba7dbe25a1d368a5cc281d3af9333ba234459",
+  "commit": "9130a7a4c05007141d29ca0d25557c94cba0e752",
   "context": {
     "cookiecutter": {
       "full_name": "Jonas Pammer",
@@ -16,6 +16,19 @@
       "role_name": "bootstrap",
       "project_slug": "ansible-role-bootstrap",
       "project_short_purpose": "preparing a linux system to be managed by ansible",
+      "__prompts__": {
+        "open_source_license": {
+          "MIT": "MIT License",
+          "Unlicense": "The Unlicense",
+          "BSL-1.0": "Boost Software License 1.0",
+          "Apache-2.0": "Apache License 2.0",
+          "MPL-2.0": "Mozilla Public License 2.0",
+          "LGPL-3.0": "GNU LGPLv3",
+          "GPL-3.0": "GNU GPLv3",
+          "AGPL-3.0": "GNU APGLv3",
+          "None": "Not open source"
+        }
+      },
       "_template": "https://github.com/JonasPammer/cookiecutter-ansible-role"
     }
   },
