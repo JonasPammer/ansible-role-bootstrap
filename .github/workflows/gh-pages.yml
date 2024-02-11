@@ -15,15 +15,10 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  gh-pages:
+  asciidoctor:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: "${{ steps.deployment.outputs.page_url }}"
     steps:
       ### Setup
       - name: check out the codebase
@@ -104,17 +99,46 @@ jobs:
         run: asciidoctor --backend=html5 --destination-dir docs --out-file index.html README.adoc
         if: github.ref == 'refs/heads/master'
 
+      - name: upload docs directory for job transfer
+        uses: actions/upload-artifact@v3
+        with:
+          name: docs
+          path: ./docs
+        if: github.ref == 'refs/heads/master'
+
+  gh-pages:
+    runs-on: ubuntu-latest
+    needs: asciidoctor
+    if: github.ref == 'refs/heads/master'
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: "${{ steps.deployment.outputs.page_url }}"
+    steps:
+      ### Deploy README.adoc
+      - name: download docs directory from previous job
+        uses: actions/download-artifact@v3
+        with:
+          name: docs
+          path: ./docs
+
       - name: Setup Pages
         uses: actions/configure-pages@b8130d9ab958b325bbde9786d62f2c97a9885a0e # v3
-        if: github.ref == 'refs/heads/master'
 
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@a753861a5debcf57bf8b404356158c8e1e33150c # v2
         with:
           path: "./docs/"
-        if: github.ref == 'refs/heads/master'
 
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@de14547edc9944350dc0481aa5b7afb08e75f254 # v2
-        if: github.ref == 'refs/heads/master'
+
+      - name: docs artifact no longer needed
+        uses: geekyeggo/delete-artifact@v2
+        with:
+          name: docs
+          failOnError: false
