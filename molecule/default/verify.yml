@@ -13,3 +13,10 @@
   hosts: all
 
   tasks:
+    - name: Test connection
+      ansible.builtin.ping:
+
+    - name: Install package by issuing ansible module
+      ansible.builtin.package:
+        name: gzip
+        state: present
