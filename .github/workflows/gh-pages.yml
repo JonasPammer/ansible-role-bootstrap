@@ -102,7 +102,7 @@ jobs:
         if: github.ref == 'refs/heads/master'
 
       - name: upload docs directory for job transfer
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32 # v3
         with:
           name: docs
           path: ./docs
@@ -122,7 +122,7 @@ jobs:
     steps:
       ### Deploy README.adoc
       - name: download docs directory from previous job
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a # v3
         with:
           name: docs
           path: ./docs
@@ -140,7 +140,7 @@ jobs:
         uses: actions/deploy-pages@de14547edc9944350dc0481aa5b7afb08e75f254 # v2
 
       - name: docs artifact no longer needed
-        uses: geekyeggo/delete-artifact@v2
+        uses: geekyeggo/delete-artifact@54ab544f12cdb7b71613a16a2b5a37a9ade990af # v2
         with:
           name: docs
           failOnError: false
