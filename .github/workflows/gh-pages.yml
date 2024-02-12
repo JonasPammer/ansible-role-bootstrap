@@ -3,8 +3,6 @@ name: build self-contained READMEs
 
 "on":
   push:
-    branches-ignore:
-      - renovate/**
 
 permissions:
   contents: read
@@ -87,12 +85,16 @@ jobs:
           pre-commit run --files README.md SECURITY.md || true
           pre-commit run --files README.md SECURITY.md || true
 
+      - id: is_renovate
+        run: echo "::set-output name=is_renovate::$( [[ ${GITHUB_REF#refs/heads/} != renovate/* ]] && echo false || echo true )"
+
       - name: Commit generated files.
         uses: stefanzweifel/git-auto-commit-action@3ea6ae190baf489ba007f7c92608f33ce20ef04a # v4
         with:
           commit_message: "${{ env.FIRST_LINE_OF_HEAD_COMMIT_MESSAGE }}\n${{ github.sha }}"
           file_pattern: README.adoc README.md SECURITY.md
           disable_globbing: true
+        if: steps.is_renovate.outputs.is_renovate == 'false'
 
       ### Deploy README.adoc
       - name: Generate HTML
