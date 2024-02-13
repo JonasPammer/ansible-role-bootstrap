@@ -3,6 +3,7 @@ name: build self-contained READMEs
 
 "on":
   push:
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -116,6 +117,8 @@ jobs:
       contents: read
       pages: write
       id-token: write
+      # delete-artifact@v4
+      actions: write
     environment:
       name: github-pages
       url: "${{ steps.deployment.outputs.page_url }}"
