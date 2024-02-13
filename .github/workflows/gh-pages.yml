@@ -87,7 +87,7 @@ jobs:
           pre-commit run --files README.md SECURITY.md || true
 
       - id: is_renovate
-        run: echo "::set-output name=is_renovate::$( [[ ${GITHUB_REF#refs/heads/} != renovate/* ]] && echo false || echo true )"
+        run: echo "is_renovate=$( [[ ${GITHUB_REF#refs/heads/} != renovate/* ]] && echo false || echo true )" >> $GITHUB_OUTPUT
 
       - name: Commit generated files.
         uses: stefanzweifel/git-auto-commit-action@8756aa072ef5b4a080af5dc8fef36c5d586e521d # v5
