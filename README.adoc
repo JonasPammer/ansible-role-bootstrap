@@ -13,8 +13,10 @@ https://github.com/JonasPammer/ansible-role-bootstrap/actions/workflows/ci.yml[i
 
 An Ansible role for preparing a linux system to be managed by ansible.
 
-This role uses the raw module (in combination with its own os-determination-system)
-to install the minimum required set of packages (python and sudo) to allow Ansible to manage a system.
+This role uses the https://docs.ansible.com/ansible-core/2.16/collections/ansible/builtin/raw_module.html[`ansible.builtin.raw` module]
+in combination with an own-implemented "Operating System determination system"
+to install the minimum required set of packages (`python` and `sudo`)
+in order to allow Ansible to manage a system.
 
 This role also ensures an up-to-date package cache for most systems.
 
