@@ -51,11 +51,17 @@ Excerpt of changes from  https://github.com/JonasPammer/ansible-role-bootstrap/r
   )
 * change default of `bootstrap_become_user` to root
 * use `bootstrap_become_user` in ansible modules steps too
-* make role compatible with podman by specifying `/bin/sh`
+* +++<del>+++
+  make role compatible with podman by specifying `/bin/sh`
+  https://github.com/robertdebock/ansible-role-bootstrap/issues/55[robertdebock/ansible-role-bootstrap#55]
   https://github.com/robertdebock/ansible-role-bootstrap/pull/66[robertdebock/ansible-role-bootstrap#66]
   ( fixed in
   https://github.com/JonasPammer/ansible-role-bootstrap/pull/62[JonasPammer#62]
   )
+  +++</del>+++ +
+  Update: The mentioned upstream issue was fixed alternative way on Aug 24, 2023 in
+  https://github.com/robertdebock/ansible-role-bootstrap/releases/tag/6.1.10[robertdebock/6.1.10]
+
 =====
 
 toc::[]
