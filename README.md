@@ -11,8 +11,7 @@ In most cases, you will want to use this role in combination with my [`core_depe
 
 DISCLAIMER
 
-This role is a fork of [robertdebock/ansible-role-bootstrap v5.2.12 (27 January, 2022)](https://github.com/robertdebock/ansible-role-bootstrap/releases/tag/5.2.12) (Apache License 2.0, Copyright Robert de Bock (<robert@meinit.nl>)) with various changes/fixes.  
-Excerpt of changes from [/releases](https://github.com/JonasPammer/ansible-role-bootstrap/releases) below (with accompanying Issues in robertdebock’s repository):
+This role is a fork of [robertdebock/ansible-role-bootstrap v7.0.3 (19 September, 2024)](https://github.com/robertdebock/ansible-role-bootstrap/releases/tag/7.0.3) (Apache License 2.0, Copyright Robert de Bock (<robert@meinit.nl>)) that has the intent to implement fixes for the issues mentioned below (excerpt from [/releases](https://github.com/JonasPammer/ansible-role-bootstrap/releases) with accompanying Issues in robertdebock’s repository):
 
 -   use `bootstrap_become_user` in ansible modules steps too ([robertdebock/ansible-role-bootstrap#59](https://github.com/robertdebock/ansible-role-bootstrap/issues/59))
 
