@@ -14,11 +14,11 @@ DISCLAIMER
 This role is a fork of [robertdebock/ansible-role-bootstrap v5.2.12 (27 January, 2022)](https://github.com/robertdebock/ansible-role-bootstrap/releases/tag/5.2.12) (Apache License 2.0, Copyright Robert de Bock (<robert@meinit.nl>)) with various changes/fixes.  
 Excerpt of changes from [/releases](https://github.com/JonasPammer/ansible-role-bootstrap/releases) below (with accompanying Issues in robertdebock’s repository):
 
+-   use `bootstrap_become_user` in ansible modules steps too ([robertdebock/ansible-role-bootstrap#59](https://github.com/robertdebock/ansible-role-bootstrap/issues/59))
+
 -   change default of become to `false`, add ability to define `become_user` seperately from `ansible_user`: [robertdebock/ansible-role-bootstrap#63](https://github.com/robertdebock/ansible-role-bootstrap/issues/63) ( fixed in [JonasPammer#61](https://github.com/JonasPammer/ansible-role-bootstrap/pull/61) )
 
 -   change default of `bootstrap_become_user` to root
-
--   use `bootstrap_become_user` in ansible modules steps too
 
 -   The role itself should pre-heat the the package manager cache: [robertdebock/ansible-role-bootstrap#57](https://github.com/robertdebock/ansible-role-bootstrap/pull/57) ( fixed in [JonasPammer#43](https://github.com/JonasPammer/ansible-role-bootstrap/pull/43); [JonasPammer#50](https://github.com/JonasPammer/ansible-role-bootstrap/pull/50) )  
     Update: The mentioned upstream PR was merged on Dec 4, 2024 in [robertdebock/6.2.4](https://github.com/robertdebock/ansible-role-bootstrap/releases/tag/6.2.4)
