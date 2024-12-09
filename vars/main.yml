@@ -15,6 +15,7 @@ _bootstrap__packages:
   Debian_8: python sudo gnupg
   Debian_9: python sudo gnupg
   RedHat_7: python sudo
+  Fedora: python3 sudo python3-libdnf5
 
 # Map the right set of packages, based on gathered bootstrap facts.
 bootstrap__packages:
