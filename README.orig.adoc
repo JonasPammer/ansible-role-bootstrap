@@ -38,13 +38,14 @@ This role is a fork of https://github.com/robertdebock/ansible-role-bootstrap/re
 with various changes/fixes. +
 Excerpt of changes from  https://github.com/JonasPammer/ansible-role-bootstrap/releases[/releases] below (with accompanying Issues in robertdebock's repository):
 
+* use `bootstrap_become_user` in ansible modules steps too
+  (https://github.com/robertdebock/ansible-role-bootstrap/issues/59[robertdebock/ansible-role-bootstrap#59])
 * change default of become to `false`, add ability to define `become_user` seperately from `ansible_user`:
   https://github.com/robertdebock/ansible-role-bootstrap/issues/63[robertdebock/ansible-role-bootstrap#63]
   ( fixed in
   https://github.com/JonasPammer/ansible-role-bootstrap/pull/61[JonasPammer#61]
   )
 * change default of `bootstrap_become_user` to root
-* use `bootstrap_become_user` in ansible modules steps too
 
 * +++<del>+++
   The role itself should pre-heat the the package manager cache:
