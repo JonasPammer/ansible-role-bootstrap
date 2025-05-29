@@ -51,7 +51,7 @@ jobs:
         run: asciidoctor -b docbook README.adoc
 
       - name: Generate README.md from README.xml using pandoc
-        uses: docker://pandoc/core@sha256:2b79262284929afdbe98b73097bfc6ed0e1fb5b0ea59db984890e6b84d5fe17a
+        uses: docker://pandoc/core@sha256:a115371a3f4b3f93233ef894f31eb8c4235fbcee60c64846f1a61c1c970d338c
         with:
           args: "-f docbook -t markdown_strict README.xml -o README.md --wrap=none"
 
